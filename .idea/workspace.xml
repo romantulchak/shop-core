@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9739963b-258d-4989-be48-e316df16c2bb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - shop@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - shop@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - shop@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="shop: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - shop@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="shop: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="custom: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YehdhIZxCtflnkJRF75ZdWk49w" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ShopBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.computerShop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.computerShop.App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9739963b-258d-4989-be48-e316df16c2bb" name="Default Changelist" comment="" />
+      <created>1583309056036</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583309056036</updated>
+      <workItem from="1583309058000" duration="13235000" />
+      <workItem from="1583413495931" duration="9017000" />
+      <workItem from="1583476359878" duration="9117000" />
+      <workItem from="1583589605418" duration="763000" />
+      <workItem from="1583611793989" duration="1212000" />
+      <workItem from="1583739525792" duration="10525000" />
+      <workItem from="1583826540549" duration="6290000" />
+      <workItem from="1584003365142" duration="26358000" />
+      <workItem from="1584170312477" duration="8446000" />
+      <workItem from="1584259985608" duration="15031000" />
+      <workItem from="1584344559276" duration="8927000" />
+      <workItem from="1584388578974" duration="8759000" />
+      <workItem from="1584519332063" duration="13529000" />
+      <workItem from="1584602833908" duration="16395000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="278" y="59" width="800" height="684" key="#Assign_Data_Sources" timestamp="1583358713767">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="278" y="59" width="800" height="684" key="#Assign_Data_Sources/0.27.1366.741@0.27.1366.741" timestamp="1583358713767" />
+    <state x="278" y="59" width="800" height="684" key="#Auto_Import" timestamp="1583505041833">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="278" y="59" width="800" height="684" key="#Auto_Import/0.27.1366.741@0.27.1366.741" timestamp="1583505041833" />
+    <state x="309" y="59" width="1033" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584613235738">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="309" y="59" width="1033" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.741@0.27.1366.741" timestamp="1584613235738" />
+    <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1584624963133">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1584624963133" />
+    <state x="790" y="27" width="566" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584349714897">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="790" y="27" width="566" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1366.741@0.27.1366.741" timestamp="1584349714897" />
+    <state width="530" height="540" key="DebuggerActiveHint" timestamp="1584616426474">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="530" height="540" key="DebuggerActiveHint/0.27.1366.741@0.27.1366.741" timestamp="1584616426474" />
+    <state width="1320" height="107" key="GridCell.Tab.0.bottom" timestamp="1584626381779">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="107" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1584626381779" />
+    <state width="1320" height="107" key="GridCell.Tab.0.center" timestamp="1584626381778">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="107" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1584626381778" />
+    <state width="1320" height="107" key="GridCell.Tab.0.left" timestamp="1584626381778">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="107" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1584626381778" />
+    <state width="1320" height="107" key="GridCell.Tab.0.right" timestamp="1584626381778">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="107" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1584626381778" />
+    <state width="1320" height="107" key="GridCell.Tab.1.bottom" timestamp="1584626381438">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="107" key="GridCell.Tab.1.bottom/0.27.1366.741@0.27.1366.741" timestamp="1584626381438" />
+    <state width="1320" height="107" key="GridCell.Tab.1.center" timestamp="1584626381437">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="107" key="GridCell.Tab.1.center/0.27.1366.741@0.27.1366.741" timestamp="1584626381437" />
+    <state width="1320" height="107" key="GridCell.Tab.1.left" timestamp="1584626381437">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="107" key="GridCell.Tab.1.left/0.27.1366.741@0.27.1366.741" timestamp="1584626381437" />
+    <state width="1320" height="107" key="GridCell.Tab.1.right" timestamp="1584626381437">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="107" key="GridCell.Tab.1.right/0.27.1366.741@0.27.1366.741" timestamp="1584626381437" />
+    <state width="1320" height="107" key="GridCell.Tab.2.bottom" timestamp="1584626381439">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="107" key="GridCell.Tab.2.bottom/0.27.1366.741@0.27.1366.741" timestamp="1584626381439" />
+    <state width="1320" height="107" key="GridCell.Tab.2.center" timestamp="1584626381438">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="107" key="GridCell.Tab.2.center/0.27.1366.741@0.27.1366.741" timestamp="1584626381438" />
+    <state width="1320" height="107" key="GridCell.Tab.2.left" timestamp="1584626381438">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="107" key="GridCell.Tab.2.left/0.27.1366.741@0.27.1366.741" timestamp="1584626381438" />
+    <state width="1320" height="107" key="GridCell.Tab.2.right" timestamp="1584626381439">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="107" key="GridCell.Tab.2.right/0.27.1366.741@0.27.1366.741" timestamp="1584626381439" />
+    <state width="683" height="370" key="XDebugger.FullValuePopup" timestamp="1584006392813">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="683" height="370" key="XDebugger.FullValuePopup/0.27.1366.741@0.27.1366.741" timestamp="1584006392813" />
+    <state x="579" y="294" width="377" height="321" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1584613218605">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="579" y="294" width="377" height="321" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.27.1366.741@0.27.1366.741" timestamp="1584613218605" />
+    <state x="402" y="27" width="552" height="741" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1584613302544">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="402" y="27" width="552" height="741" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.27.1366.741@0.27.1366.741" timestamp="1584613302544" />
+    <state x="339" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1584602828959">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="339" y="225" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1584602828959" />
+    <state x="381" y="225" key="com.intellij.ide.util.TipDialog/56.27.1310.741@56.27.1310.741" timestamp="1583738201721" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java</url>
+          <line>42</line>
+          <properties class="org.computerShop.controller.MainController" method="createProduct">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/CategoryController.java</url>
+          <line>33</line>
+          <properties class="org.computerShop.controller.CategoryController" method="createCategory">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java</url>
+          <line>54</line>
+          <properties class="org.computerShop.service.impl.ProductServiceImpl" method="createProduct">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java</url>
+          <line>79</line>
+          <properties class="org.computerShop.service.impl.ProductServiceImpl" method="pushImage">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/CategoryController.java</url>
+          <line>38</line>
+          <properties class="org.computerShop.controller.CategoryController" method="deleteCategory">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CategoryServiceImpl.java</url>
+          <line>56</line>
+          <properties class="org.computerShop.service.impl.CategoryServiceImpl" method="editCategory">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java</url>
+          <line>46</line>
+          <properties class="org.computerShop.controller.MainController" method="deleteProduct">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java</url>
+          <line>127</line>
+          <properties class="org.computerShop.service.impl.ProductServiceImpl" method="filterByCategory">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java</url>
+          <line>64</line>
+          <properties class="org.computerShop.controller.MainController" method="productsByCategory">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/OrderController.java</url>
+          <line>26</line>
+          <properties class="org.computerShop.controller.OrderController" method="createOrder">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java</url>
+          <line>28</line>
+          <properties class="org.computerShop.service.impl.CustomServiceImpl" method="createOrder">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java</url>
+          <line>71</line>
+          <properties class="org.computerShop.controller.MainController" method="getProductsById">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/CategoryController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CategoryServiceImpl.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
