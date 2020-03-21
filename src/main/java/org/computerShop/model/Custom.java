@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -44,6 +45,18 @@ public class Custom {
     @JsonView(Views.CustomFUll.class)
     private int amount;
 
+
+
+    @NotNull
+    @JsonView(Views.CustomFUll.class)
+    private int totalPrice;
+
+    @NotNull
+    @Email
+    @JsonView(Views.CustomFUll.class)
+    private String email;
+
+
     public void setId(long id) {
         this.id = id;
     }
@@ -52,9 +65,21 @@ public class Custom {
     @JsonView(Views.CustomFUll.class)
     private LocalDateTime createdDate;
 
+    public int getTotalPrice() {
+        return totalPrice;
+    }
 
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
+    }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     @ManyToOne
     @JsonView(Views.CustomFUll.class)

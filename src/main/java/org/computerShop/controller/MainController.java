@@ -68,10 +68,6 @@ public class MainController {
         return productService.filterByCategory(category);
     }
 
-    @GetMapping("/getProductsById")
-    public List<Product> getProductsById(@RequestParam("id") Long[] ids){
-        System.out.println(ids);
-        return productService.getProductsById(ids);
-    }
+
 
 }

@@ -123,28 +123,27 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
-    @Override
+    //TODO: MAX SIZE PHOTO 10 MB
 
+    @Override
     public List<Product> filterByCategory(String categoryName){
         Category category = categoryRepo.findByCategoryName(categoryName);
         List<Product> products = productRepo.findAllByCategory(category);
         if (products.size() != 0){
+
+
+
             return products;
         }else {
-            return productRepo.findAll();
-        }
 
-    }
-
-    @Override
-    public List<Product> getProductsById(Long[] ids) {
-        List<Product> products = new ArrayList<>();
-        for (Long id: ids){
-            Product product = productRepo.findById(id).orElse(null);
-            if(product != null){
-                products.add(product);
+            if(categoryName.isEmpty()) {
+                return productRepo.findAll();
+            }else{
+                return products;
             }
         }
-        return products;
+
     }
+
+
 }

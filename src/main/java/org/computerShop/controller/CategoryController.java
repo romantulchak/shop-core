@@ -40,6 +40,8 @@ public class CategoryController {
         return categoryService.deleteCategory(category);
     }
 
+
+    //TODO: EDIT
     @PutMapping("/editCategory")
     @JsonView(Views.CategoryFull.class)
     public ResponseEntity<String> editCategory(@RequestBody Category category){

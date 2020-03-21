@@ -28,6 +28,6 @@ public interface ProductService {
 
     List<Product> filterByCategory(String category);
 
-    List<Product> getProductsById(Long[] ids);
+
 
 }
