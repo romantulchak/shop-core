@@ -8,6 +8,8 @@ public interface CustomService {
 
     List<Custom> getAllByIdentificationNumber(String identificationNumber);
     String createOrder(Custom custom);
+    List<Custom> getAll();
+    List<Custom> setStatus(Custom custom);
 
 
 }

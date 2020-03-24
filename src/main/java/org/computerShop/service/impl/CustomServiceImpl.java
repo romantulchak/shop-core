@@ -53,9 +53,6 @@ public class CustomServiceImpl implements CustomService {
                         customToSave.setTotalPrice(custom.getTotalPrice());
                         customToSave.setEmail(custom.getEmail());
                         customRepo.save(customToSave);
-
-
-
                     }
                 }
             }
@@ -106,4 +103,42 @@ public class CustomServiceImpl implements CustomService {
         System.out.println(customs);
         return customRepo.findAllByIdentificationNumber(identificationNumber);
     }
+    @Override
+    public List<Custom> getAll(){
+
+
+        List<Custom> sdsa = new ArrayList<>();
+        List<String> strings = customRepo.getUnique();
+        List<Custom> customsToShow = customRepo.findAll();
+
+        for (String ss: strings) {
+
+            Custom c = customRepo.getFirstByIdentificationNumber(ss);
+
+
+
+
+
+            sdsa.add(c);
+
+        }
+
+
+
+
+
+
+        return sdsa;
+    }
+
+    @Override
+    public List<Custom> setStatus(Custom custom){
+        if(custom != null){
+            customRepo.save(custom);
+        }
+        return getAll();
+    }
+
+
+
 }

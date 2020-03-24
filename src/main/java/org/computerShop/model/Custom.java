@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.swing.text.View;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-public class Custom {
+public class Custom  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -45,7 +46,20 @@ public class Custom {
     @JsonView(Views.CustomFUll.class)
     private int amount;
 
+    @JsonView(Views.CustomFUll.class)
+    private boolean isBeingProcessed = true;
 
+    @JsonView(Views.CustomFUll.class)
+    private boolean isCompleted = false;
+
+    @JsonView(Views.CustomFUll.class)
+    private boolean inTransit = false;
+
+    @JsonView(Views.CustomFUll.class)
+    private boolean atTheDestination = false;
+
+    @JsonView(Views.CustomFUll.class)
+    private boolean received = false;
 
     @NotNull
     @JsonView(Views.CustomFUll.class)
@@ -55,15 +69,84 @@ public class Custom {
     @Email
     @JsonView(Views.CustomFUll.class)
     private String email;
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @JsonView(Views.CustomFUll.class)
+    private LocalDateTime createdDate;
+
+    @NotNull
+    @JsonView(Views.CustomFUll.class)
+    private String identificationNumber;
+
+    public Custom(){
+
+    }
+
+    public Custom(String costumerName, String costumerLastName, String costumerAddress, String costumerCity,
+                  String customerMobilePhone, String customerPostalCode, int amount, boolean isBeingProcessed,
+                  boolean isCompleted, boolean inTransit, boolean atTheDestination, boolean received
+                  ){
+        this.costumerName = costumerName;
+        this.costumerLastName = costumerLastName;
+        this.costumerAddress = costumerAddress;
+        this.costumerCity = costumerCity;
+        this.customerMobilePhone = customerMobilePhone;
+        this.customerPostalCode = customerPostalCode;
+        this.amount = amount;
+        this.isBeingProcessed = isBeingProcessed;
+        this.isCompleted = isCompleted;
+        this.inTransit = inTransit;
+        this.atTheDestination = atTheDestination;
+        this.received = received;
+
+    }
+
+    public boolean isBeingProcessed() {
+        return isBeingProcessed;
+    }
+
+    public boolean isReceived() {
+        return received;
+    }
+
+    public void setReceived(boolean received) {
+        this.received = received;
+    }
+
+    public void setBeingProcessed(boolean beingProcessed) {
+        isBeingProcessed = beingProcessed;
+    }
+
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    public void setCompleted(boolean completed) {
+        isCompleted = completed;
+    }
+
+    public boolean isInTransit() {
+        return inTransit;
+    }
+
+    public void setInTransit(boolean inTransit) {
+        this.inTransit = inTransit;
+    }
+
+    public boolean isAtTheDestination() {
+        return atTheDestination;
+    }
+
+    public void setAtTheDestination(boolean atTheDestination) {
+        this.atTheDestination = atTheDestination;
+    }
+
+
 
 
     public void setId(long id) {
         this.id = id;
     }
 
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
-    @JsonView(Views.CustomFUll.class)
-    private LocalDateTime createdDate;
 
     public int getTotalPrice() {
         return totalPrice;
@@ -105,8 +188,6 @@ public class Custom {
     public void setItems(List<Item> items) {
         this.items = items;
     }
-
-    private String identificationNumber;
 
 
     public long getId(){
