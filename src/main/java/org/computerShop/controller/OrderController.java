@@ -5,6 +5,7 @@ import org.computerShop.model.Views;
 import org.computerShop.service.CustomService;
 import org.computerShop.service.impl.CustomServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.computerShop.model.Custom;
 
@@ -41,13 +42,29 @@ public class OrderController {
     }
     @PutMapping("/setIsBeingProcessed")
     @JsonView(Views.CustomFUll.class)
-    public List<Custom> setIsBeingProcessed(@RequestBody Custom custom){
-        return customService.setStatus(custom);
+    public ResponseEntity<String> setIsBeingProcessed(@RequestBody Custom custom){
+        return customService.setStatus(custom, 1);
     }
     @PutMapping("/setCompleted")
     @JsonView(Views.CustomFUll.class)
-    public List<Custom> setCompleted(@RequestBody Custom custom){
-        return customService.setStatus(custom);
+    public ResponseEntity<String> setCompleted(@RequestBody Custom custom){
+        return customService.setStatus(custom,2 );
     }
 
+    @PutMapping("/setInTransit")
+    @JsonView(Views.CustomFUll.class)
+    public ResponseEntity<String> setInTransit(@RequestBody Custom custom){
+        return customService.setStatus(custom,3 );
+    }
+
+    @PutMapping("/setAtTheDestination")
+    @JsonView(Views.CustomFUll.class)
+    public ResponseEntity<String> setAtTheDestination(@RequestBody Custom custom){
+        return customService.setStatus(custom,4 );
+    }
+    @PutMapping("/setReceived")
+    @JsonView(Views.CustomFUll.class)
+    public ResponseEntity<String> setReceived(@RequestBody Custom custom){
+        return customService.setStatus(custom,5 );
+    }
 }

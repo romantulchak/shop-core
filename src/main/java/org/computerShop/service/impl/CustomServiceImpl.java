@@ -9,6 +9,8 @@ import org.computerShop.repository.ProductRepo;
 import org.computerShop.service.CustomService;
 import org.hibernate.sql.Template;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -132,11 +134,32 @@ public class CustomServiceImpl implements CustomService {
     }
 
     @Override
-    public List<Custom> setStatus(Custom custom){
-        if(custom != null){
-            customRepo.save(custom);
+    public ResponseEntity<String> setStatus(Custom custom, int status){
+
+        switch (status){
+            case 1:
+                custom.setBeingProcessed(!custom.isBeingProcessed());
+                break;
+            case 2:
+                custom.setCompleted(!custom.isCompleted());
+                break;
+            case 3:
+                custom.setInTransit(!custom.isInTransit());
+                break;
+            case 4:
+                custom.setAtTheDestination(!custom.isAtTheDestination());
+                break;
+            case 5:
+                custom.setReceived(!custom.isReceived());
+                break;
         }
-        return getAll();
+
+        if(custom != null && custom.isBeingProcessed()){
+            customRepo.save(custom);
+            return new ResponseEntity<>("Ok", HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>("You can not set another status if Is being processed is false", HttpStatus.OK);
+        }
     }
 
 
