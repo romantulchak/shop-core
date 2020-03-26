@@ -11,6 +11,6 @@ public interface CustomService {
     String createOrder(Custom custom);
     List<Custom> getAll();
     ResponseEntity<String> setStatus(Custom custom, int status);
-
+    ResponseEntity<String> deleteCustom(Custom custom);
 
 }

@@ -40,31 +40,17 @@ public class OrderController {
     public List<Custom> findByIdentificationNumber(@PathVariable("identificationNumber") String identificationNumber){
         return customService.getAllByIdentificationNumber(identificationNumber);
     }
-    @PutMapping("/setIsBeingProcessed")
+
+
+    @PutMapping("/setStatus")
     @JsonView(Views.CustomFUll.class)
-    public ResponseEntity<String> setIsBeingProcessed(@RequestBody Custom custom){
-        return customService.setStatus(custom, 1);
-    }
-    @PutMapping("/setCompleted")
-    @JsonView(Views.CustomFUll.class)
-    public ResponseEntity<String> setCompleted(@RequestBody Custom custom){
-        return customService.setStatus(custom,2 );
+    public ResponseEntity<String> setCustomStatus(@RequestParam(value = "statusCode", required = false) String code, @RequestBody Custom custom){
+        return customService.setStatus(custom, Integer.parseInt(code));
     }
 
-    @PutMapping("/setInTransit")
-    @JsonView(Views.CustomFUll.class)
-    public ResponseEntity<String> setInTransit(@RequestBody Custom custom){
-        return customService.setStatus(custom,3 );
+    @DeleteMapping("/deleteCustom/{id}")
+    public ResponseEntity<String> deleteCustom(@PathVariable("id") Custom custom){
+        return customService.deleteCustom(custom);
     }
 
-    @PutMapping("/setAtTheDestination")
-    @JsonView(Views.CustomFUll.class)
-    public ResponseEntity<String> setAtTheDestination(@RequestBody Custom custom){
-        return customService.setStatus(custom,4 );
-    }
-    @PutMapping("/setReceived")
-    @JsonView(Views.CustomFUll.class)
-    public ResponseEntity<String> setReceived(@RequestBody Custom custom){
-        return customService.setStatus(custom,5 );
-    }
 }

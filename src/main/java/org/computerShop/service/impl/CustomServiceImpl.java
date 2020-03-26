@@ -1,13 +1,14 @@
 package org.computerShop.service.impl;
 
+import maps.Status;
 import org.computerShop.email.SendEmail;
 import org.computerShop.model.Custom;
+import org.computerShop.model.enums.CustomStatus;
 import org.computerShop.model.Item;
 import org.computerShop.model.Product;
 import org.computerShop.repository.CustomRepo;
 import org.computerShop.repository.ProductRepo;
 import org.computerShop.service.CustomService;
-import org.hibernate.sql.Template;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 @Service
@@ -29,14 +31,31 @@ public class CustomServiceImpl implements CustomService {
     }
 
 
+    private ArrayList<Status> allStatuses(){
+        Status isBeingProcessed = new Status(CustomStatus.IS_BEING_PROCESSED, LocalDateTime.now(), 0);
+        Status isCompleted = new Status(CustomStatus.IS_COMPLETED, 101);
+        Status inTransit = new Status(CustomStatus.IN_TRANSIT, 102);
+        Status atTheDestination = new Status(CustomStatus.AT_THE_DESTINATION, 103);
+        Status received = new Status(CustomStatus.RECEIVED, 104);
+        ArrayList<Status> statuses = new ArrayList<Status>(5){{
+            add(isBeingProcessed);
+            add(isCompleted);
+            add(inTransit);
+            add(atTheDestination);
+            add(received);
+        }};
+        return statuses;
+    }
+
     @Override
     public String createOrder(Custom custom) {
         String identificationNumber = generateRandomStringNumber();
         List<Product> products = new ArrayList<>();
+
+
+
         if(custom != null){
-
             if(custom.getItems().size() != 0 && custom.getItems() != null){
-
                 for(Item item: custom.getItems()) {
                     Custom customToSave = new Custom();
                     Product product = productRepo.findById(item.getId()).orElse(null);
@@ -54,6 +73,7 @@ public class CustomServiceImpl implements CustomService {
                         customToSave.setCustomerPostalCode(custom.getCustomerPostalCode());
                         customToSave.setTotalPrice(custom.getTotalPrice());
                         customToSave.setEmail(custom.getEmail());
+                        customToSave.setStatuses(allStatuses());
                         customRepo.save(customToSave);
                     }
                 }
@@ -134,27 +154,56 @@ public class CustomServiceImpl implements CustomService {
     }
 
     @Override
-    public ResponseEntity<String> setStatus(Custom custom, int status){
-
+    public ResponseEntity<String> setStatus(Custom custom, int status) {
+        boolean isSuccess = false;
         switch (status){
+            case 0:
+                break;
             case 1:
-                custom.setBeingProcessed(!custom.isBeingProcessed());
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(null);
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(101);
+                isSuccess = true;
                 break;
             case 2:
-                custom.setCompleted(!custom.isCompleted());
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(null);
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(102);
+                isSuccess = true;
                 break;
             case 3:
-                custom.setInTransit(!custom.isInTransit());
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(null);
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(103);
+                isSuccess = true;
                 break;
             case 4:
-                custom.setAtTheDestination(!custom.isAtTheDestination());
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(null);
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(104);
+                isSuccess = true;
                 break;
-            case 5:
-                custom.setReceived(!custom.isReceived());
+            case 100:
+                break;
+            case 101:
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(LocalDateTime.now());
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(1);
+                isSuccess = true;
+                break;
+            case 102:
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(LocalDateTime.now());
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(2);
+                isSuccess = true;
+                break;
+            case 103:
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(LocalDateTime.now());
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(3);
+                isSuccess = true;
+                break;
+            case 104:
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(LocalDateTime.now());
+                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(4);
+                isSuccess = true;
                 break;
         }
 
-        if(custom != null && custom.isBeingProcessed()){
+        if(custom != null && isSuccess){
             customRepo.save(custom);
             return new ResponseEntity<>("Ok", HttpStatus.OK);
         }else{
@@ -162,6 +211,15 @@ public class CustomServiceImpl implements CustomService {
         }
     }
 
+    @Override
+    public ResponseEntity<String> deleteCustom(Custom custom) {
 
+        if(custom != null){
+            customRepo.delete(custom);
+            return new ResponseEntity<>("OK", HttpStatus.OK);
+        }else {
+            return new ResponseEntity<>("Bad", HttpStatus.OK);
+        }
 
+    }
 }
