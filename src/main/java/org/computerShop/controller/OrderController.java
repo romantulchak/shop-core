@@ -45,12 +45,19 @@ public class OrderController {
     @PutMapping("/setStatus")
     @JsonView(Views.CustomFUll.class)
     public ResponseEntity<String> setCustomStatus(@RequestParam(value = "statusCode", required = false) String code, @RequestBody Custom custom){
+
+        //TODO:FIX коли приходять не цифри
         return customService.setStatus(custom, Integer.parseInt(code));
     }
 
     @DeleteMapping("/deleteCustom/{id}")
     public ResponseEntity<String> deleteCustom(@PathVariable("id") Custom custom){
         return customService.deleteCustom(custom);
+    }
+
+    @PutMapping("/cancel")
+    public ResponseEntity<String> cancel(@RequestBody Custom custom){
+        return customService.setCancel(custom);
     }
 
 }

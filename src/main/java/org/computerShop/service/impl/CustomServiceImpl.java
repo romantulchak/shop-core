@@ -50,37 +50,62 @@ public class CustomServiceImpl implements CustomService {
     @Override
     public String createOrder(Custom custom) {
         String identificationNumber = generateRandomStringNumber();
-        List<Product> products = new ArrayList<>();
+        ArrayList<Product> products = new ArrayList<>();
 
 
 
         if(custom != null){
             if(custom.getItems().size() != 0 && custom.getItems() != null){
                 for(Item item: custom.getItems()) {
-                    Custom customToSave = new Custom();
                     Product product = productRepo.findById(item.getId()).orElse(null);
                     if (product != null) {
                         products.add(product);
-                        customToSave.setAmount(item.getAmount());
-                        customToSave.setProduct(product);
-                        customToSave.setCreatedDate(LocalDateTime.now());
-                        customToSave.setIdentificationNumber(identificationNumber);
-                        customToSave.setCostumerAddress(custom.getCostumerAddress());
-                        customToSave.setCostumerCity(custom.getCostumerCity());
-                        customToSave.setCostumerLastName(custom.getCostumerLastName());
-                        customToSave.setCostumerName(custom.getCostumerName());
-                        customToSave.setCustomerMobilePhone(custom.getCustomerMobilePhone());
-                        customToSave.setCustomerPostalCode(custom.getCustomerPostalCode());
-                        customToSave.setTotalPrice(custom.getTotalPrice());
-                        customToSave.setEmail(custom.getEmail());
-                        customToSave.setStatuses(allStatuses());
+                        Custom customToSave = new Custom(custom.getCostumerName(),
+                                                        custom.getCostumerLastName(),
+                                custom.getCostumerAddress(),
+                                custom.getCostumerCity(),
+                                custom.getCustomerMobilePhone(),
+                                custom.getCustomerPostalCode(),
+                                item.getAmount(),
+                                product,
+                                identificationNumber,
+                                custom.getTotalPrice(),
+                                custom.getEmail(),
+                                allStatuses()
+                        );
+
+
+
+                        //customToSave.setAmount(item.getAmount());
+                        //customToSave.setProduct(product);
+                        //customToSave.setCreatedDate(LocalDateTime.now());
+                        //customToSave.setIdentificationNumber(identificationNumber);
+                        //customToSave.setCostumerAddress(custom.getCostumerAddress());
+                        //customToSave.setCostumerCity(custom.getCostumerCity());
+                        //customToSave.setCostumerLastName(custom.getCostumerLastName());
+                        //customToSave.setCostumerName(custom.getCostumerName());
+                        //customToSave.setCustomerMobilePhone(custom.getCustomerMobilePhone());
+                        //customToSave.setCustomerPostalCode(custom.getCustomerPostalCode());
+                        //customToSave.setTotalPrice(custom.getTotalPrice());
+                        //customToSave.setEmail(custom.getEmail());
+                        //customToSave.setStatuses(allStatuses());
                         customRepo.save(customToSave);
                     }
                 }
             }
+            SendEmail email = new SendEmail();
+            if (custom.getEmail() != null) {
+                email.sendMail(custom.getEmail(), "Your order number", contentToSend(products, custom, identificationNumber).toString());
+            }
 
         }
 
+
+        return identificationNumber;
+    }
+
+
+    private StringBuilder contentToSend(ArrayList<Product> products, Custom custom, String identificationNumber){
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("<div style=\"text-align: center; justify-content: center; align-items: center; height: 500px; display:flex;\">")
                 .append("<div style=\" width: 100%; \">")
@@ -98,11 +123,7 @@ public class CustomServiceImpl implements CustomService {
         }
         stringBuilder.append("</div>").append("</div>");
 
-        SendEmail email = new SendEmail();
-        if (custom.getEmail() != null) {
-            email.sendMail(custom.getEmail(), "Your order number", stringBuilder.toString());
-        }
-        return identificationNumber;
+        return stringBuilder;
     }
 
 
@@ -119,12 +140,16 @@ public class CustomServiceImpl implements CustomService {
     }
 
 
+    //TODO: враховувати Cancel
     @Override
     public List<Custom> getAllByIdentificationNumber(String identificationNumber) {
         List<Custom> customs = customRepo.findAllByIdentificationNumber(identificationNumber);
         System.out.println(customs);
         return customRepo.findAllByIdentificationNumber(identificationNumber);
     }
+
+
+    //TODO: fix it
     @Override
     public List<Custom> getAll(){
 
@@ -158,47 +183,49 @@ public class CustomServiceImpl implements CustomService {
         boolean isSuccess = false;
         switch (status){
             case 0:
+                //TODO: пофіксити
                 break;
             case 1:
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(null);
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(101);
+
+                changeStatus(1, custom, 101);
+                changeStatus(2, custom, 102);
+                changeStatus(3, custom, 103);
+                changeStatus(4, custom, 104);
                 isSuccess = true;
                 break;
             case 2:
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(null);
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(102);
+                changeStatus(2, custom, 102);
+                changeStatus(3, custom, 103);
+                changeStatus(4, custom, 104);
                 isSuccess = true;
                 break;
             case 3:
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(null);
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(103);
+
+                changeStatus(3, custom, 103);
+                changeStatus(4, custom, 104);
                 isSuccess = true;
                 break;
             case 4:
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(null);
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(104);
+                changeStatus(4, custom, 104);
                 isSuccess = true;
                 break;
             case 100:
                 break;
             case 101:
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(LocalDateTime.now());
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(1);
+
+                changeStatus(101, custom, 1);
                 isSuccess = true;
                 break;
             case 102:
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(LocalDateTime.now());
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(2);
+                changeStatus(102, custom, 2);
                 isSuccess = true;
                 break;
             case 103:
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(LocalDateTime.now());
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(3);
+                changeStatus(103, custom, 3);
                 isSuccess = true;
                 break;
             case 104:
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusDateTime(LocalDateTime.now());
-                custom.getStatuses().stream().filter(s->s.getStatusCode() == status).findFirst().orElse(new Status()).setStatusCode(4);
+                changeStatus(104, custom, 4);
                 isSuccess = true;
                 break;
         }
@@ -211,6 +238,19 @@ public class CustomServiceImpl implements CustomService {
         }
     }
 
+
+    private void changeStatus(int status, Custom custom, int statusToSet){
+
+        custom.getStatuses().stream().filter(s->s.getStatusCode() == status)
+                .findFirst()
+                .orElse(new Status())
+                .setStatusDateTime(LocalDateTime.now());
+        custom.getStatuses().stream().filter(s->s.getStatusCode() == status).
+                findFirst()
+                .orElse(new Status())
+                .setStatusCode(statusToSet);
+    }
+
     @Override
     public ResponseEntity<String> deleteCustom(Custom custom) {
 
@@ -220,6 +260,21 @@ public class CustomServiceImpl implements CustomService {
         }else {
             return new ResponseEntity<>("Bad", HttpStatus.OK);
         }
+
+    }
+
+
+    @Override
+    public ResponseEntity<String> setCancel(Custom custom){
+
+        if(custom != null){
+            custom.setCancel(custom.isCancel());
+            customRepo.save(custom);
+            return new ResponseEntity<>("Good", HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>("Bad", HttpStatus.OK);
+        }
+
 
     }
 }

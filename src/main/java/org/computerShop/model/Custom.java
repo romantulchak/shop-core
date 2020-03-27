@@ -3,6 +3,7 @@ package org.computerShop.model;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import maps.Status;
+import org.computerShop.model.enums.CustomStatus;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -65,6 +66,23 @@ public class Custom  {
     @JsonView(Views.CustomFUll.class)
     private String identificationNumber;
 
+
+    @ManyToOne
+    @JsonView(Views.CustomFUll.class)
+    private Product product;
+
+    @JsonView(Views.CustomFUll.class)
+    private boolean cancel = false;
+
+
+
+    public boolean isCancel(){
+        return cancel;
+    }
+    public void setCancel(boolean cancel){
+        this.cancel = cancel;
+    }
+
     public List<Status> getStatuses() {
         return statuses;
     }
@@ -78,7 +96,8 @@ public class Custom  {
     }
 
     public Custom(String costumerName, String costumerLastName, String costumerAddress, String costumerCity,
-                  String customerMobilePhone, String customerPostalCode, int amount
+                  String customerMobilePhone, String customerPostalCode, int amount, Product product, String identificationNumber,
+                  int totalPrice, String email, ArrayList<Status> statuses
                   ){
         this.costumerName = costumerName;
         this.costumerLastName = costumerLastName;
@@ -87,8 +106,12 @@ public class Custom  {
         this.customerMobilePhone = customerMobilePhone;
         this.customerPostalCode = customerPostalCode;
         this.amount = amount;
-
-
+        this.product = product;
+        this.setCreatedDate(LocalDateTime.now());
+        this.identificationNumber = identificationNumber;
+        this.totalPrice = totalPrice;
+        this.email = email;
+        this.setStatuses(statuses);
     }
 
 
@@ -114,9 +137,6 @@ public class Custom  {
         this.email = email;
     }
 
-    @ManyToOne
-    @JsonView(Views.CustomFUll.class)
-    private Product product;
 
     public Product getProduct() {
         return product;
@@ -215,4 +235,5 @@ public class Custom  {
     public void setCreatedDate(LocalDateTime createdDate) {
         this.createdDate = createdDate;
     }
+
 }
