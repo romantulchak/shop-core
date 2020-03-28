@@ -11,11 +11,11 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonView({Views.ProductFull.class, Views.CategoryFull.class})
+    @JsonView({Views.ProductFull.class, Views.CategoryFull.class, Views.UserFull.class})
     private long id;
 
     @Column(name = "categoryName")
-    @JsonView({Views.ProductFull.class, Views.CategoryFull.class, Views.CustomFUll.class })
+    @JsonView({Views.ProductFull.class, Views.CategoryFull.class, Views.CustomFUll.class ,Views.UserFull.class})
     private String categoryName;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)

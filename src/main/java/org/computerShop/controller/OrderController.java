@@ -1,11 +1,13 @@
 package org.computerShop.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import org.computerShop.model.User;
 import org.computerShop.model.Views;
 import org.computerShop.service.CustomService;
 import org.computerShop.service.impl.CustomServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.computerShop.model.Custom;
 
@@ -29,7 +31,8 @@ public class OrderController {
         return customService.createOrder(custom);
 
     }
-    @GetMapping("getAll")
+    @GetMapping("/getAll")
+    @PreAuthorize("hasRole('ADMIN')")
     @JsonView(Views.CustomFUll.class)
     public List<Custom> getCustoms(){
         return customService.getAll();
@@ -43,6 +46,7 @@ public class OrderController {
 
 
     @PutMapping("/setStatus")
+    @PreAuthorize("hasRole('ADMIN')")
     @JsonView(Views.CustomFUll.class)
     public ResponseEntity<String> setCustomStatus(@RequestParam(value = "statusCode", required = false) String code, @RequestBody Custom custom){
 
@@ -51,6 +55,7 @@ public class OrderController {
     }
 
     @DeleteMapping("/deleteCustom/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<String> deleteCustom(@PathVariable("id") Custom custom){
         return customService.deleteCustom(custom);
     }
@@ -60,4 +65,9 @@ public class OrderController {
         return customService.setCancel(custom);
     }
 
+    @GetMapping("/getAllForUser/{id}")
+    @JsonView(Views.UserFull.class)
+    public List<Custom> getAllForUser(@PathVariable("id")User user){
+        return customService.getAllForUser(user);
+    }
 }

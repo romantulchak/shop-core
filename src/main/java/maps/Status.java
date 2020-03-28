@@ -10,14 +10,14 @@ import java.time.LocalDateTime;
 @Embeddable
 public class Status {
 
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private CustomStatus customStatus;
 
 
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private LocalDateTime statusDateTime;
 
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private int statusCode;
 
     public Status(){

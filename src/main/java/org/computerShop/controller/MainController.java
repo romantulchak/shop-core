@@ -8,6 +8,7 @@ import org.computerShop.model.Views;
 import org.computerShop.service.impl.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -28,7 +29,6 @@ public class MainController {
     @GetMapping
     @JsonView(Views.ProductFull.class)
     public List<Product> main(){
-
         return productService.allProducts();
     }
 
@@ -40,16 +40,18 @@ public class MainController {
 
 
     @PostMapping("/createProduct")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<String> createProduct(@RequestBody Product product){
             return productService.createProduct(product);
     }
     @DeleteMapping("/deleteProduct/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<String> deleteProduct(@PathVariable("id") Product product){
         return this.productService.deleteProduct(product);
     }
     @PostMapping("/pushImage")
     @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
-
+    @PreAuthorize("hasRole('ADMIN')")
     public void saveImage(@RequestParam("file") MultipartFile[] files) throws Exception{
         productService.pushImage(files);
     }

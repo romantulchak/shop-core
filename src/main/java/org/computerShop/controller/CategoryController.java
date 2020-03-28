@@ -6,6 +6,7 @@ import org.computerShop.model.Views;
 import org.computerShop.service.impl.CategoryServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,17 +25,20 @@ public class CategoryController {
 
     @GetMapping
     @JsonView(Views.CategoryFull.class)
+
     public List<Category> getCategories(){
         return this.categoryService.getCategories();
     }
 
 
     @PostMapping("/createCategory")
+    @PreAuthorize("hasRole('ADMIN')")
     @JsonView(Views.CategoryFull.class)
     public ResponseEntity<String> createCategory(@RequestBody Category category){
         return categoryService.createCategory(category);
     }
     @DeleteMapping("/deleteCategory/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     @JsonView(Views.CategoryFull.class)
     public ResponseEntity<String> deleteCategory(@PathVariable("id") Category category){
         return categoryService.deleteCategory(category);
@@ -43,6 +47,7 @@ public class CategoryController {
 
     //TODO: EDIT
     @PutMapping("/editCategory")
+    @PreAuthorize("hasRole('ADMIN')")
     @JsonView(Views.CategoryFull.class)
     public ResponseEntity<String> editCategory(@RequestBody Category category){
         return categoryService.editCategory(category);

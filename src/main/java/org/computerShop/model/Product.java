@@ -12,18 +12,17 @@ import java.util.List;
 @Table(name = "products")
 public class Product {
 
-
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @JsonView({Views.ProductFull.class, Views.CustomFUll.class})
+    @JsonView({Views.ProductFull.class, Views.CustomFUll.class, Views.UserFull.class})
     private long id;
 
     @Column(name = "productName")
-    @JsonView({Views.ProductFull.class,Views.CustomFUll.class})
+    @JsonView({Views.ProductFull.class,Views.CustomFUll.class,Views.UserFull.class})
     private String productName;
 
     @Column(name = "productPrice")
-    @JsonView({Views.ProductFull.class,Views.CustomFUll.class})
+    @JsonView({Views.ProductFull.class,Views.CustomFUll.class,Views.UserFull.class})
     private double productPrice;
 
     @Column
@@ -32,19 +31,18 @@ public class Product {
 
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
-    @JsonView({Views.ProductFull.class,Views.CustomFUll.class})
+    @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class})
     @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
     private List<Image> image;
 
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "category_id", nullable = false)
-    @JsonView({Views.ProductFull.class,Views.CustomFUll.class})
+    @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class})
     private Category category;
 
 
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
-
     @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
     private List<Custom> customs;
 

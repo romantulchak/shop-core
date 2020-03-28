@@ -3,6 +3,7 @@ package org.computerShop.service.impl;
 import maps.Status;
 import org.computerShop.email.SendEmail;
 import org.computerShop.model.Custom;
+import org.computerShop.model.User;
 import org.computerShop.model.enums.CustomStatus;
 import org.computerShop.model.Item;
 import org.computerShop.model.Product;
@@ -71,7 +72,8 @@ public class CustomServiceImpl implements CustomService {
                                 identificationNumber,
                                 custom.getTotalPrice(),
                                 custom.getEmail(),
-                                allStatuses()
+                                allStatuses(),
+                                custom.getUser()
                         );
 
 
@@ -274,7 +276,16 @@ public class CustomServiceImpl implements CustomService {
         }else{
             return new ResponseEntity<>("Bad", HttpStatus.OK);
         }
+    }
+
+    @Override
+    public List<Custom> getAllForUser(User user) {
+        if(user != null){
 
 
+            return user.getCustom();
+        }
+        //TODO: фікс
+        return null;
     }
 }

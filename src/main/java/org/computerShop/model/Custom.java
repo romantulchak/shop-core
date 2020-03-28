@@ -7,6 +7,7 @@ import org.computerShop.model.enums.CustomStatus;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.swing.text.View;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
@@ -17,41 +18,41 @@ public class Custom  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private long id;
 
     @NotNull
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private String costumerName;
     @NotNull
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private String costumerLastName;
 
     @NotNull
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private String costumerAddress;
 
     @NotNull
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private String costumerCity;
 
     @NotNull
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private String customerMobilePhone;
     @NotNull
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private String customerPostalCode;
 
     @NotNull
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private int amount;
 
     @ElementCollection
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private List<Status> statuses = new ArrayList<>(5);
 
     @NotNull
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private int totalPrice;
 
     @NotNull
@@ -59,22 +60,32 @@ public class Custom  {
     @JsonView(Views.CustomFUll.class)
     private String email;
     @DateTimeFormat(pattern = "dd-MM-yyyy")
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private LocalDateTime createdDate;
 
     @NotNull
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private String identificationNumber;
 
 
-    @ManyToOne
-    @JsonView(Views.CustomFUll.class)
+    @ManyToOne(cascade = CascadeType.REMOVE)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private Product product;
 
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private boolean cancel = false;
 
 
+    @ManyToOne
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public boolean isCancel(){
         return cancel;
@@ -97,7 +108,7 @@ public class Custom  {
 
     public Custom(String costumerName, String costumerLastName, String costumerAddress, String costumerCity,
                   String customerMobilePhone, String customerPostalCode, int amount, Product product, String identificationNumber,
-                  int totalPrice, String email, ArrayList<Status> statuses
+                  int totalPrice, String email, ArrayList<Status> statuses, User user
                   ){
         this.costumerName = costumerName;
         this.costumerLastName = costumerLastName;
@@ -112,6 +123,7 @@ public class Custom  {
         this.totalPrice = totalPrice;
         this.email = email;
         this.setStatuses(statuses);
+        this.user = user;
     }
 
 

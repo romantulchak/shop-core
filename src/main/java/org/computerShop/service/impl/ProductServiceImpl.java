@@ -136,7 +136,7 @@ public class ProductServiceImpl implements ProductService {
             return products;
         }else {
 
-            if(categoryName.isEmpty()) {
+            if(categoryName.contains("undefined")) {
                 return productRepo.findAll();
             }else{
                 return products;
