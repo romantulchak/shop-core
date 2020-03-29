@@ -15,7 +15,7 @@ public class Image {
     private long id;
 
 
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class, Views.UserFull.class})
     private String imagePath;
 
     @ManyToOne(cascade = CascadeType.REMOVE)

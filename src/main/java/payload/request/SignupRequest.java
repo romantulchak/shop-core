@@ -1,5 +1,8 @@
 package payload.request;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import org.computerShop.model.Views;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -20,6 +23,33 @@ public class SignupRequest {
     @NotBlank
     @Size(min = 6, max = 40)
     private String password;
+
+
+
+    @NotBlank
+    @Size(max = 20)
+    private String firstName;
+
+    @NotBlank
+    @Size(max = 20)
+    private String lastName;
+
+    @NotBlank
+    @Size(max = 30)
+    private String city;
+
+    @NotBlank
+    @Size(max = 40)
+    private String address;
+
+    @NotBlank
+    @Size(max = 7)
+    private String postalCode;
+
+    @NotBlank
+    private String mobilePhone;
+
+
 
     public String getUsername() {
         return username;
@@ -51,5 +81,53 @@ public class SignupRequest {
 
     public void setRole(Set<String> role) {
         this.role = role;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getMobilePhone() {
+        return mobilePhone;
+    }
+
+    public void setMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
     }
 }

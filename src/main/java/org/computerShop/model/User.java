@@ -41,6 +41,35 @@ public class User {
     @JsonView(Views.UserFull.class)
     private String password;
 
+    @NotBlank
+    @Size(max = 20)
+    @JsonView(Views.UserFull.class)
+    private String firstName;
+
+    @NotBlank
+    @Size(max = 20)
+    @JsonView(Views.UserFull.class)
+    private String lastName;
+
+    @NotBlank
+    @Size(max = 30)
+    @JsonView(Views.UserFull.class)
+    private String city;
+
+    @NotBlank
+    @Size(max = 40)
+    @JsonView(Views.UserFull.class)
+    private String address;
+
+    @NotBlank
+    @Size(max = 7)
+    @JsonView(Views.UserFull.class)
+    private String postalCode;
+
+    @NotBlank
+    @JsonView(Views.UserFull.class)
+    private String mobilePhone;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable( name = "user_roles",
                 joinColumns = @JoinColumn(name = "user_id"),
@@ -60,10 +89,16 @@ public class User {
     public User() {
     }
 
-    public User(String username, String email, String password) {
+    public User(String username, String email, String password, String firstName, String lastName, String city, String address, String postalCode, String mobilePhone) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.city = city;
+        this.address = address;
+        this.postalCode = postalCode;
+        this.mobilePhone = mobilePhone;
     }
 
     public Long getId() {
@@ -112,5 +147,53 @@ public class User {
 
     public void setCustom(List<Custom> custom) {
         this.custom = custom;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getMobilePhone() {
+        return mobilePhone;
+    }
+
+    public void setMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
     }
 }
