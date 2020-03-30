@@ -138,6 +138,9 @@ public class CustomServiceImpl implements CustomService {
     public List<Custom> getAll(){
 
 
+        return customRepo.findAll();
+        /*
+
         List<Custom> sdsa = new ArrayList<>();
         List<String> strings = customRepo.getUnique();
         List<Custom> customsToShow = customRepo.findAll();
@@ -148,6 +151,8 @@ public class CustomServiceImpl implements CustomService {
 
         }
         return sdsa;
+
+         */
     }
 
     @Override
@@ -226,17 +231,6 @@ public class CustomServiceImpl implements CustomService {
 
         });
 
-/*
-        custom.getStatuses().stream().filter(s->s.getStatusCode() == status)
-                .findFirst()
-                .orElse(new Status())
-                .setStatusDateTime(LocalDateTime.now());
-        custom.getStatuses().stream().filter(s->s.getStatusCode() == status).
-                findFirst()
-                .orElse(new Status())
-                .setStatusCode(statusToSet);
-
-  */
     }
 
     @Override
@@ -271,29 +265,8 @@ public class CustomServiceImpl implements CustomService {
 
     @Override
     public List<Custom> getAllForUser(User user) {
-        List<Custom> customs = new ArrayList<>();
-        if(user != null){
-
-
-
-
-
-
-           customs = user.getCustom().stream().filter(distinctByKey(p->p.getIdentificationNumber())).collect(Collectors.toList());
-
-
-            return customs;
-           // return user.getCustom();
-        }
-        //TODO: фікс
-        return null;
+        return  user.getCustom();
     }
 
-
-    public static <T> Predicate<T> distinctByKey(Function<? super T, Object> keyExtractor)
-    {
-        Map<Object, Boolean> map = new ConcurrentHashMap<>();
-        return t -> map.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
-    }
 
 }

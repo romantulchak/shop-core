@@ -2,39 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9739963b-258d-4989-be48-e316df16c2bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/CustomProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/CustomProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0abab12f-147a-433f-bbc7-dd96bf35cf79.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0abab12f-147a-433f-bbc7-dd96bf35cf79.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maps/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/maps/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Custom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Custom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Views.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Views.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/CustomRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/CustomRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/CustomProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/CustomProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/payload/request/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/payload/request/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/payload/request/SignupRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/payload/request/SignupRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/payload/response/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/payload/response/JwtResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/payload/response/MessageResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/payload/response/MessageResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/maps/Status.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/controller/OrderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/model/Custom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/model/Custom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/model/Views.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/model/Views.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/repository/CustomRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/repository/CustomRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/CustomServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/CustomServiceImpl$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/CustomServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/CustomServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/payload/request/LoginRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/payload/request/SignupRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/payload/response/JwtResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/payload/response/MessageResponse.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +184,8 @@
       <workItem from="1585291887835" duration="17096000" />
       <workItem from="1585380454148" duration="30440000" />
       <workItem from="1585464813200" duration="16784000" />
-      <workItem from="1585550403140" duration="22935000" />
+      <workItem from="1585550403140" duration="22938000" />
+      <workItem from="1585599066156" duration="2082000" />
     </task>
     <servers />
   </component>
@@ -259,54 +233,54 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="100" y="127" width="1166" height="541" key="DiffContextDialog/0.27.1366.741@0.27.1366.741" timestamp="1585408710780" />
-    <state width="1320" height="188" key="GridCell.Tab.0.bottom" timestamp="1585582689549">
+    <state width="1320" height="188" key="GridCell.Tab.0.bottom" timestamp="1585601341428">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="188" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1585582689549" />
-    <state width="1320" height="188" key="GridCell.Tab.0.center" timestamp="1585582689548">
+    <state width="1320" height="188" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1585601341428" />
+    <state width="1320" height="188" key="GridCell.Tab.0.center" timestamp="1585601341415">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="188" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1585582689548" />
-    <state width="1320" height="188" key="GridCell.Tab.0.left" timestamp="1585582689548">
+    <state width="1320" height="188" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1585601341415" />
+    <state width="1320" height="188" key="GridCell.Tab.0.left" timestamp="1585601341414">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="188" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1585582689548" />
-    <state width="1320" height="188" key="GridCell.Tab.0.right" timestamp="1585582689548">
+    <state width="1320" height="188" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1585601341414" />
+    <state width="1320" height="188" key="GridCell.Tab.0.right" timestamp="1585601341417">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="188" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1585582689548" />
-    <state width="1320" height="188" key="GridCell.Tab.1.bottom" timestamp="1585582689550">
+    <state width="1320" height="188" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1585601341417" />
+    <state width="1320" height="188" key="GridCell.Tab.1.bottom" timestamp="1585601341439">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="188" key="GridCell.Tab.1.bottom/0.27.1366.741@0.27.1366.741" timestamp="1585582689550" />
-    <state width="1320" height="188" key="GridCell.Tab.1.center" timestamp="1585582689550">
+    <state width="1320" height="188" key="GridCell.Tab.1.bottom/0.27.1366.741@0.27.1366.741" timestamp="1585601341439" />
+    <state width="1320" height="188" key="GridCell.Tab.1.center" timestamp="1585601341436">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="188" key="GridCell.Tab.1.center/0.27.1366.741@0.27.1366.741" timestamp="1585582689550" />
-    <state width="1320" height="188" key="GridCell.Tab.1.left" timestamp="1585582689549">
+    <state width="1320" height="188" key="GridCell.Tab.1.center/0.27.1366.741@0.27.1366.741" timestamp="1585601341436" />
+    <state width="1320" height="188" key="GridCell.Tab.1.left" timestamp="1585601341431">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="188" key="GridCell.Tab.1.left/0.27.1366.741@0.27.1366.741" timestamp="1585582689549" />
-    <state width="1320" height="188" key="GridCell.Tab.1.right" timestamp="1585582689550">
+    <state width="1320" height="188" key="GridCell.Tab.1.left/0.27.1366.741@0.27.1366.741" timestamp="1585601341431" />
+    <state width="1320" height="188" key="GridCell.Tab.1.right" timestamp="1585601341438">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="188" key="GridCell.Tab.1.right/0.27.1366.741@0.27.1366.741" timestamp="1585582689550" />
-    <state width="1320" height="230" key="GridCell.Tab.2.bottom" timestamp="1585581893037">
+    <state width="1320" height="188" key="GridCell.Tab.1.right/0.27.1366.741@0.27.1366.741" timestamp="1585601341438" />
+    <state width="1320" height="71" key="GridCell.Tab.2.bottom" timestamp="1585600824829">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="230" key="GridCell.Tab.2.bottom/0.27.1366.741@0.27.1366.741" timestamp="1585581893037" />
-    <state width="1320" height="230" key="GridCell.Tab.2.center" timestamp="1585581893036">
+    <state width="1320" height="71" key="GridCell.Tab.2.bottom/0.27.1366.741@0.27.1366.741" timestamp="1585600824829" />
+    <state width="1320" height="71" key="GridCell.Tab.2.center" timestamp="1585600824828">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="230" key="GridCell.Tab.2.center/0.27.1366.741@0.27.1366.741" timestamp="1585581893036" />
-    <state width="1320" height="230" key="GridCell.Tab.2.left" timestamp="1585581893036">
+    <state width="1320" height="71" key="GridCell.Tab.2.center/0.27.1366.741@0.27.1366.741" timestamp="1585600824828" />
+    <state width="1320" height="71" key="GridCell.Tab.2.left" timestamp="1585600824828">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="230" key="GridCell.Tab.2.left/0.27.1366.741@0.27.1366.741" timestamp="1585581893036" />
-    <state width="1320" height="230" key="GridCell.Tab.2.right" timestamp="1585581893037">
+    <state width="1320" height="71" key="GridCell.Tab.2.left/0.27.1366.741@0.27.1366.741" timestamp="1585600824828" />
+    <state width="1320" height="71" key="GridCell.Tab.2.right" timestamp="1585600824829">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="230" key="GridCell.Tab.2.right/0.27.1366.741@0.27.1366.741" timestamp="1585581893037" />
+    <state width="1320" height="71" key="GridCell.Tab.2.right/0.27.1366.741@0.27.1366.741" timestamp="1585600824829" />
     <state width="1320" height="186" key="GridCell.Tab.3.bottom" timestamp="1585553762540">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -335,10 +309,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="402" y="27" width="552" height="741" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.27.1366.741@0.27.1366.741" timestamp="1584613302544" />
-    <state x="339" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1585552148815">
+    <state x="339" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1585599080997">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="339" y="225" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1585552148815" />
+    <state x="339" y="225" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1585599080997" />
     <state x="381" y="225" key="com.intellij.ide.util.TipDialog/56.27.1310.741@56.27.1310.741" timestamp="1583738201721" />
     <state x="82" y="85" width="1192" height="631" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1585552886994">
       <screen x="0" y="27" width="1366" height="741" />
@@ -428,7 +402,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java</url>
-          <line>272</line>
+          <line>266</line>
           <properties class="org.computerShop.service.impl.CustomServiceImpl" method="getAllForUser">
             <option name="EMULATED" value="true" />
           </properties>
@@ -464,7 +438,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java</url>
-          <line>215</line>
+          <line>220</line>
           <properties class="org.computerShop.service.impl.CustomServiceImpl" method="changeStatus">
             <option name="EMULATED" value="true" />
           </properties>
@@ -472,7 +446,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java</url>
-          <line>153</line>
+          <line>158</line>
           <properties class="org.computerShop.service.impl.CustomServiceImpl" method="setStatus">
             <option name="EMULATED" value="true" />
           </properties>
@@ -480,7 +454,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java</url>
-          <line>255</line>
+          <line>249</line>
           <properties class="org.computerShop.service.impl.CustomServiceImpl" method="setCancel">
             <option name="EMULATED" value="true" />
           </properties>

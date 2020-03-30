@@ -75,7 +75,7 @@ public class Custom  {
     private boolean cancel = false;
 
     @OneToMany(mappedBy = "custom")
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private Set<CustomProduct> customProducts;
 
 

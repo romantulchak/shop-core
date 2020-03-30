@@ -15,7 +15,7 @@ public class CustomProduct {
     private Custom custom;
 
     @ManyToOne
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private Product product;
 
 
