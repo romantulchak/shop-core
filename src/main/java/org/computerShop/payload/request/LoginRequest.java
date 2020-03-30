@@ -1,4 +1,4 @@
-package payload.request;
+package org.computerShop.payload.request;
 
 import javax.validation.constraints.NotBlank;
 

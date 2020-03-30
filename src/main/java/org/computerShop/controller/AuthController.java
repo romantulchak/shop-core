@@ -15,10 +15,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import payload.request.LoginRequest;
-import payload.request.SignupRequest;
-import payload.response.JwtResponse;
-import payload.response.MessageResponse;
+import org.computerShop.payload.request.LoginRequest;
+import org.computerShop.payload.request.SignupRequest;
+import org.computerShop.payload.response.JwtResponse;
+import org.computerShop.payload.response.MessageResponse;
 
 import javax.validation.Valid;
 import java.util.HashSet;
@@ -65,12 +65,18 @@ public class AuthController {
                 .collect(Collectors.toList());
 
 
-
+        User user = userRepo.findByUsername(userDetails.getUsername()).orElse(null);
         return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
-                roles
+                roles,
+                user.getFirstName(),
+                user.getLastName(),
+                user.getCity(),
+                user.getAddress(),
+                user.getPostalCode(),
+                user.getMobilePhone()
         ));
     }
 

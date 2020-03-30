@@ -41,12 +41,23 @@ public class Product {
     private Category category;
 
 
-
+/*
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
     private List<Custom> customs;
+*/
+
+    @OneToMany(mappedBy = "product")
+    private List<CustomProduct> customProducts;
 
 
+    public List<CustomProduct> getCustomProducts() {
+        return customProducts;
+    }
+
+    public void setCustomProducts(List<CustomProduct> customProducts) {
+        this.customProducts = customProducts;
+    }
 
     public long getId() {
         return id;

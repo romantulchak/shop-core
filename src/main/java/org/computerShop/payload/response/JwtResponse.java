@@ -1,10 +1,5 @@
-package payload.response;
+package org.computerShop.payload.response;
 
-import com.fasterxml.jackson.annotation.JsonView;
-import org.computerShop.model.Views;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 import java.util.List;
 
 public class JwtResponse {
@@ -27,12 +22,19 @@ public class JwtResponse {
 
     private List<String> roles;
 
-    public JwtResponse(String accessToken, Long id, String username, String email, List<String> roles) {
+    public JwtResponse(String accessToken, Long id, String username, String email, List<String> roles, String firstName, String lastName, String city, String  address, String postalCode, String mobilePhone) {
         this.token = accessToken;
         this.id = id;
         this.username = username;
         this.email = email;
         this.roles = roles;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.city = city;
+        this.address = address;
+        this.postalCode = postalCode;
+        this.mobilePhone = mobilePhone;
+
     }
 
     public String getCity() {

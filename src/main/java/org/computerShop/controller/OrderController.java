@@ -60,8 +60,9 @@ public class OrderController {
         return customService.deleteCustom(custom);
     }
 
-    @PutMapping("/cancel")
-    public ResponseEntity<String> cancel(@RequestBody Custom custom){
+    @PutMapping("/cancel/{id}")
+    @JsonView(Views.CustomUser.class)
+    public ResponseEntity<String> cancel(@PathVariable("id") Custom custom){
         return customService.setCancel(custom);
     }
 

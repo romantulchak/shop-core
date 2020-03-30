@@ -1,7 +1,4 @@
-package payload.request;
-
-import com.fasterxml.jackson.annotation.JsonView;
-import org.computerShop.model.Views;
+package org.computerShop.payload.request;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

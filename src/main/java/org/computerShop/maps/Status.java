@@ -1,4 +1,4 @@
-package maps;
+package org.computerShop.maps;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import org.computerShop.model.enums.CustomStatus;
@@ -10,14 +10,14 @@ import java.time.LocalDateTime;
 @Embeddable
 public class Status {
 
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private CustomStatus customStatus;
 
 
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private LocalDateTime statusDateTime;
 
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private int statusCode;
 
     public Status(){

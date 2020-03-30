@@ -1,6 +1,7 @@
 package org.computerShop.model;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import javax.swing.text.View;
@@ -20,14 +21,17 @@ import java.util.Set;
 )
 public class User {
 
+
+    //TODO: список бажань
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonView(Views.UserFull.class)
+    @JsonView({Views.UserFull.class, Views.CustomUser.class})
     private Long id;
 
     @NotBlank
     @Size(max = 20)
-    @JsonView(Views.UserFull.class)
+    @JsonView({Views.UserFull.class})
     private String username;
 
     @NotBlank
@@ -43,7 +47,7 @@ public class User {
 
     @NotBlank
     @Size(max = 20)
-    @JsonView(Views.UserFull.class)
+    @JsonView({Views.UserFull.class})
     private String firstName;
 
     @NotBlank

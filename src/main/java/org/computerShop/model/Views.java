@@ -5,4 +5,5 @@ public class Views {
     public interface CategoryFull{}
     public interface CustomFUll{}
     public interface UserFull{}
+    public interface CustomUser{}
 }

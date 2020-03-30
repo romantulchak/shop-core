@@ -1,4 +1,4 @@
-package payload.response;
+package org.computerShop.payload.response;
 
 public class MessageResponse {
     private String message;

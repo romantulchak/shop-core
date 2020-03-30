@@ -1,12 +1,10 @@
 package org.computerShop.service.impl;
 
-import maps.Status;
+import org.computerShop.maps.Status;
 import org.computerShop.email.SendEmail;
-import org.computerShop.model.Custom;
-import org.computerShop.model.User;
+import org.computerShop.model.*;
 import org.computerShop.model.enums.CustomStatus;
-import org.computerShop.model.Item;
-import org.computerShop.model.Product;
+import org.computerShop.repository.CustomProductRepo;
 import org.computerShop.repository.CustomRepo;
 import org.computerShop.repository.ProductRepo;
 import org.computerShop.service.CustomService;
@@ -17,18 +15,24 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 @Service
 public class CustomServiceImpl implements CustomService {
 
     private CustomRepo customRepo;
     private ProductRepo productRepo;
+    private CustomProductRepo customProductRepo;
     @Autowired
-    public CustomServiceImpl(CustomRepo customRepo, ProductRepo productRepo){
+    public CustomServiceImpl(CustomRepo customRepo, ProductRepo productRepo, CustomProductRepo customProductRepo){
         this.customRepo = customRepo;
         this.productRepo = productRepo;
+        this.customProductRepo = customProductRepo;
     }
 
 
@@ -54,55 +58,33 @@ public class CustomServiceImpl implements CustomService {
         ArrayList<Product> products = new ArrayList<>();
 
 
+        custom.setCreatedDate(LocalDateTime.now());
+        custom.setIdentificationNumber(identificationNumber);
+        custom.setStatuses(allStatuses());
+        customRepo.save(custom);
 
-        if(custom != null){
-            if(custom.getItems().size() != 0 && custom.getItems() != null){
-                for(Item item: custom.getItems()) {
-                    Product product = productRepo.findById(item.getId()).orElse(null);
-                    if (product != null) {
-                        products.add(product);
-                        Custom customToSave = new Custom(custom.getCostumerName(),
-                                                        custom.getCostumerLastName(),
-                                custom.getCostumerAddress(),
-                                custom.getCostumerCity(),
-                                custom.getCustomerMobilePhone(),
-                                custom.getCustomerPostalCode(),
-                                item.getAmount(),
-                                product,
-                                identificationNumber,
-                                custom.getTotalPrice(),
-                                custom.getEmail(),
-                                allStatuses(),
-                                custom.getUser()
-                        );
+
+        custom.getItems().forEach(item-> {
+            Product product = productRepo.findById(item.getId()).orElse(null);
+
+
+            CustomProduct customProduct = new CustomProduct(custom, product, item.getAmount());
+            customProductRepo.save(customProduct);
+
+        });
 
 
 
-                        //customToSave.setAmount(item.getAmount());
-                        //customToSave.setProduct(product);
-                        //customToSave.setCreatedDate(LocalDateTime.now());
-                        //customToSave.setIdentificationNumber(identificationNumber);
-                        //customToSave.setCostumerAddress(custom.getCostumerAddress());
-                        //customToSave.setCostumerCity(custom.getCostumerCity());
-                        //customToSave.setCostumerLastName(custom.getCostumerLastName());
-                        //customToSave.setCostumerName(custom.getCostumerName());
-                        //customToSave.setCustomerMobilePhone(custom.getCustomerMobilePhone());
-                        //customToSave.setCustomerPostalCode(custom.getCustomerPostalCode());
-                        //customToSave.setTotalPrice(custom.getTotalPrice());
-                        //customToSave.setEmail(custom.getEmail());
-                        //customToSave.setStatuses(allStatuses());
-                        customRepo.save(customToSave);
-                    }
-                }
-            }
-            SendEmail email = new SendEmail();
-            if (custom.getEmail() != null) {
-                email.sendMail(custom.getEmail(), "Your order number", contentToSend(products, custom, identificationNumber).toString());
-            }
 
+
+
+
+
+
+        SendEmail email = new SendEmail();
+        if (custom.getEmail() != null) {
+            email.sendMail(custom.getEmail(), "Your order number", contentToSend(products, custom, identificationNumber).toString());
         }
-
-
         return identificationNumber;
     }
 
@@ -161,27 +143,17 @@ public class CustomServiceImpl implements CustomService {
         List<Custom> customsToShow = customRepo.findAll();
 
         for (String ss: strings) {
-
             Custom c = customRepo.getFirstByIdentificationNumber(ss);
-
-
-
-
-
             sdsa.add(c);
 
         }
-
-
-
-
-
-
         return sdsa;
     }
 
     @Override
     public ResponseEntity<String> setStatus(Custom custom, int status) {
+
+        List<Custom> customs = customRepo.findAllByIdentificationNumber(custom.getIdentificationNumber());
         boolean isSuccess = false;
         switch (status){
             case 0:
@@ -189,51 +161,51 @@ public class CustomServiceImpl implements CustomService {
                 break;
             case 1:
 
-                changeStatus(1, custom, 101);
-                changeStatus(2, custom, 102);
-                changeStatus(3, custom, 103);
-                changeStatus(4, custom, 104);
+                changeStatus(1, customs, 101);
+                changeStatus(2, customs, 102);
+                changeStatus(3, customs, 103);
+                changeStatus(4, customs, 104);
                 isSuccess = true;
                 break;
             case 2:
-                changeStatus(2, custom, 102);
-                changeStatus(3, custom, 103);
-                changeStatus(4, custom, 104);
+                changeStatus(2, customs, 102);
+                changeStatus(3, customs, 103);
+                changeStatus(4, customs, 104);
                 isSuccess = true;
                 break;
             case 3:
 
-                changeStatus(3, custom, 103);
-                changeStatus(4, custom, 104);
+                changeStatus(3, customs, 103);
+                changeStatus(4, customs, 104);
                 isSuccess = true;
                 break;
             case 4:
-                changeStatus(4, custom, 104);
+                changeStatus(4, customs, 104);
                 isSuccess = true;
                 break;
             case 100:
                 break;
             case 101:
 
-                changeStatus(101, custom, 1);
+                changeStatus(101, customs, 1);
                 isSuccess = true;
                 break;
             case 102:
-                changeStatus(102, custom, 2);
+                changeStatus(102, customs, 2);
                 isSuccess = true;
                 break;
             case 103:
-                changeStatus(103, custom, 3);
+                changeStatus(103, customs, 3);
                 isSuccess = true;
                 break;
             case 104:
-                changeStatus(104, custom, 4);
+                changeStatus(104, customs, 4);
                 isSuccess = true;
                 break;
         }
 
-        if(custom != null && isSuccess){
-            customRepo.save(custom);
+        if(customs != null && isSuccess){
+            customRepo.saveAll(customs);
             return new ResponseEntity<>("Ok", HttpStatus.OK);
         }else{
             return new ResponseEntity<>("You can not set another status if Is being processed is false", HttpStatus.OK);
@@ -241,8 +213,20 @@ public class CustomServiceImpl implements CustomService {
     }
 
 
-    private void changeStatus(int status, Custom custom, int statusToSet){
+    private void changeStatus(int status, List<Custom> customs, int statusToSet){
 
+
+        customs.forEach(s->{
+            s.getStatuses().stream().filter(x->x.getStatusCode() == status)
+                    .findFirst().orElse(new Status()).setStatusDateTime(LocalDateTime.now());
+            s.getStatuses().stream().filter(x->x.getStatusCode() == status).
+                    findFirst()
+                    .orElse(new Status())
+                    .setStatusCode(statusToSet);
+
+        });
+
+/*
         custom.getStatuses().stream().filter(s->s.getStatusCode() == status)
                 .findFirst()
                 .orElse(new Status())
@@ -251,6 +235,8 @@ public class CustomServiceImpl implements CustomService {
                 findFirst()
                 .orElse(new Status())
                 .setStatusCode(statusToSet);
+
+  */
     }
 
     @Override
@@ -269,9 +255,14 @@ public class CustomServiceImpl implements CustomService {
     @Override
     public ResponseEntity<String> setCancel(Custom custom){
 
-        if(custom != null){
-            custom.setCancel(custom.isCancel());
-            customRepo.save(custom);
+        List<Custom> customs = customRepo.findAllByIdentificationNumber(custom.getIdentificationNumber());
+
+
+        if(customs != null){
+            customs.forEach(x->{
+                x.setCancel(!x.isCancel());
+                customRepo.save(x);
+            });
             return new ResponseEntity<>("Good", HttpStatus.OK);
         }else{
             return new ResponseEntity<>("Bad", HttpStatus.OK);
@@ -280,12 +271,29 @@ public class CustomServiceImpl implements CustomService {
 
     @Override
     public List<Custom> getAllForUser(User user) {
+        List<Custom> customs = new ArrayList<>();
         if(user != null){
 
 
-            return user.getCustom();
+
+
+
+
+           customs = user.getCustom().stream().filter(distinctByKey(p->p.getIdentificationNumber())).collect(Collectors.toList());
+
+
+            return customs;
+           // return user.getCustom();
         }
         //TODO: фікс
         return null;
     }
+
+
+    public static <T> Predicate<T> distinctByKey(Function<? super T, Object> keyExtractor)
+    {
+        Map<Object, Boolean> map = new ConcurrentHashMap<>();
+        return t -> map.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
+    }
+
 }

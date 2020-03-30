@@ -19,4 +19,6 @@ public interface CustomRepo extends JpaRepository<Custom, Long> {
 
     List<Custom> findAllByUser(User user);
 
+    Custom findFirstByIdentificationNumber(String identificationNumber);
+
 }

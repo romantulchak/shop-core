@@ -2,12 +2,11 @@ package org.computerShop.model;
 
 
 import com.fasterxml.jackson.annotation.JsonView;
-import maps.Status;
-import org.computerShop.model.enums.CustomStatus;
+import org.computerShop.maps.Status;
+import org.hibernate.annotations.Cascade;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.swing.text.View;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
@@ -18,62 +17,66 @@ public class Custom  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private long id;
 
     @NotNull
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private String costumerName;
     @NotNull
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private String costumerLastName;
 
     @NotNull
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private String costumerAddress;
 
     @NotNull
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private String costumerCity;
 
     @NotNull
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private String customerMobilePhone;
     @NotNull
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private String customerPostalCode;
 
     @NotNull
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private int amount;
 
     @ElementCollection
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private List<Status> statuses = new ArrayList<>(5);
 
     @NotNull
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private int totalPrice;
 
     @NotNull
     @Email
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.CustomUser.class, Views.CustomUser.class})
     private String email;
     @DateTimeFormat(pattern = "dd-MM-yyyy")
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private LocalDateTime createdDate;
 
     @NotNull
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class, Views.CustomUser.class})
     private String identificationNumber;
 
-
+/*
     @ManyToOne(cascade = CascadeType.REMOVE)
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private Product product;
-
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+*/
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class, Views.CustomUser.class})
     private boolean cancel = false;
+
+    @OneToMany(mappedBy = "custom")
+    @JsonView(Views.CustomFUll.class)
+    private Set<CustomProduct> customProducts;
 
 
     @ManyToOne
@@ -106,27 +109,20 @@ public class Custom  {
 
     }
 
-    public Custom(String costumerName, String costumerLastName, String costumerAddress, String costumerCity,
-                  String customerMobilePhone, String customerPostalCode, int amount, Product product, String identificationNumber,
-                  int totalPrice, String email, ArrayList<Status> statuses, User user
-                  ){
-        this.costumerName = costumerName;
-        this.costumerLastName = costumerLastName;
-        this.costumerAddress = costumerAddress;
-        this.costumerCity = costumerCity;
-        this.customerMobilePhone = customerMobilePhone;
-        this.customerPostalCode = customerPostalCode;
-        this.amount = amount;
-        this.product = product;
+    public Custom(ArrayList<Status> statuses){
         this.setCreatedDate(LocalDateTime.now());
-        this.identificationNumber = identificationNumber;
-        this.totalPrice = totalPrice;
-        this.email = email;
         this.setStatuses(statuses);
-        this.user = user;
+
     }
 
 
+    public Set<CustomProduct> getCustomProducts() {
+        return customProducts;
+    }
+
+    public void setCustomProducts(Set<CustomProduct> customProducts) {
+        this.customProducts = customProducts;
+    }
 
     public void setId(long id) {
         this.id = id;
@@ -150,14 +146,14 @@ public class Custom  {
     }
 
 
-    public Product getProduct() {
+ /*   public Product getProduct() {
         return product;
     }
 
     public void setProduct(Product product) {
         this.product = product;
     }
-
+*/
 
 
     private transient List<Item> items;
