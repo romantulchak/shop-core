@@ -47,7 +47,7 @@ public class Product {
     private List<Custom> customs;
 */
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     private List<CustomProduct> customProducts;
 
 

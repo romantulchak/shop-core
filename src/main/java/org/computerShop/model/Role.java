@@ -11,10 +11,12 @@ public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonView(Views.UserFull.class)
     private Long id;
 
     @Enumerated(EnumType.STRING)
     @Column(length = 20)
+    @JsonView(Views.UserFull.class)
     private ERole name;
 
     public Role(){

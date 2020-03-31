@@ -56,7 +56,7 @@ public class Custom  {
 
     @NotNull
     @Email
-    @JsonView({Views.CustomFUll.class, Views.CustomUser.class, Views.CustomUser.class})
+    @JsonView({Views.CustomFUll.class, Views.CustomUser.class, Views.UserFull.class})
     private String email;
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
@@ -74,7 +74,7 @@ public class Custom  {
     @JsonView({Views.CustomFUll.class, Views.UserFull.class, Views.CustomUser.class})
     private boolean cancel = false;
 
-    @OneToMany(mappedBy = "custom")
+    @OneToMany(mappedBy = "custom", cascade = CascadeType.REMOVE)
     @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private Set<CustomProduct> customProducts;
 

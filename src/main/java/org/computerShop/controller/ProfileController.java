@@ -3,6 +3,9 @@ package org.computerShop.controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.computerShop.model.User;
 import org.computerShop.model.Views;
+import org.computerShop.service.impl.ProfileServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,15 +15,23 @@ import org.springframework.web.bind.annotation.*;
 public class ProfileController {
 
 
+    private ProfileServiceImpl profileService;
+    @Autowired
+    public ProfileController(ProfileServiceImpl profileService){
+        this.profileService = profileService;
+    }
+
 
     @GetMapping("/userDetails/{id}")
     @JsonView(Views.UserFull.class)
     public User currentUser(@PathVariable("id") User user){
-        
-
-
-
         return user;
+    }
+
+    @PutMapping("/editUser")
+    @JsonView(Views.UserFull.class)
+    public ResponseEntity<String> editUser(@RequestBody User user){
+        return profileService.editUser(user);
     }
 
 
