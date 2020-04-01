@@ -91,7 +91,15 @@ public class User {
 
 
     public User() {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.city = city;
+        this.address = address;
+        this.postalCode = postalCode;
+        this.mobilePhone = mobilePhone;
     }
+
+
 
     public User(String username, String email, String password, String firstName, String lastName, String city, String address, String postalCode, String mobilePhone) {
         this.username = username;

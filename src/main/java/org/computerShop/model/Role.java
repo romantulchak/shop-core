@@ -11,7 +11,6 @@ public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonView(Views.UserFull.class)
     private Long id;
 
     @Enumerated(EnumType.STRING)

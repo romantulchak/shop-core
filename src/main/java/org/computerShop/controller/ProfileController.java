@@ -1,6 +1,7 @@
 package org.computerShop.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import org.computerShop.dto.UserDto;
 import org.computerShop.model.User;
 import org.computerShop.model.Views;
 import org.computerShop.service.impl.ProfileServiceImpl;
@@ -23,14 +24,13 @@ public class ProfileController {
 
 
     @GetMapping("/userDetails/{id}")
-    @JsonView(Views.UserFull.class)
-    public User currentUser(@PathVariable("id") User user){
-        return user;
+    public UserDto currentUser(@PathVariable("id") User user){
+        return profileService.getCurrentUser(user);
     }
 
     @PutMapping("/editUser")
     @JsonView(Views.UserFull.class)
-    public ResponseEntity<String> editUser(@RequestBody User user){
+    public ResponseEntity<String> editUser(@RequestBody UserDto user){
         return profileService.editUser(user);
     }
 

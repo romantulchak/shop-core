@@ -40,12 +40,10 @@ public class Product {
     @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class})
     private Category category;
 
-
-/*
-    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
-    @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
-    private List<Custom> customs;
-*/
+    @ManyToOne(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "brand_id", nullable = false)
+    @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class})
+    private Brand brand;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     private List<CustomProduct> customProducts;
