@@ -71,4 +71,11 @@ public class OrderController {
     public List<Custom> getAllForUser(@PathVariable("id")User user){
         return customService.getAllForUser(user);
     }
+
+    @GetMapping("/checkAmount")
+    public int checkAmount(@RequestParam(value="productId", required = false) String id, @RequestParam(value = "productAmount", required = false) String amount){
+        System.out.println(id);
+        System.out.println(amount);
+        return customService.checkAmount(id, amount);
+    }
 }

@@ -271,5 +271,19 @@ public class CustomServiceImpl implements CustomService {
         return  user.getCustom();
     }
 
+    @Override
+    public int checkAmount(String id, String amount) {
+        int amountToReturn = Integer.parseInt(amount);
+        Product product = productRepo.findById(Long.parseLong(id)).orElse(null);
+        if(product != null){
+            if(product.getAmountInStock() > amountToReturn){
+                return amountToReturn;
+            }else{
+                return product.getAmountInStock();
+            }
+        }else {
+            return amountToReturn;
+        }
 
+    }
 }
