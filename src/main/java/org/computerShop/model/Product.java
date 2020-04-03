@@ -3,10 +3,12 @@ package org.computerShop.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonView;
+import org.computerShop.model.accessory.CPU;
 
 import javax.persistence.*;
 import javax.swing.text.View;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "products")
@@ -48,7 +50,19 @@ public class Product {
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     private List<CustomProduct> customProducts;
 
+    @JsonView(Views.ProductFull.class)
     private int amountInStock;
+
+
+    @ManyToMany
+    @JoinTable(
+            name = "proudcts_cpu",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "cpu_id")
+
+    )
+    @JsonView(Views.ProductFull.class)
+    private Set<CPU> cpus;
 
 
     public List<CustomProduct> getCustomProducts() {
@@ -121,6 +135,14 @@ public class Product {
 
     public void setAmountInStock(int amountInStock) {
         this.amountInStock = amountInStock;
+    }
+
+    public Set<CPU> getCpus() {
+        return cpus;
+    }
+
+    public void setCpus(Set<CPU> cpus) {
+        this.cpus = cpus;
     }
 
     @PreRemove

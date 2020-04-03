@@ -145,5 +145,20 @@ public class ProductServiceImpl implements ProductService {
 
     }
 
+    @Override
+    public List<Product> filter(String[] brands) {
+        List<Product> products = new ArrayList<>();
+        if (brands != null){
+            for (String brand: brands) {
+                List<Product> product = productRepo.findAllByBrand(brand);
+                products.addAll(product);
+            }
+        }else {
+            return productRepo.findAll();
+        }
 
+
+
+        return products;
+    }
 }

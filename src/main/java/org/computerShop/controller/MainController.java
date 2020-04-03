@@ -65,9 +65,13 @@ public class MainController {
     @GetMapping("/filterByCategory")
     @JsonView(Views.ProductFull.class)
     public List<Product> productsByCategory(@RequestParam(value = "categoryName", required = false) String category){
-
-
         return productService.filterByCategory(category);
+    }
+
+    @GetMapping("/filter")
+    @JsonView(Views.ProductFull.class)
+    public List<Product> filter(@RequestParam(value = "brands", required = false) String[] brands){
+        return productService.filter(brands);
     }
 
 

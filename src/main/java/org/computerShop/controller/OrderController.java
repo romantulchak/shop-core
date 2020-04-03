@@ -73,9 +73,7 @@ public class OrderController {
     }
 
     @GetMapping("/checkAmount")
-    public int checkAmount(@RequestParam(value="productId", required = false) String id, @RequestParam(value = "productAmount", required = false) String amount){
-        System.out.println(id);
-        System.out.println(amount);
+    public boolean checkAmount(@RequestParam(value="productId", required = false) String id, @RequestParam(value = "productAmount", required = false) String amount){
         return customService.checkAmount(id, amount);
     }
 }

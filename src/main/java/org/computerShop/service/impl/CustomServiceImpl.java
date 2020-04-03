@@ -56,6 +56,8 @@ public class CustomServiceImpl implements CustomService {
     @Override
     public String createOrder(Custom custom) {
         String identificationNumber = generateRandomStringNumber();
+
+
         ArrayList<Product> products = new ArrayList<>();
 
 
@@ -67,11 +69,12 @@ public class CustomServiceImpl implements CustomService {
 
         custom.getItems().forEach(item-> {
             Product product = productRepo.findById(item.getId()).orElse(null);
-
-
-            CustomProduct customProduct = new CustomProduct(custom, product, item.getAmount());
-            customProductRepo.save(customProduct);
-
+            if (product != null) {
+                product.setAmountInStock(product.getAmountInStock() - item.getAmount());
+                CustomProduct customProduct = new CustomProduct(custom, product, item.getAmount());
+                productRepo.save(product);
+                customProductRepo.save(customProduct);
+            }
         });
 
 
@@ -272,17 +275,17 @@ public class CustomServiceImpl implements CustomService {
     }
 
     @Override
-    public int checkAmount(String id, String amount) {
+    public boolean checkAmount(String id, String amount) {
         int amountToReturn = Integer.parseInt(amount);
         Product product = productRepo.findById(Long.parseLong(id)).orElse(null);
         if(product != null){
             if(product.getAmountInStock() > amountToReturn){
-                return amountToReturn;
+                return true;
             }else{
-                return product.getAmountInStock();
+                return false;
             }
         }else {
-            return amountToReturn;
+            return false;
         }
 
     }
