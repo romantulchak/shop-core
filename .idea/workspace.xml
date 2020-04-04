@@ -2,28 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9739963b-258d-4989-be48-e316df16c2bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/accessory/CPU.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/CpuRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/0abab12f-147a-433f-bbc7-dd96bf35cf79.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0abab12f-147a-433f-bbc7-dd96bf35cf79.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/BrandRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/BrandRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/ProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/CustomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/CustomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/accessory/CPU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/accessory/CPU.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/controller/OrderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/model/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/repository/BrandRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/repository/BrandRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/repository/ProductRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/repository/ProductRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/service/CustomService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/service/CustomService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/model/accessory/CPU.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/model/accessory/CPU.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/CustomServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/CustomServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/ProductServiceImpl.class" afterDir="false" />
     </list>
     <list id="a5435536-5e2d-4bcc-af27-145a0e584bf9" name="Deploy" comment="" />
@@ -70,8 +60,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -210,7 +200,8 @@
       <workItem from="1585637816102" duration="13506000" />
       <workItem from="1585723646885" duration="18821000" />
       <workItem from="1585813694523" duration="14632000" />
-      <workItem from="1585895161024" duration="15997000" />
+      <workItem from="1585895161024" duration="16684000" />
+      <workItem from="1585981642988" duration="13392000" />
     </task>
     <servers />
   </component>
@@ -247,10 +238,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="309" y="59" width="1033" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.741@0.27.1366.741" timestamp="1585552667689" />
-    <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1585922329391">
+    <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1586017212590">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1585922329391" />
+    <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1586017212590" />
     <state x="268" y="325" width="829" height="152" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1585567976541">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -275,38 +266,38 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="466" y="155" width="424" height="491" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1585836951207" />
-    <state width="1320" height="172" key="GridCell.Tab.0.bottom" timestamp="1585924899455">
+    <state width="1320" height="242" key="GridCell.Tab.0.bottom" timestamp="1586019886575">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1585924899455" />
-    <state width="1320" height="172" key="GridCell.Tab.0.center" timestamp="1585924899453">
+    <state width="1320" height="242" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1586019886575" />
+    <state width="1320" height="242" key="GridCell.Tab.0.center" timestamp="1586019886575">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1585924899453" />
-    <state width="1320" height="172" key="GridCell.Tab.0.left" timestamp="1585924899449">
+    <state width="1320" height="242" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1586019886575" />
+    <state width="1320" height="242" key="GridCell.Tab.0.left" timestamp="1586019886574">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1585924899449" />
-    <state width="1320" height="172" key="GridCell.Tab.0.right" timestamp="1585924899454">
+    <state width="1320" height="242" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1586019886574" />
+    <state width="1320" height="242" key="GridCell.Tab.0.right" timestamp="1586019886575">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1585924899454" />
-    <state width="1320" height="172" key="GridCell.Tab.1.bottom" timestamp="1585924899464">
+    <state width="1320" height="242" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1586019886575" />
+    <state width="1320" height="242" key="GridCell.Tab.1.bottom" timestamp="1586019886577">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.1.bottom/0.27.1366.741@0.27.1366.741" timestamp="1585924899464" />
-    <state width="1320" height="172" key="GridCell.Tab.1.center" timestamp="1585924899461">
+    <state width="1320" height="242" key="GridCell.Tab.1.bottom/0.27.1366.741@0.27.1366.741" timestamp="1586019886577" />
+    <state width="1320" height="242" key="GridCell.Tab.1.center" timestamp="1586019886576">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.1.center/0.27.1366.741@0.27.1366.741" timestamp="1585924899461" />
-    <state width="1320" height="172" key="GridCell.Tab.1.left" timestamp="1585924899458">
+    <state width="1320" height="242" key="GridCell.Tab.1.center/0.27.1366.741@0.27.1366.741" timestamp="1586019886576" />
+    <state width="1320" height="242" key="GridCell.Tab.1.left" timestamp="1586019886576">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.1.left/0.27.1366.741@0.27.1366.741" timestamp="1585924899458" />
-    <state width="1320" height="172" key="GridCell.Tab.1.right" timestamp="1585924899462">
+    <state width="1320" height="242" key="GridCell.Tab.1.left/0.27.1366.741@0.27.1366.741" timestamp="1586019886576" />
+    <state width="1320" height="242" key="GridCell.Tab.1.right" timestamp="1586019886576">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.1.right/0.27.1366.741@0.27.1366.741" timestamp="1585924899462" />
+    <state width="1320" height="242" key="GridCell.Tab.1.right/0.27.1366.741@0.27.1366.741" timestamp="1586019886576" />
     <state width="1320" height="141" key="GridCell.Tab.2.bottom" timestamp="1585760496732">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -347,18 +338,18 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="683" height="370" key="XDebugger.FullValuePopup/0.27.1366.741@0.27.1366.741" timestamp="1585399327786" />
-    <state x="579" y="294" width="377" height="321" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1585919214701">
+    <state x="579" y="294" width="377" height="321" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1586013115750">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="579" y="294" width="377" height="321" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.27.1366.741@0.27.1366.741" timestamp="1585919214701" />
+    <state x="579" y="294" width="377" height="321" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.27.1366.741@0.27.1366.741" timestamp="1586013115750" />
     <state x="402" y="27" width="552" height="741" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1584613302544">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="402" y="27" width="552" height="741" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.27.1366.741@0.27.1366.741" timestamp="1584613302544" />
-    <state x="339" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1585895387834">
+    <state x="339" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1585982363807">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="339" y="225" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1585895387834" />
+    <state x="339" y="225" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1585982363807" />
     <state x="381" y="225" key="com.intellij.ide.util.TipDialog/56.27.1310.741@56.27.1310.741" timestamp="1583738201721" />
     <state x="82" y="85" width="1192" height="631" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1585736491932">
       <screen x="0" y="27" width="1366" height="741" />
@@ -374,7 +365,7 @@
       <breakpoints>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java</url>
-          <line>43</line>
+          <line>44</line>
           <properties class="org.computerShop.controller.MainController" method="createProduct" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -386,7 +377,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java</url>
-          <line>54</line>
+          <line>58</line>
           <properties class="org.computerShop.service.impl.ProductServiceImpl" method="createProduct">
             <option name="EMULATED" value="true" />
           </properties>
@@ -394,7 +385,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java</url>
-          <line>79</line>
+          <line>83</line>
           <properties class="org.computerShop.service.impl.ProductServiceImpl" method="pushImage">
             <option name="EMULATED" value="true" />
           </properties>
@@ -416,13 +407,13 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java</url>
-          <line>48</line>
+          <line>49</line>
           <properties class="org.computerShop.controller.MainController" method="deleteProduct" />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java</url>
-          <line>128</line>
+          <line>132</line>
           <properties class="org.computerShop.service.impl.ProductServiceImpl" method="filterByCategory">
             <option name="EMULATED" value="true" />
           </properties>
@@ -456,7 +447,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java</url>
-          <line>66</line>
+          <line>67</line>
           <properties class="org.computerShop.controller.MainController" method="productsByCategory" />
           <option name="timeStamp" value="48" />
         </line-breakpoint>
@@ -544,7 +535,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java</url>
-          <line>55</line>
+          <line>59</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint type="java-line">

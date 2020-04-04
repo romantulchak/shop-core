@@ -22,8 +22,20 @@ public class CPU {
     @JsonView(Views.ProductFull.class)
     private String maxFrequency;
 
+    @JsonView(Views.ProductFull.class)
+    private int numberOfCores;
 
-    @ManyToMany(mappedBy = "cpus")
+    @JsonView(Views.ProductFull.class)
+    private String generation;
+
+    @JsonView(Views.ProductFull.class)
+    private int cacheL3;
+
+    @JsonView(Views.ProductFull.class)
+    private boolean integratedGraphics;
+
+
+    @OneToMany(mappedBy = "cpu")
     private Set<Product> products;
 
     public long getId() {
@@ -64,5 +76,37 @@ public class CPU {
 
     public void setProducts(Set<Product> products) {
         this.products = products;
+    }
+
+    public int getNumberOfCores() {
+        return numberOfCores;
+    }
+
+    public void setNumberOfCores(int numberOfCores) {
+        this.numberOfCores = numberOfCores;
+    }
+
+    public String getGeneration() {
+        return generation;
+    }
+
+    public void setGeneration(String generation) {
+        this.generation = generation;
+    }
+
+    public int getCacheL3() {
+        return cacheL3;
+    }
+
+    public void setCacheL3(int cacheL3) {
+        this.cacheL3 = cacheL3;
+    }
+
+    public boolean isIntegratedGraphics() {
+        return integratedGraphics;
+    }
+
+    public void setIntegratedGraphics(boolean integratedGraphics) {
+        this.integratedGraphics = integratedGraphics;
     }
 }

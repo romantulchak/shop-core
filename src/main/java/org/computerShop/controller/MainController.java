@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import org.computerShop.model.Category;
 import org.computerShop.model.Product;
 import org.computerShop.model.Views;
+import org.computerShop.model.accessory.CPU;
 import org.computerShop.service.impl.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -74,6 +75,16 @@ public class MainController {
         return productService.filter(brands);
     }
 
+    @GetMapping("/cpus")
+    @JsonView(Views.ProductFull.class)
+    public List<CPU> getAllCpus(){
+        System.out.println("sa");
+        return productService.getAllCpus();
+    }
 
+    @PostMapping("/createCpu")
+    public ResponseEntity<String> createCpu(@RequestBody CPU cpu){
+        return productService.createCpu(cpu);
+    }
 
 }

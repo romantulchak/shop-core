@@ -2,6 +2,7 @@ package org.computerShop.service;
 
 import org.computerShop.model.Category;
 import org.computerShop.model.Product;
+import org.computerShop.model.accessory.CPU;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.multipart.MultipartFile;
@@ -29,5 +30,11 @@ public interface ProductService {
     List<Product> filterByCategory(String category);
 
     List<Product> filter(String[] brands);
+
+    List<CPU> getAllCpus();
+
+    ResponseEntity<String> createCpu(CPU cpu);
+
+
 
 }

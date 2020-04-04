@@ -54,15 +54,10 @@ public class Product {
     private int amountInStock;
 
 
-    @ManyToMany
-    @JoinTable(
-            name = "proudcts_cpu",
-            joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "cpu_id")
-
-    )
+    @ManyToOne
+    @JoinColumn(name = "cpu_id")
     @JsonView(Views.ProductFull.class)
-    private Set<CPU> cpus;
+    private CPU cpu;
 
 
     public List<CustomProduct> getCustomProducts() {
@@ -137,12 +132,13 @@ public class Product {
         this.amountInStock = amountInStock;
     }
 
-    public Set<CPU> getCpus() {
-        return cpus;
+
+    public CPU getCpu() {
+        return cpu;
     }
 
-    public void setCpus(Set<CPU> cpus) {
-        this.cpus = cpus;
+    public void setCpu(CPU cpu) {
+        this.cpu = cpu;
     }
 
     @PreRemove

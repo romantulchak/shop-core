@@ -5,7 +5,9 @@ import org.computerShop.model.Category;
 import org.computerShop.model.Image;
 import org.computerShop.model.Product;
 import org.computerShop.model.Views;
+import org.computerShop.model.accessory.CPU;
 import org.computerShop.repository.CategoryRepo;
+import org.computerShop.repository.CpuRepo;
 import org.computerShop.repository.ImageRepo;
 import org.computerShop.repository.ProductRepo;
 import org.computerShop.service.ProductService;
@@ -30,12 +32,14 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepo productRepo;
     private CategoryRepo categoryRepo;
     private ImageRepo imageRepo;
+    private CpuRepo cpuRepo;
 
     @Autowired
-    public ProductServiceImpl(ProductRepo productRepo, ImageRepo imageRepo, CategoryRepo categoryRepo){
+    public ProductServiceImpl(ProductRepo productRepo, ImageRepo imageRepo, CategoryRepo categoryRepo, CpuRepo cpuRepo){
         this.productRepo = productRepo;
         this.imageRepo = imageRepo;
         this.categoryRepo = categoryRepo;
+        this.cpuRepo = cpuRepo;
     }
 
 
@@ -156,9 +160,21 @@ public class ProductServiceImpl implements ProductService {
         }else {
             return productRepo.findAll();
         }
-
-
-
         return products;
     }
+
+    @Override
+    public List<CPU> getAllCpus() {
+        return cpuRepo.findAll();
+    }
+
+    @Override
+    public ResponseEntity<String> createCpu(CPU cpu) {
+        if (cpu != null){
+            cpuRepo.save(cpu);
+            return new ResponseEntity<>("Success", HttpStatus.OK);
+        }
+        return new ResponseEntity<>("Bad", HttpStatus.OK);
+    }
 }
+
