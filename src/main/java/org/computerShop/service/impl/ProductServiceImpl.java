@@ -1,10 +1,7 @@
 package org.computerShop.service.impl;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import org.computerShop.model.Category;
-import org.computerShop.model.Image;
-import org.computerShop.model.Product;
-import org.computerShop.model.Views;
+import org.computerShop.model.*;
 import org.computerShop.model.accessory.CPU;
 import org.computerShop.repository.CategoryRepo;
 import org.computerShop.repository.CpuRepo;
@@ -13,6 +10,7 @@ import org.computerShop.repository.ProductRepo;
 import org.computerShop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -150,31 +148,23 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> filter(String[] brands) {
+    public List<Product> filter(String[] brands, String[] cpus) {
         List<Product> products = new ArrayList<>();
-        if (brands != null){
-            for (String brand: brands) {
-                List<Product> product = productRepo.findAllByBrand(brand);
-                products.addAll(product);
+        if(brands != null && cpus != null){
+            products.addAll(productRepo.findAllByBrandAndCpu(brands,cpus));
+        }else{
+            if (brands != null){
+                products.addAll(productRepo.findAllByBrand(brands));
+            }else if(cpus != null){
+                products.addAll(productRepo.findAllByCpu(cpus));
+            }else{
+                return productRepo.findAll();
             }
-        }else {
-            return productRepo.findAll();
         }
         return products;
     }
 
-    @Override
-    public List<CPU> getAllCpus() {
-        return cpuRepo.findAll();
-    }
 
-    @Override
-    public ResponseEntity<String> createCpu(CPU cpu) {
-        if (cpu != null){
-            cpuRepo.save(cpu);
-            return new ResponseEntity<>("Success", HttpStatus.OK);
-        }
-        return new ResponseEntity<>("Bad", HttpStatus.OK);
-    }
+
 }
 

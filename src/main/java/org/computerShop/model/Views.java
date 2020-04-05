@@ -6,4 +6,5 @@ public class Views {
     public interface CustomFUll{}
     public interface UserFull{}
     public interface CustomUser{}
+    public interface BrandFull{}
 }

@@ -12,14 +12,16 @@ public class Brand {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,  Views.BrandFull.class})
     private long id;
 
     @NotBlank
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class, Views.BrandFull.class})
     private String name;
 
+
     @OneToMany(mappedBy = "brand",cascade = CascadeType.ALL)
+    @JsonView(Views.BrandFull.class)
     private Set<Product> products = new LinkedHashSet<>();
 
     public long getId() {

@@ -6,6 +6,7 @@ import org.computerShop.model.Category;
 import org.computerShop.model.Product;
 import org.computerShop.model.Views;
 import org.computerShop.model.accessory.CPU;
+import org.computerShop.service.impl.CpuServiceImpl;
 import org.computerShop.service.impl.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,10 +22,11 @@ import java.util.List;
 public class MainController {
 
     private ProductServiceImpl productService;
-
+    private CpuServiceImpl cpuService;
     @Autowired
-    public MainController(ProductServiceImpl productService){
+    public MainController(ProductServiceImpl productService, CpuServiceImpl cpuService){
         this.productService = productService;
+        this.cpuService = cpuService;
     }
 
     @GetMapping
@@ -71,20 +73,19 @@ public class MainController {
 
     @GetMapping("/filter")
     @JsonView(Views.ProductFull.class)
-    public List<Product> filter(@RequestParam(value = "brands", required = false) String[] brands){
-        return productService.filter(brands);
+    public List<Product> filter(@RequestParam(value = "brands", required = false) String[] brands, @RequestParam(value = "cpus", required = false) String[] cpus ){
+        return productService.filter(brands, cpus);
     }
 
     @GetMapping("/cpus")
     @JsonView(Views.ProductFull.class)
     public List<CPU> getAllCpus(){
-        System.out.println("sa");
-        return productService.getAllCpus();
+        return cpuService.getAllCpus();
     }
 
     @PostMapping("/createCpu")
     public ResponseEntity<String> createCpu(@RequestBody CPU cpu){
-        return productService.createCpu(cpu);
+        return cpuService.createCpu(cpu);
     }
 
 }

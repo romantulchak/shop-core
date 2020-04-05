@@ -29,11 +29,9 @@ public interface ProductService {
 
     List<Product> filterByCategory(String category);
 
-    List<Product> filter(String[] brands);
+    List<Product> filter(String[] brands, String[] cpus);
 
-    List<CPU> getAllCpus();
 
-    ResponseEntity<String> createCpu(CPU cpu);
 
 
 

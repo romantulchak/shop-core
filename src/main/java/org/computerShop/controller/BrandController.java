@@ -25,7 +25,7 @@ public class BrandController {
 
 
     @GetMapping
-    @JsonView(Views.ProductFull.class)
+    @JsonView(Views.BrandFull.class)
     public List<Brand> getAllBrands(){
         return brandService.getAll();
     }

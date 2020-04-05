@@ -35,7 +35,7 @@ public class CPU {
     private boolean integratedGraphics;
 
 
-    @OneToMany(mappedBy = "cpu")
+    @OneToMany(mappedBy = "cpu", cascade = CascadeType.ALL)
     private Set<Product> products;
 
     public long getId() {

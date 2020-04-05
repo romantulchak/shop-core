@@ -4,6 +4,7 @@ package org.computerShop.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.computerShop.model.accessory.CPU;
+import org.computerShop.model.accessory.GPU;
 
 import javax.persistence.*;
 import javax.swing.text.View;
@@ -27,7 +28,7 @@ public class Product {
     @JsonView({Views.ProductFull.class,Views.CustomFUll.class,Views.UserFull.class})
     private double productPrice;
 
-    @Column
+    @Column(length = 100000)
     @JsonView(Views.ProductFull.class)
     private String description;
 
@@ -54,11 +55,16 @@ public class Product {
     private int amountInStock;
 
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "cpu_id")
     @JsonView(Views.ProductFull.class)
     private CPU cpu;
 
+
+    @ManyToOne(cascade = CascadeType.REMOVE)
+    @JoinColumn(name="gpu_id")
+    @JsonView(Views.ProductFull.class)
+    private GPU gpu;
 
     public List<CustomProduct> getCustomProducts() {
         return customProducts;
@@ -141,8 +147,20 @@ public class Product {
         this.cpu = cpu;
     }
 
-    @PreRemove
-    public void deleteCategory(){
-        this.setCategory(null);
+    public GPU getGpu() {
+        return gpu;
     }
+
+    public void setGpu(GPU gpu) {
+        this.gpu = gpu;
+    }
+
+    @PreRemove
+    public void delete(){
+        this.setCategory(null);
+        this.setBrand(null);
+        this.setCpu(null);
+        this.setGpu(null);
+    }
+
 }
