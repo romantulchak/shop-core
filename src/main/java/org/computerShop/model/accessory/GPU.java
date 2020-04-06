@@ -1,6 +1,8 @@
 package org.computerShop.model.accessory;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import org.computerShop.model.Product;
+import org.computerShop.model.Views;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -11,24 +13,27 @@ public class GPU {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonView(Views.ProductFull.class)
     private long id;
 
     @NotBlank
+    @JsonView(Views.ProductFull.class)
     private String name;
-
-    @NotBlank
+    @JsonView(Views.ProductFull.class)
     private int memoryFrequency;
 
     @NotBlank
+    @JsonView(Views.ProductFull.class)
     private String memorySize;
 
-    @NotBlank
+    @JsonView(Views.ProductFull.class)
     private short memoryBusWidth;
 
     @NotBlank
+    @JsonView(Views.ProductFull.class)
     private String memoryType;
 
-    @OneToMany
+    @OneToMany(mappedBy = "gpu")
     private Set<Product> products;
 
     public long getId() {

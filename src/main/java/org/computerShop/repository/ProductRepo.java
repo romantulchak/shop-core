@@ -22,4 +22,7 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
 
     @Query(value = "SELECT p FROM Product p where p.cpu.name IN ?1")
     List<Product> findAllByCpu(String[] name);
+
+    @Query(value = "SELECT p FROM Product p where p.brand.name IN ?1 and  p.cpu.name IN ?2 and p.gpu.name IN ?3")
+    List<Product> findAllByBrandAndCpuAndGpu(String[] brands, String[] cpus, String[] gpus);
 }

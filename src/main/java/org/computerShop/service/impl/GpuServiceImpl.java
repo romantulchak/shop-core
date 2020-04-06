@@ -21,6 +21,7 @@ public class GpuServiceImpl implements GpuService {
 
     @Override
     public List<GPU> getAllGpu() {
+        System.out.println("sdfdsfdsf");
         return gpuRepo.findAll();
     }
 

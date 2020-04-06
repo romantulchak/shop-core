@@ -148,9 +148,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> filter(String[] brands, String[] cpus) {
+    public List<Product> filter(String[] brands, String[] cpus, String[] gpus) {
         List<Product> products = new ArrayList<>();
-        if(brands != null && cpus != null){
+
+        if(brands != null && cpus != null && gpus != null){
+            products.addAll(productRepo.findAllByBrandAndCpuAndGpu(brands, cpus, gpus));
+        }else if(brands != null && cpus != null){
             products.addAll(productRepo.findAllByBrandAndCpu(brands,cpus));
         }else{
             if (brands != null){

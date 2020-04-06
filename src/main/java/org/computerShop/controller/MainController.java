@@ -6,7 +6,10 @@ import org.computerShop.model.Category;
 import org.computerShop.model.Product;
 import org.computerShop.model.Views;
 import org.computerShop.model.accessory.CPU;
+import org.computerShop.model.accessory.GPU;
+import org.computerShop.service.GpuService;
 import org.computerShop.service.impl.CpuServiceImpl;
+import org.computerShop.service.impl.GpuServiceImpl;
 import org.computerShop.service.impl.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,10 +26,12 @@ public class MainController {
 
     private ProductServiceImpl productService;
     private CpuServiceImpl cpuService;
+    private GpuServiceImpl gpuService;
     @Autowired
-    public MainController(ProductServiceImpl productService, CpuServiceImpl cpuService){
+    public MainController(ProductServiceImpl productService, CpuServiceImpl cpuService, GpuServiceImpl gpuService){
         this.productService = productService;
         this.cpuService = cpuService;
+        this.gpuService = gpuService;
     }
 
     @GetMapping
@@ -73,8 +78,8 @@ public class MainController {
 
     @GetMapping("/filter")
     @JsonView(Views.ProductFull.class)
-    public List<Product> filter(@RequestParam(value = "brands", required = false) String[] brands, @RequestParam(value = "cpus", required = false) String[] cpus ){
-        return productService.filter(brands, cpus);
+    public List<Product> filter(@RequestParam(value = "brands", required = false) String[] brands, @RequestParam(value = "cpus", required = false) String[] cpus, @RequestParam(value = "gpus", required = false) String[] gpus ){
+        return productService.filter(brands, cpus, gpus);
     }
 
     @GetMapping("/cpus")
@@ -87,5 +92,17 @@ public class MainController {
     public ResponseEntity<String> createCpu(@RequestBody CPU cpu){
         return cpuService.createCpu(cpu);
     }
+
+    @GetMapping("/gpus")
+    @JsonView(Views.ProductFull.class)
+    public List<GPU> getAllGpus(){
+        return gpuService.getAllGpu();
+    }
+    @PostMapping("/createGpu")
+    public ResponseEntity<String> createGpu(@RequestBody GPU gpu){
+        return gpuService.createGpu(gpu);
+    }
+
+
 
 }

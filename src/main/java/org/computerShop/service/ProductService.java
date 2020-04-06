@@ -29,7 +29,7 @@ public interface ProductService {
 
     List<Product> filterByCategory(String category);
 
-    List<Product> filter(String[] brands, String[] cpus);
+    List<Product> filter(String[] brands, String[] cpus, String[] gpus );
 
 
 
