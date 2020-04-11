@@ -3,7 +3,6 @@ package org.computerShop.controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.computerShop.model.User;
 import org.computerShop.model.Views;
-import org.computerShop.service.CustomService;
 import org.computerShop.service.impl.CustomServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +10,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.computerShop.model.Custom;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -73,7 +71,7 @@ public class OrderController {
     }
 
     @GetMapping("/checkAmount")
-    public boolean checkAmount(@RequestParam(value="productId", required = false) String id, @RequestParam(value = "productAmount", required = false) String amount){
+    public int checkAmount(@RequestParam(value="productId", required = false) String id, @RequestParam(value = "productAmount", required = false) String amount){
         return customService.checkAmount(id, amount);
     }
 }

@@ -16,5 +16,5 @@ public interface CustomService {
     ResponseEntity<String> setCancel(Custom custom);
 
     List<Custom> getAllForUser(User user);
-    boolean checkAmount(String id, String amount);
+    int checkAmount(String id, String amount);
 }

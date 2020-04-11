@@ -137,8 +137,7 @@ public class ProductServiceImpl implements ProductService {
 
             return products;
         }else {
-
-            if(categoryName.contains("undefined")) {
+            if(categoryName.contains("undefined") || categoryName.contains("all")) {
                 return productRepo.findAll();
             }else{
                 return products;
@@ -155,11 +154,18 @@ public class ProductServiceImpl implements ProductService {
             products.addAll(productRepo.findAllByBrandAndCpuAndGpu(brands, cpus, gpus));
         }else if(brands != null && cpus != null){
             products.addAll(productRepo.findAllByBrandAndCpu(brands,cpus));
-        }else{
+        }else if(brands != null && gpus != null){
+            products.addAll(productRepo.findAllByBrandAndGpu(brands, gpus));
+        }else if(cpus != null && gpus != null){
+            products.addAll(productRepo.findAllByCpuAndGpu(cpus, gpus));
+        }
+        else{
             if (brands != null){
                 products.addAll(productRepo.findAllByBrand(brands));
             }else if(cpus != null){
                 products.addAll(productRepo.findAllByCpu(cpus));
+            }else if(gpus != null){
+                products.addAll(productRepo.findAllByGpu(gpus));
             }else{
                 return productRepo.findAll();
             }

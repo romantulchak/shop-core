@@ -8,12 +8,13 @@ import org.computerShop.model.accessory.GPU;
 
 import javax.persistence.*;
 import javax.swing.text.View;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name = "products")
-public class Product {
+public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -31,6 +32,10 @@ public class Product {
     @Column(length = 100000)
     @JsonView(Views.ProductFull.class)
     private String description;
+
+    //TODO: зробити знижку для всі якщо потрібно
+
+    private int discountPrice;
 
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
@@ -65,6 +70,15 @@ public class Product {
     @JoinColumn(name="gpu_id")
     @JsonView(Views.ProductFull.class)
     private GPU gpu;
+
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product", cascade = CascadeType.REMOVE)
+    @JsonView(Views.ProductFull.class)
+    private Set<PromotionalCode> promotionalCodes;
+
+
+
+
 
     public List<CustomProduct> getCustomProducts() {
         return customProducts;
@@ -153,6 +167,22 @@ public class Product {
 
     public void setGpu(GPU gpu) {
         this.gpu = gpu;
+    }
+
+    public Set<PromotionalCode> getPromotionalCodes() {
+        return promotionalCodes;
+    }
+
+    public void setPromotionalCodes(Set<PromotionalCode> promotionalCodes) {
+        this.promotionalCodes = promotionalCodes;
+    }
+
+    public int getDiscountPrice() {
+        return discountPrice;
+    }
+
+    public void setDiscountPrice(int discountPrice) {
+        this.discountPrice = discountPrice;
     }
 
     @PreRemove

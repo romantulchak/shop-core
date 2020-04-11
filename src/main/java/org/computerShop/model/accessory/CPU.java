@@ -5,10 +5,11 @@ import org.computerShop.model.Product;
 import org.computerShop.model.Views;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-public class CPU {
+public class CPU implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

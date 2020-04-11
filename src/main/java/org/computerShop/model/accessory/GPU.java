@@ -6,10 +6,11 @@ import org.computerShop.model.Views;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-public class GPU {
+public class GPU implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

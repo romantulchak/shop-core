@@ -53,20 +53,15 @@ public class CustomServiceImpl implements CustomService {
         return statuses;
     }
 
+    //TODO: FIX IT
     @Override
     public String createOrder(Custom custom) {
         String identificationNumber = generateRandomStringNumber();
-
-
         ArrayList<Product> products = new ArrayList<>();
-
-
         custom.setCreatedDate(LocalDateTime.now());
         custom.setIdentificationNumber(identificationNumber);
         custom.setStatuses(allStatuses());
         customRepo.save(custom);
-
-
         custom.getItems().forEach(item-> {
             Product product = productRepo.findById(item.getId()).orElse(null);
             if (product != null) {
@@ -76,14 +71,6 @@ public class CustomServiceImpl implements CustomService {
                 customProductRepo.save(customProduct);
             }
         });
-
-
-
-
-
-
-
-
 
         SendEmail email = new SendEmail();
         if (custom.getEmail() != null) {
@@ -110,7 +97,6 @@ public class CustomServiceImpl implements CustomService {
 
         }
         stringBuilder.append("</div>").append("</div>");
-
         return stringBuilder;
     }
 
@@ -124,7 +110,6 @@ public class CustomServiceImpl implements CustomService {
             stringBuilder.append(numericString.charAt(index));
         }
         return stringBuilder.toString();
-
     }
 
 
@@ -132,7 +117,6 @@ public class CustomServiceImpl implements CustomService {
     @Override
     public List<Custom> getAllByIdentificationNumber(String identificationNumber) {
         List<Custom> customs = customRepo.findAllByIdentificationNumber(identificationNumber);
-        System.out.println(customs);
         return customRepo.findAllByIdentificationNumber(identificationNumber);
     }
 
@@ -140,23 +124,7 @@ public class CustomServiceImpl implements CustomService {
     //TODO: fix it
     @Override
     public List<Custom> getAll(){
-
-
         return customRepo.findAll();
-        /*
-
-        List<Custom> sdsa = new ArrayList<>();
-        List<String> strings = customRepo.getUnique();
-        List<Custom> customsToShow = customRepo.findAll();
-
-        for (String ss: strings) {
-            Custom c = customRepo.getFirstByIdentificationNumber(ss);
-            sdsa.add(c);
-
-        }
-        return sdsa;
-
-         */
     }
 
     @Override
@@ -195,7 +163,6 @@ public class CustomServiceImpl implements CustomService {
             case 100:
                 break;
             case 101:
-
                 changeStatus(101, customs, 1);
                 isSuccess = true;
                 break;
@@ -252,10 +219,7 @@ public class CustomServiceImpl implements CustomService {
 
     @Override
     public ResponseEntity<String> setCancel(Custom custom){
-
         List<Custom> customs = customRepo.findAllByIdentificationNumber(custom.getIdentificationNumber());
-
-
         if(customs != null){
             customs.forEach(x->{
                 x.setCancel(!x.isCancel());
@@ -275,18 +239,17 @@ public class CustomServiceImpl implements CustomService {
     }
 
     @Override
-    public boolean checkAmount(String id, String amount) {
+    public int checkAmount(String id, String amount) {
         int amountToReturn = Integer.parseInt(amount);
         Product product = productRepo.findById(Long.parseLong(id)).orElse(null);
         if(product != null){
             if(product.getAmountInStock() > amountToReturn){
-                return true;
+                return amountToReturn;
             }else{
-                return false;
+                return product.getAmountInStock();
             }
         }else {
-            return false;
+            return amountToReturn;
         }
-
     }
 }

@@ -11,12 +11,18 @@ import org.computerShop.service.GpuService;
 import org.computerShop.service.impl.CpuServiceImpl;
 import org.computerShop.service.impl.GpuServiceImpl;
 import org.computerShop.service.impl.ProductServiceImpl;
+import org.computerShop.service.impl.PromotionalCodeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 @RestController
@@ -27,11 +33,13 @@ public class MainController {
     private ProductServiceImpl productService;
     private CpuServiceImpl cpuService;
     private GpuServiceImpl gpuService;
+    private PromotionalCodeServiceImpl promotionalCodeService;
     @Autowired
-    public MainController(ProductServiceImpl productService, CpuServiceImpl cpuService, GpuServiceImpl gpuService){
+    public MainController(ProductServiceImpl productService, CpuServiceImpl cpuService, GpuServiceImpl gpuService, PromotionalCodeServiceImpl promotionalCodeService){
         this.productService = productService;
         this.cpuService = cpuService;
         this.gpuService = gpuService;
+        this.promotionalCodeService = promotionalCodeService;
     }
 
     @GetMapping
@@ -104,5 +112,13 @@ public class MainController {
     }
 
 
+    @PostMapping("/createPromo/{productId}/{percent}/{numberOfDays}/{numberOfUses}")
+    public ResponseEntity<String> createPromo(@PathVariable("productId") Long id, @PathVariable("percent") short percent, @PathVariable("numberOfDays") long numberOfDays, @PathVariable("numberOfUses") int numberOfUses) {
+        return promotionalCodeService.createPromo(percent, numberOfDays, numberOfUses, id);
+    }
 
+    @GetMapping("/checkDiscount/{id}")
+    public ResponseEntity<?> checkDiscount(@RequestParam("code") String code, @PathVariable("id") long productId){
+        return promotionalCodeService.findCode(code, productId);
+    }
 }

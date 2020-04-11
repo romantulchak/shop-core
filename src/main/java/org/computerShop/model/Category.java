@@ -3,11 +3,12 @@ package org.computerShop.model;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
 @Table(name = "categories")
-public class Category {
+public class Category implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +22,9 @@ public class Category {
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private Set<Product> product;
 
+    @Column(name = "imagePath")
+    @JsonView(Views.CategoryFull.class)
+    private String imagePath;
 
     public long getId() {
         return id;
@@ -44,6 +48,14 @@ public class Category {
 
     public void setProduct(Set<Product> product) {
         this.product = product;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     @Override

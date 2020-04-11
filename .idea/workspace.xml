@@ -1,443 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9739963b-258d-4989-be48-e316df16c2bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0abab12f-147a-433f-bbc7-dd96bf35cf79.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0abab12f-147a-433f-bbc7-dd96bf35cf79.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_jakarta_mail_1_6_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_jakarta_mail_1_6_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_6_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_mail_2_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_mail_2_2_5_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_2_5_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_2_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_2_2_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_2_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_2_2_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_2_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_2_2_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_2_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_2_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopBackEnd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopBackEnd.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/BrandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/email/SendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/email/SendEmail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/jwt/AuthEntryPointJwt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/jwt/AuthEntryPointJwt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/jwt/AuthTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/jwt/AuthTokenFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/jwt/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/jwt/JwtUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/maps/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/maps/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Brand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Custom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Custom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/CustomProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/CustomProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Filter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/accessory/CPU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/accessory/CPU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/accessory/GPU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/accessory/GPU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/enums/CustomStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/enums/CustomStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/enums/ERole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/enums/ERole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/payload/request/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/payload/request/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/payload/request/SignupRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/payload/request/SignupRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/payload/response/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/payload/response/JwtResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/payload/response/MessageResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/payload/response/MessageResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/BrandRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/BrandRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/CpuRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/CpuRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/CustomProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/CustomProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/CustomRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/CustomRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/GpuRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/GpuRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/ProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/RoleRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/RoleRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/BrandService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/CpuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/CpuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/CustomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/CustomService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/GpuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/GpuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/ProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/BrandServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/BrandServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CpuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CpuServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/GpuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/GpuServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProfileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/UserDetailsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/02ea41a2-8461-457d-b9cb-9f52b5461eb1.C6bGHUBxVnA.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/02ea41a2-8461-457d-b9cb-9f52b5461eb1.C6bGHUBxVnA.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/02ec3991-2e46-426d-b87e-4bbeee79e077.Снимок экрана от 2020-03-25 16-58-35.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/02ec3991-2e46-426d-b87e-4bbeee79e077.Снимок экрана от 2020-03-25 16-58-35.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/088e9634-1d31-4d9e-81e6-13909e0103af.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/088e9634-1d31-4d9e-81e6-13909e0103af.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/0895ff54-8a78-4e76-8b4d-7acb45aa58af.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/0895ff54-8a78-4e76-8b4d-7acb45aa58af.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/0c57ddf0-b1bc-4b4b-8234-735b5a22719b.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/0c57ddf0-b1bc-4b4b-8234-735b5a22719b.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/0cea458a-6dd8-4dde-827e-896c056576ac.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/0cea458a-6dd8-4dde-827e-896c056576ac.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/14b74260-acba-4a2b-8533-dbdd724420f4.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/14b74260-acba-4a2b-8533-dbdd724420f4.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/15f1ef82-c1a1-44c4-9424-e93b3848ca74.VAw7lnkKlYI.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/15f1ef82-c1a1-44c4-9424-e93b3848ca74.VAw7lnkKlYI.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/169c897a-ea77-4539-a2dd-41717e747694.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/169c897a-ea77-4539-a2dd-41717e747694.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/1b6476aa-e5c5-4823-abaf-7ec1c7a21818.Снимок экрана от 2020-03-24 20-49-09.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/1b6476aa-e5c5-4823-abaf-7ec1c7a21818.Снимок экрана от 2020-03-24 20-49-09.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/1db70708-9a70-4912-a56a-f5eb5ef4a0ee.Снимок экрана от 2020-04-04 13-41-58.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/1db70708-9a70-4912-a56a-f5eb5ef4a0ee.Снимок экрана от 2020-04-04 13-41-58.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/1f60d9c3-17be-4c3e-b232-c9aa34225840.Снимок экрана от 2020-03-25 18-39-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/1f60d9c3-17be-4c3e-b232-c9aa34225840.Снимок экрана от 2020-03-25 18-39-14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/209cdf24-9a09-46a2-8ff1-d13b8a36b25e.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/209cdf24-9a09-46a2-8ff1-d13b8a36b25e.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/220b31a9-ae28-4d13-92f5-8614a10e3f86.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/220b31a9-ae28-4d13-92f5-8614a10e3f86.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/22461e04-807c-4768-ac1a-60b890768cbf.Снимок экрана от 2020-03-24 20-48-56.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/22461e04-807c-4768-ac1a-60b890768cbf.Снимок экрана от 2020-03-24 20-48-56.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/23371c88-2a02-47e0-ad60-efc181741986.Снимок экрана от 2020-03-25 18-39-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/23371c88-2a02-47e0-ad60-efc181741986.Снимок экрана от 2020-03-25 18-39-14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/23741686-c17e-475b-a683-f5c534f30112.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/23741686-c17e-475b-a683-f5c534f30112.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/240963fe-bb24-4605-a024-ee87743994da.Снимок экрана от 2020-03-24 20-48-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/240963fe-bb24-4605-a024-ee87743994da.Снимок экрана от 2020-03-24 20-48-29.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/2492a8b1-6e7b-48c9-aecf-d997364ce729.Снимок экрана от 2020-04-05 10-42-54.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/2492a8b1-6e7b-48c9-aecf-d997364ce729.Снимок экрана от 2020-04-05 10-42-54.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/251cb873-7b8a-4ef7-9ebe-c25540d64f26.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/251cb873-7b8a-4ef7-9ebe-c25540d64f26.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/26f3e6a1-7873-46b9-bdbf-c53e85756289.Снимок экрана от 2020-03-24 20-48-56.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/26f3e6a1-7873-46b9-bdbf-c53e85756289.Снимок экрана от 2020-03-24 20-48-56.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/2966a7f9-c319-4370-bcd4-5e3acc9a6cc7.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/2966a7f9-c319-4370-bcd4-5e3acc9a6cc7.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/2ae27e37-beb9-4eb0-9a71-4bd1435fca95.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/2ae27e37-beb9-4eb0-9a71-4bd1435fca95.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/2c93536b-5a5a-4e96-8085-89518e1cea5f.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/2c93536b-5a5a-4e96-8085-89518e1cea5f.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/2ceb7d2e-4795-4a0a-ad0f-8a0946ab50d7.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/2ceb7d2e-4795-4a0a-ad0f-8a0946ab50d7.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/2cfd25ff-1a19-4b42-b2fc-b086c29c2e42.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/2cfd25ff-1a19-4b42-b2fc-b086c29c2e42.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/2d296ab9-2571-4ec1-8d55-652a2b93d1d5.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/2d296ab9-2571-4ec1-8d55-652a2b93d1d5.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/2df4fd6e-c192-4503-9c3e-7dd4e4e2b8b3.Снимок экрана от 2020-03-24 20-49-09.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/2df4fd6e-c192-4503-9c3e-7dd4e4e2b8b3.Снимок экрана от 2020-03-24 20-49-09.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/2f87a806-2b5d-48af-834d-cc4d752a5dff.Снимок экрана от 2020-03-24 20-49-09.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/2f87a806-2b5d-48af-834d-cc4d752a5dff.Снимок экрана от 2020-03-24 20-49-09.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/30add900-efeb-4fab-937e-24d977d89949.HVclNyYNvws.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/30add900-efeb-4fab-937e-24d977d89949.HVclNyYNvws.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/30bbd047-19a2-4349-9bd7-7da343c098e0.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/30bbd047-19a2-4349-9bd7-7da343c098e0.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/31fda039-e4be-4441-99d3-dc3f029d5422.Снимок экрана от 2020-03-31 13-01-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/31fda039-e4be-4441-99d3-dc3f029d5422.Снимок экрана от 2020-03-31 13-01-13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/32c59fcd-a036-405f-9869-77486df0b852.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/32c59fcd-a036-405f-9869-77486df0b852.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/359217a2-bb6a-4a82-bfc2-c970f410f91b.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/359217a2-bb6a-4a82-bfc2-c970f410f91b.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/3967000b-0cdd-4f10-bdda-89886b1df3b8.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/3967000b-0cdd-4f10-bdda-89886b1df3b8.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/3a792790-00a6-4ba9-8947-7d21efd781b8.Снимок экрана от 2020-03-31 11-23-38.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/3a792790-00a6-4ba9-8947-7d21efd781b8.Снимок экрана от 2020-03-31 11-23-38.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/3b2f882f-e17e-4ce1-80f9-2063195a7633.Снимок экрана от 2020-03-25 18-39-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/3b2f882f-e17e-4ce1-80f9-2063195a7633.Снимок экрана от 2020-03-25 18-39-14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/41bfb37b-e17d-4b17-80df-6bf24d354f53.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/41bfb37b-e17d-4b17-80df-6bf24d354f53.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/42324b8f-602c-4d65-b653-11885fcd02a7.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/42324b8f-602c-4d65-b653-11885fcd02a7.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/43ac5dc0-1cd9-4273-9bbb-8657b241222a.Снимок экрана от 2020-03-25 18-39-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/43ac5dc0-1cd9-4273-9bbb-8657b241222a.Снимок экрана от 2020-03-25 18-39-10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/441a591d-52a1-4465-b5c7-75b304f08a2a.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/441a591d-52a1-4465-b5c7-75b304f08a2a.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/47d12827-0b49-42dc-a309-caa4d5953185.solution 1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/47d12827-0b49-42dc-a309-caa4d5953185.solution 1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/49946ff1-b2f9-4877-83d7-94d762276ac6.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/49946ff1-b2f9-4877-83d7-94d762276ac6.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/4c1adfb0-d192-4b61-970a-41f4406b071b.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/4c1adfb0-d192-4b61-970a-41f4406b071b.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/4c83327a-3765-4a5c-aea3-8efe7027d6de.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/4c83327a-3765-4a5c-aea3-8efe7027d6de.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/4cdf3110-314c-4f1f-a6c4-8f2e194432b5.Снимок экрана от 2020-03-25 18-39-01.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/4cdf3110-314c-4f1f-a6c4-8f2e194432b5.Снимок экрана от 2020-03-25 18-39-01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/4e76ea16-5b99-44c4-97ad-db7e965f4bb0.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/4e76ea16-5b99-44c4-97ad-db7e965f4bb0.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/4ffaf2e4-b159-43f3-9b3f-3082651ac9bb.Снимок экрана от 2020-04-04 13-41-58.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/4ffaf2e4-b159-43f3-9b3f-3082651ac9bb.Снимок экрана от 2020-04-04 13-41-58.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/50070e81-b0aa-46a5-aaab-19114e99b8d8.Снимок экрана от 2020-03-24 20-48-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/50070e81-b0aa-46a5-aaab-19114e99b8d8.Снимок экрана от 2020-03-24 20-48-29.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/53142405-2c29-4325-8809-d15668d38e24.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/53142405-2c29-4325-8809-d15668d38e24.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/54024eb3-7d4d-4308-85d7-8cf74c859910.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/54024eb3-7d4d-4308-85d7-8cf74c859910.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/5882585d-f6c2-4c43-b485-fd27a12fe405.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/5882585d-f6c2-4c43-b485-fd27a12fe405.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/58c6e770-c336-4cb1-a33e-bfe8d5f96025.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/58c6e770-c336-4cb1-a33e-bfe8d5f96025.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/5af5af40-8045-42f3-8ace-006f70d642ed.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/5af5af40-8045-42f3-8ace-006f70d642ed.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/5c6575e4-201b-463a-b4f9-faf9902f2486.Снимок экрана от 2020-03-25 18-39-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/5c6575e4-201b-463a-b4f9-faf9902f2486.Снимок экрана от 2020-03-25 18-39-10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/5e5f470a-423e-46d7-b4e4-7b42186f75c2.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/5e5f470a-423e-46d7-b4e4-7b42186f75c2.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/5ff95cf3-77b9-4468-9827-85ae93807346.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/5ff95cf3-77b9-4468-9827-85ae93807346.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/6123918c-19f2-4a4e-9f01-b5b180639a0a.Снимок экрана от 2020-03-21 11-17-05.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/6123918c-19f2-4a4e-9f01-b5b180639a0a.Снимок экрана от 2020-03-21 11-17-05.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/61b1703f-7380-4740-a775-2496eea8a42e.Снимок экрана от 2020-03-31 11-23-38.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/61b1703f-7380-4740-a775-2496eea8a42e.Снимок экрана от 2020-03-31 11-23-38.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/61cc97e4-f7c2-4fb1-9ab5-ba344f3ac2a1.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/61cc97e4-f7c2-4fb1-9ab5-ba344f3ac2a1.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/63d9114e-73dd-4e03-ab95-b26b68598fa5.Снимок экрана от 2020-03-25 18-39-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/63d9114e-73dd-4e03-ab95-b26b68598fa5.Снимок экрана от 2020-03-25 18-39-10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/66082976-0f73-4384-be5b-eb0a2ba80f5b.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/66082976-0f73-4384-be5b-eb0a2ba80f5b.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/679e0bf7-dec6-4579-8247-000f1561b140.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/679e0bf7-dec6-4579-8247-000f1561b140.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/685b6f21-6f8b-4ff6-b393-b8bcaba27aa4.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/685b6f21-6f8b-4ff6-b393-b8bcaba27aa4.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/696ad7e8-d2d2-4df5-812d-6a57612d675e.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/696ad7e8-d2d2-4df5-812d-6a57612d675e.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/71780671-8b85-48d5-af61-58b205019585.Снимок экрана от 2020-04-05 10-42-54.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/71780671-8b85-48d5-af61-58b205019585.Снимок экрана от 2020-04-05 10-42-54.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/71889d4b-12b0-4c1d-82b2-93b336c61156.Снимок экрана от 2020-03-31 13-01-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/71889d4b-12b0-4c1d-82b2-93b336c61156.Снимок экрана от 2020-03-31 13-01-13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/72feb462-ae44-4506-bcc1-6094002b1dcd.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/72feb462-ae44-4506-bcc1-6094002b1dcd.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/734004bf-aa5a-4775-a90d-896c41510e3c.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/734004bf-aa5a-4775-a90d-896c41510e3c.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/74e0cf28-7cd2-428b-9870-9dbf6b1002bb.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/74e0cf28-7cd2-428b-9870-9dbf6b1002bb.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/766d35b3-6889-4efc-ae05-f82d1ea000c9.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/766d35b3-6889-4efc-ae05-f82d1ea000c9.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/781843ce-b2b5-40c3-a63b-672441f14a2b.Снимок экрана от 2020-03-24 23-26-44.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/781843ce-b2b5-40c3-a63b-672441f14a2b.Снимок экрана от 2020-03-24 23-26-44.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/79bfef1f-f553-4b36-b6a4-4afee31f37e7.Снимок экрана от 2020-03-25 18-39-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/79bfef1f-f553-4b36-b6a4-4afee31f37e7.Снимок экрана от 2020-03-25 18-39-10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/79cc7687-1e5e-458b-959b-c0728536db59.Снимок экрана от 2020-04-05 09-52-43.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/79cc7687-1e5e-458b-959b-c0728536db59.Снимок экрана от 2020-04-05 09-52-43.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/7a96411e-cb66-4317-b8a2-d5c0c8cd2a28.Снимок экрана от 2020-03-24 20-48-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/7a96411e-cb66-4317-b8a2-d5c0c8cd2a28.Снимок экрана от 2020-03-24 20-48-29.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/7ae3735e-1f8d-4ea7-b133-1b1c5d0bb1a5.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/7ae3735e-1f8d-4ea7-b133-1b1c5d0bb1a5.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/83866e47-48d8-45ba-af24-06264d275f79.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/83866e47-48d8-45ba-af24-06264d275f79.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/84949c50-fec9-4070-b001-780be3ec00dc.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/84949c50-fec9-4070-b001-780be3ec00dc.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/84968526-ad1f-4ab9-9ccb-69bee658722c.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/84968526-ad1f-4ab9-9ccb-69bee658722c.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/8538a3b2-0913-40d8-bf5f-97fc520ad48b.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/8538a3b2-0913-40d8-bf5f-97fc520ad48b.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/86061ddc-4104-4393-b9d2-d36c2294f9eb.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/86061ddc-4104-4393-b9d2-d36c2294f9eb.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/86ea6a9f-19f8-4864-b779-eb1d7580d9b0.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/86ea6a9f-19f8-4864-b779-eb1d7580d9b0.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/8740d373-8611-4768-98c5-c8268572463d.IMG_7808.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/8740d373-8611-4768-98c5-c8268572463d.IMG_7808.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/87e0cd52-0392-4a59-afd6-e2947be318fb.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/87e0cd52-0392-4a59-afd6-e2947be318fb.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/8912444e-2e6c-4b2f-8dc7-116c668bf348.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/8912444e-2e6c-4b2f-8dc7-116c668bf348.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/8aae4f48-b055-4b3d-b441-dd634724a190.solution 2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/8aae4f48-b055-4b3d-b441-dd634724a190.solution 2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/90a8b4e1-ef56-43dc-be0b-38e11f5b04dc.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/90a8b4e1-ef56-43dc-be0b-38e11f5b04dc.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/913eb7cf-3ef4-459e-b50a-ed64cdbb820e.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/913eb7cf-3ef4-459e-b50a-ed64cdbb820e.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/92133cdf-34f7-4c53-a25a-3b81f71fdc6f.Снимок экрана от 2020-03-24 23-26-44.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/92133cdf-34f7-4c53-a25a-3b81f71fdc6f.Снимок экрана от 2020-03-24 23-26-44.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/92934389-8ad2-4cba-9d8a-9d99d74b2478.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/92934389-8ad2-4cba-9d8a-9d99d74b2478.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/92df4455-8304-42c6-92fc-84aa2453bb6a.Снимок экрана от 2020-03-25 00-12-47.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/92df4455-8304-42c6-92fc-84aa2453bb6a.Снимок экрана от 2020-03-25 00-12-47.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/946d3620-46ac-4559-8f99-0e4afa66f2eb.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/946d3620-46ac-4559-8f99-0e4afa66f2eb.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/952fa912-58c8-4562-aa20-442e778c60c9.Снимок экрана от 2020-04-05 10-42-54.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/952fa912-58c8-4562-aa20-442e778c60c9.Снимок экрана от 2020-04-05 10-42-54.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/955d8d0e-5a16-47c8-96df-3f730b5b801a.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/955d8d0e-5a16-47c8-96df-3f730b5b801a.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/95c5e0bf-b2b9-4715-857e-ec0d0295c47b.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/95c5e0bf-b2b9-4715-857e-ec0d0295c47b.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/96c7824d-b287-457e-8c03-729b2f3a1285.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/96c7824d-b287-457e-8c03-729b2f3a1285.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/985f329a-af44-4827-befc-a7cc58d420e4.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/985f329a-af44-4827-befc-a7cc58d420e4.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/992c154b-0158-4ec6-882a-ec6f4f20bcaf.IMG_7808.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/992c154b-0158-4ec6-882a-ec6f4f20bcaf.IMG_7808.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/9b2a9c74-c963-4e5d-ae4b-9dcf0ce713b6.358Cx0pfm2I.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/9b2a9c74-c963-4e5d-ae4b-9dcf0ce713b6.358Cx0pfm2I.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/9da3aa1f-43fb-4248-a32b-185eeae9be0b.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/9da3aa1f-43fb-4248-a32b-185eeae9be0b.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/9ecb0fa7-7208-4d4d-bf60-5de23c054c36.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/9ecb0fa7-7208-4d4d-bf60-5de23c054c36.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/a24bb8ef-60f5-4307-a584-a76955193d2b.Снимок экрана от 2020-04-01 11-45-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/a24bb8ef-60f5-4307-a584-a76955193d2b.Снимок экрана от 2020-04-01 11-45-17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/a24c5a36-0338-4ca3-bbe7-38b3c46cadc4.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/a24c5a36-0338-4ca3-bbe7-38b3c46cadc4.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/a285346c-914e-4832-b2d1-bcdc857c54a0.358Cx0pfm2I.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/a285346c-914e-4832-b2d1-bcdc857c54a0.358Cx0pfm2I.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/a310e49b-d9b0-40b6-b5d3-684ec64b2b35.IMG_20200319_175153.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/a310e49b-d9b0-40b6-b5d3-684ec64b2b35.IMG_20200319_175153.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/a31cd716-06a8-4d71-ab1c-64b40b611b45.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/a31cd716-06a8-4d71-ab1c-64b40b611b45.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/a4a3022a-7fb7-42e0-875f-c126fd6ec527.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/a4a3022a-7fb7-42e0-875f-c126fd6ec527.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/a6101377-fe4f-4af5-8131-29e582d5711b.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/a6101377-fe4f-4af5-8131-29e582d5711b.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/ac4352e1-2b3c-4a66-bb4b-f60566283c0a.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/ac4352e1-2b3c-4a66-bb4b-f60566283c0a.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/ad5d088b-433f-4f9f-ac08-6890cce6cdde.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/ad5d088b-433f-4f9f-ac08-6890cce6cdde.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/b029b8b5-ff7e-49e4-88bc-7fbffdeb69bf.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/b029b8b5-ff7e-49e4-88bc-7fbffdeb69bf.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/b166a642-aab3-4b8d-91f6-f0d6f07661c6.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/b166a642-aab3-4b8d-91f6-f0d6f07661c6.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/b32b7341-5412-436b-b5a5-32bdb42dfa61.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/b32b7341-5412-436b-b5a5-32bdb42dfa61.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/b521413b-0ca6-4ca9-8df7-f4e3e8a17753.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/b521413b-0ca6-4ca9-8df7-f4e3e8a17753.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/b7f9832f-00b9-4226-a92f-aaf6095261cb.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/b7f9832f-00b9-4226-a92f-aaf6095261cb.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/b80c2e0a-e5af-426e-a47f-64a8735a66a2.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/b80c2e0a-e5af-426e-a47f-64a8735a66a2.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/b89713b1-3cc0-49f9-af6f-61f2d40dc815.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/b89713b1-3cc0-49f9-af6f-61f2d40dc815.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/ba5b0e9f-dd72-4edc-8faa-c9596ddae9c2.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/ba5b0e9f-dd72-4edc-8faa-c9596ddae9c2.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/bdd30f6f-6a90-42b0-9d5a-1a53d81f196b.Снимок экрана от 2020-03-25 18-39-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/bdd30f6f-6a90-42b0-9d5a-1a53d81f196b.Снимок экрана от 2020-03-25 18-39-10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/beb12b0d-6036-4623-a25c-045ba551d703.Снимок экрана от 2020-03-25 18-39-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/beb12b0d-6036-4623-a25c-045ba551d703.Снимок экрана от 2020-03-25 18-39-14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/c1c7cf66-ea47-43dc-946f-d97edfc28a9e.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/c1c7cf66-ea47-43dc-946f-d97edfc28a9e.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/c1cfdec2-da9e-42f9-88bd-27903e0f983f.Снимок экрана от 2020-03-31 13-01-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/c1cfdec2-da9e-42f9-88bd-27903e0f983f.Снимок экрана от 2020-03-31 13-01-13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/c32c4989-b7b8-443f-97bc-b217cfc20e0f.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/c32c4989-b7b8-443f-97bc-b217cfc20e0f.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/c39aae9c-78de-4ff2-8ba2-5b42a2619a68.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/c39aae9c-78de-4ff2-8ba2-5b42a2619a68.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/c48fdac9-cf60-49d7-8591-4d84cfbd6058.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/c48fdac9-cf60-49d7-8591-4d84cfbd6058.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/c6a2770d-51db-473c-a1be-1b0e5524fe9b.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/c6a2770d-51db-473c-a1be-1b0e5524fe9b.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/ca0fa12e-aaff-43ca-8c76-7ad0626d5e6e.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/ca0fa12e-aaff-43ca-8c76-7ad0626d5e6e.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/cadaebfe-8f38-4cb6-b4b6-09350a9257e1.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/cadaebfe-8f38-4cb6-b4b6-09350a9257e1.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/cc48a08f-9542-4c6f-bc98-d99266a2e1d3.Снимок экрана от 2020-04-01 11-45-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/cc48a08f-9542-4c6f-bc98-d99266a2e1d3.Снимок экрана от 2020-04-01 11-45-17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/cd8a1fe1-d592-400d-b0e5-437e515a8b6f.ldina_led_voda_164084_1920x1080.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/cd8a1fe1-d592-400d-b0e5-437e515a8b6f.ldina_led_voda_164084_1920x1080.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/cda6df25-81cd-4d78-aa75-c8a256f4e6dc.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/cda6df25-81cd-4d78-aa75-c8a256f4e6dc.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/ce08d71d-70a0-420e-8c89-f9c76050894d.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/ce08d71d-70a0-420e-8c89-f9c76050894d.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/ce10d845-6a02-42b3-8ae1-5c553bc37168.Снимок экрана от 2020-03-25 18-39-01.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/ce10d845-6a02-42b3-8ae1-5c553bc37168.Снимок экрана от 2020-03-25 18-39-01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/cf1baf80-3650-4b5e-a970-913d0432f4e0.solution 1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/cf1baf80-3650-4b5e-a970-913d0432f4e0.solution 1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/d08e6952-b83a-48e1-a4c4-3f7ca57fc174.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/d08e6952-b83a-48e1-a4c4-3f7ca57fc174.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/d0a58392-c8d7-468a-a4f4-eea10be75b85.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/d0a58392-c8d7-468a-a4f4-eea10be75b85.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/d3f2909b-3631-44d6-9370-30c1160685dd.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/d3f2909b-3631-44d6-9370-30c1160685dd.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/d4332acb-0583-49c8-bf51-5b178702e786.Снимок экрана от 2020-03-25 00-12-47.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/d4332acb-0583-49c8-bf51-5b178702e786.Снимок экрана от 2020-03-25 00-12-47.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/d46bd340-58cc-40f4-9169-320d66f22e6b.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/d46bd340-58cc-40f4-9169-320d66f22e6b.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/d65040e7-5c9a-4978-aa7d-2cc6dab3ae7f.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/d65040e7-5c9a-4978-aa7d-2cc6dab3ae7f.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/d66b661e-8a00-41d3-a94c-b01216637ab0.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/d66b661e-8a00-41d3-a94c-b01216637ab0.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/d68890b5-a5a9-45af-b9a6-d1c542cf4cb2.solution 2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/d68890b5-a5a9-45af-b9a6-d1c542cf4cb2.solution 2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/d68ed05c-d13f-4863-bb92-ff70c244f31d.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/d68ed05c-d13f-4863-bb92-ff70c244f31d.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/d76678a0-50b2-4924-bb57-87035ecf75b0.Снимок экрана от 2020-03-21 11-17-05.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/d76678a0-50b2-4924-bb57-87035ecf75b0.Снимок экрана от 2020-03-21 11-17-05.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/d7ba7ae9-20e4-447b-83c2-a85ab8ea4f03.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/d7ba7ae9-20e4-447b-83c2-a85ab8ea4f03.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/d923ff06-32d5-4df3-8333-d3dad8aecd2f.Снимок экрана от 2020-03-31 11-23-38.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/d923ff06-32d5-4df3-8333-d3dad8aecd2f.Снимок экрана от 2020-03-31 11-23-38.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/d9e551ab-2bb5-4d9a-93f4-dab079724421.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/d9e551ab-2bb5-4d9a-93f4-dab079724421.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/dbdd790c-144e-4623-89e6-32d9d1150f7b.Снимок экрана от 2020-03-24 20-48-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/dbdd790c-144e-4623-89e6-32d9d1150f7b.Снимок экрана от 2020-03-24 20-48-29.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/dd5621af-0435-4dff-a681-ea7ec1c2ce77.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/dd5621af-0435-4dff-a681-ea7ec1c2ce77.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/dd635a5c-4dcd-48b8-a809-a0553c9fb33f.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/dd635a5c-4dcd-48b8-a809-a0553c9fb33f.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/ddfc569f-1ce0-4ed6-ac7c-55e614af28ec.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/ddfc569f-1ce0-4ed6-ac7c-55e614af28ec.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/dedc9f4e-6c24-45e3-b4b2-b6c4feea060e.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/dedc9f4e-6c24-45e3-b4b2-b6c4feea060e.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/e1053d04-86fb-40db-b0d3-eadf4b3f25ec.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/e1053d04-86fb-40db-b0d3-eadf4b3f25ec.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/e1ade54b-afc3-4d1b-b87e-28b9484c8e08.lS5gRmur3Tc.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/e1ade54b-afc3-4d1b-b87e-28b9484c8e08.lS5gRmur3Tc.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/e29b46a3-0d31-4ce1-a6f9-b7230e0f2167.Снимок экрана от 2020-04-01 11-45-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/e29b46a3-0d31-4ce1-a6f9-b7230e0f2167.Снимок экрана от 2020-04-01 11-45-17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/e85f2fb1-9a48-4b52-bb72-aeb65495fc30.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/e85f2fb1-9a48-4b52-bb72-aeb65495fc30.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/ea5694f8-f00c-4915-a8ae-75d047d9ed27.photo_2020-03-21_19-26-11.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/ea5694f8-f00c-4915-a8ae-75d047d9ed27.photo_2020-03-21_19-26-11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/eaccf1bb-a07e-4819-badc-bfca2959c515.Снимок экрана от 2020-03-25 16-58-35.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/eaccf1bb-a07e-4819-badc-bfca2959c515.Снимок экрана от 2020-03-25 16-58-35.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/ee517340-6c6f-4f57-9e0a-cee0c156be8b.Снимок экрана от 2020-03-25 18-39-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/ee517340-6c6f-4f57-9e0a-cee0c156be8b.Снимок экрана от 2020-03-25 18-39-14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/f08bf915-9171-42b0-b0e7-945884f2dd01.Снимок экрана от 2020-03-24 20-49-09.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/f08bf915-9171-42b0-b0e7-945884f2dd01.Снимок экрана от 2020-03-24 20-49-09.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/f1b57db2-d02f-43f3-8f01-19136df2c008.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/f1b57db2-d02f-43f3-8f01-19136df2c008.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/f3223313-8186-458a-b3e3-47db545a9780.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/f3223313-8186-458a-b3e3-47db545a9780.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/f48d714f-28c3-4edf-a0c2-50ec921c2169.Снимок экрана от 2020-04-04 13-41-58.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/f48d714f-28c3-4edf-a0c2-50ec921c2169.Снимок экрана от 2020-04-04 13-41-58.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/f512e74e-2510-4fd8-ab4f-a5fa34c5a642.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/f512e74e-2510-4fd8-ab4f-a5fa34c5a642.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/f5161d29-bb17-4d84-928d-422dbd1f70c5.Снимок экрана от 2020-03-25 18-39-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/f5161d29-bb17-4d84-928d-422dbd1f70c5.Снимок экрана от 2020-03-25 18-39-14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/f637679a-416b-4130-b13e-8285cd7073a3.IMG_20200319_175824_023.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/f637679a-416b-4130-b13e-8285cd7073a3.IMG_20200319_175824_023.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/f725dc3e-c478-42d2-b2e6-1f988a06c889.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/f725dc3e-c478-42d2-b2e6-1f988a06c889.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/fa409358-9487-4745-97a8-ac461d002b4d.Снимок экрана от 2020-03-24 23-26-44.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/fa409358-9487-4745-97a8-ac461d002b4d.Снимок экрана от 2020-03-24 23-26-44.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/fae4af97-36c3-4b8c-824b-6ff76c06c228.kraska_razvody_rozovyj_138237_1920x1080.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/fae4af97-36c3-4b8c-824b-6ff76c06c228.kraska_razvody_rozovyj_138237_1920x1080.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/fbeeb42c-650a-4882-91ba-faf87e21cd77.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/fbeeb42c-650a-4882-91ba-faf87e21cd77.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/fc7414a0-a602-40d1-8aec-9a1f80c54b77.Снимок экрана от 2020-04-05 10-42-54.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/fc7414a0-a602-40d1-8aec-9a1f80c54b77.Снимок экрана от 2020-04-05 10-42-54.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/fd591ae2-9b86-4250-bc1b-0bf8210f3500.Снимок экрана от 2020-04-05 09-52-43.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/fd591ae2-9b86-4250-bc1b-0bf8210f3500.Снимок экрана от 2020-04-05 09-52-43.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/fdf455b2-baf3-4414-ad3b-5cdb40d556e7.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/fdf455b2-baf3-4414-ad3b-5cdb40d556e7.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/fea3e2fa-31b9-4b6e-bf98-53472d4c5b3d.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/fea3e2fa-31b9-4b6e-bf98-53472d4c5b3d.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/feca8fb8-0e22-4fbb-8db1-30c1aacbf569.Снимок экрана от 2020-03-25 18-39-01.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/feca8fb8-0e22-4fbb-8db1-30c1aacbf569.Снимок экрана от 2020-03-25 18-39-01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productImages/ff244cdc-68a8-4a50-9195-e7d71b189e97.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productImages/ff244cdc-68a8-4a50-9195-e7d71b189e97.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/ShopBackEnd.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/email/SendEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/email/SendEmail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/jwt/AuthTokenFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/jwt/AuthTokenFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/jwt/JwtUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/jwt/JwtUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/model/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/model/accessory/GPU.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/model/accessory/GPU.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/CategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/CategoryServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/CustomServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/CustomServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/ProductServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/ProfileServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/ProfileServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/02ea41a2-8461-457d-b9cb-9f52b5461eb1.C6bGHUBxVnA.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/02ea41a2-8461-457d-b9cb-9f52b5461eb1.C6bGHUBxVnA.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/02ec3991-2e46-426d-b87e-4bbeee79e077.Снимок экрана от 2020-03-25 16-58-35.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/02ec3991-2e46-426d-b87e-4bbeee79e077.Снимок экрана от 2020-03-25 16-58-35.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/088e9634-1d31-4d9e-81e6-13909e0103af.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/088e9634-1d31-4d9e-81e6-13909e0103af.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/0895ff54-8a78-4e76-8b4d-7acb45aa58af.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/0895ff54-8a78-4e76-8b4d-7acb45aa58af.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/0c57ddf0-b1bc-4b4b-8234-735b5a22719b.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/0c57ddf0-b1bc-4b4b-8234-735b5a22719b.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/0cea458a-6dd8-4dde-827e-896c056576ac.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/0cea458a-6dd8-4dde-827e-896c056576ac.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/14b74260-acba-4a2b-8533-dbdd724420f4.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/14b74260-acba-4a2b-8533-dbdd724420f4.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/15f1ef82-c1a1-44c4-9424-e93b3848ca74.VAw7lnkKlYI.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/15f1ef82-c1a1-44c4-9424-e93b3848ca74.VAw7lnkKlYI.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/169c897a-ea77-4539-a2dd-41717e747694.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/169c897a-ea77-4539-a2dd-41717e747694.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/1b6476aa-e5c5-4823-abaf-7ec1c7a21818.Снимок экрана от 2020-03-24 20-49-09.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/1b6476aa-e5c5-4823-abaf-7ec1c7a21818.Снимок экрана от 2020-03-24 20-49-09.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/1db70708-9a70-4912-a56a-f5eb5ef4a0ee.Снимок экрана от 2020-04-04 13-41-58.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/1db70708-9a70-4912-a56a-f5eb5ef4a0ee.Снимок экрана от 2020-04-04 13-41-58.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/1f60d9c3-17be-4c3e-b232-c9aa34225840.Снимок экрана от 2020-03-25 18-39-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/1f60d9c3-17be-4c3e-b232-c9aa34225840.Снимок экрана от 2020-03-25 18-39-14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/209cdf24-9a09-46a2-8ff1-d13b8a36b25e.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/209cdf24-9a09-46a2-8ff1-d13b8a36b25e.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/220b31a9-ae28-4d13-92f5-8614a10e3f86.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/220b31a9-ae28-4d13-92f5-8614a10e3f86.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/22461e04-807c-4768-ac1a-60b890768cbf.Снимок экрана от 2020-03-24 20-48-56.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/22461e04-807c-4768-ac1a-60b890768cbf.Снимок экрана от 2020-03-24 20-48-56.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/23371c88-2a02-47e0-ad60-efc181741986.Снимок экрана от 2020-03-25 18-39-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/23371c88-2a02-47e0-ad60-efc181741986.Снимок экрана от 2020-03-25 18-39-14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/23741686-c17e-475b-a683-f5c534f30112.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/23741686-c17e-475b-a683-f5c534f30112.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/240963fe-bb24-4605-a024-ee87743994da.Снимок экрана от 2020-03-24 20-48-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/240963fe-bb24-4605-a024-ee87743994da.Снимок экрана от 2020-03-24 20-48-29.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/2492a8b1-6e7b-48c9-aecf-d997364ce729.Снимок экрана от 2020-04-05 10-42-54.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/2492a8b1-6e7b-48c9-aecf-d997364ce729.Снимок экрана от 2020-04-05 10-42-54.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/251cb873-7b8a-4ef7-9ebe-c25540d64f26.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/251cb873-7b8a-4ef7-9ebe-c25540d64f26.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/26f3e6a1-7873-46b9-bdbf-c53e85756289.Снимок экрана от 2020-03-24 20-48-56.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/26f3e6a1-7873-46b9-bdbf-c53e85756289.Снимок экрана от 2020-03-24 20-48-56.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/2966a7f9-c319-4370-bcd4-5e3acc9a6cc7.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/2966a7f9-c319-4370-bcd4-5e3acc9a6cc7.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/2ae27e37-beb9-4eb0-9a71-4bd1435fca95.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/2ae27e37-beb9-4eb0-9a71-4bd1435fca95.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/2c93536b-5a5a-4e96-8085-89518e1cea5f.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/2c93536b-5a5a-4e96-8085-89518e1cea5f.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/2ceb7d2e-4795-4a0a-ad0f-8a0946ab50d7.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/2ceb7d2e-4795-4a0a-ad0f-8a0946ab50d7.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/2cfd25ff-1a19-4b42-b2fc-b086c29c2e42.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/2cfd25ff-1a19-4b42-b2fc-b086c29c2e42.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/2d296ab9-2571-4ec1-8d55-652a2b93d1d5.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/2d296ab9-2571-4ec1-8d55-652a2b93d1d5.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/2df4fd6e-c192-4503-9c3e-7dd4e4e2b8b3.Снимок экрана от 2020-03-24 20-49-09.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/2df4fd6e-c192-4503-9c3e-7dd4e4e2b8b3.Снимок экрана от 2020-03-24 20-49-09.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/2f87a806-2b5d-48af-834d-cc4d752a5dff.Снимок экрана от 2020-03-24 20-49-09.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/2f87a806-2b5d-48af-834d-cc4d752a5dff.Снимок экрана от 2020-03-24 20-49-09.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/30add900-efeb-4fab-937e-24d977d89949.HVclNyYNvws.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/30add900-efeb-4fab-937e-24d977d89949.HVclNyYNvws.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/30bbd047-19a2-4349-9bd7-7da343c098e0.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/30bbd047-19a2-4349-9bd7-7da343c098e0.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/31fda039-e4be-4441-99d3-dc3f029d5422.Снимок экрана от 2020-03-31 13-01-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/31fda039-e4be-4441-99d3-dc3f029d5422.Снимок экрана от 2020-03-31 13-01-13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/32c59fcd-a036-405f-9869-77486df0b852.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/32c59fcd-a036-405f-9869-77486df0b852.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/359217a2-bb6a-4a82-bfc2-c970f410f91b.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/359217a2-bb6a-4a82-bfc2-c970f410f91b.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/3967000b-0cdd-4f10-bdda-89886b1df3b8.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/3967000b-0cdd-4f10-bdda-89886b1df3b8.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/3a792790-00a6-4ba9-8947-7d21efd781b8.Снимок экрана от 2020-03-31 11-23-38.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/3a792790-00a6-4ba9-8947-7d21efd781b8.Снимок экрана от 2020-03-31 11-23-38.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/3b2f882f-e17e-4ce1-80f9-2063195a7633.Снимок экрана от 2020-03-25 18-39-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/3b2f882f-e17e-4ce1-80f9-2063195a7633.Снимок экрана от 2020-03-25 18-39-14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/41bfb37b-e17d-4b17-80df-6bf24d354f53.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/41bfb37b-e17d-4b17-80df-6bf24d354f53.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/42324b8f-602c-4d65-b653-11885fcd02a7.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/42324b8f-602c-4d65-b653-11885fcd02a7.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/43ac5dc0-1cd9-4273-9bbb-8657b241222a.Снимок экрана от 2020-03-25 18-39-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/43ac5dc0-1cd9-4273-9bbb-8657b241222a.Снимок экрана от 2020-03-25 18-39-10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/441a591d-52a1-4465-b5c7-75b304f08a2a.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/441a591d-52a1-4465-b5c7-75b304f08a2a.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/47d12827-0b49-42dc-a309-caa4d5953185.solution 1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/47d12827-0b49-42dc-a309-caa4d5953185.solution 1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/49946ff1-b2f9-4877-83d7-94d762276ac6.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/49946ff1-b2f9-4877-83d7-94d762276ac6.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/4c1adfb0-d192-4b61-970a-41f4406b071b.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/4c1adfb0-d192-4b61-970a-41f4406b071b.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/4c83327a-3765-4a5c-aea3-8efe7027d6de.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/4c83327a-3765-4a5c-aea3-8efe7027d6de.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/4cdf3110-314c-4f1f-a6c4-8f2e194432b5.Снимок экрана от 2020-03-25 18-39-01.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/4cdf3110-314c-4f1f-a6c4-8f2e194432b5.Снимок экрана от 2020-03-25 18-39-01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/4e76ea16-5b99-44c4-97ad-db7e965f4bb0.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/4e76ea16-5b99-44c4-97ad-db7e965f4bb0.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/4ffaf2e4-b159-43f3-9b3f-3082651ac9bb.Снимок экрана от 2020-04-04 13-41-58.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/4ffaf2e4-b159-43f3-9b3f-3082651ac9bb.Снимок экрана от 2020-04-04 13-41-58.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/50070e81-b0aa-46a5-aaab-19114e99b8d8.Снимок экрана от 2020-03-24 20-48-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/50070e81-b0aa-46a5-aaab-19114e99b8d8.Снимок экрана от 2020-03-24 20-48-29.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/53142405-2c29-4325-8809-d15668d38e24.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/53142405-2c29-4325-8809-d15668d38e24.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/54024eb3-7d4d-4308-85d7-8cf74c859910.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/54024eb3-7d4d-4308-85d7-8cf74c859910.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/5882585d-f6c2-4c43-b485-fd27a12fe405.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/5882585d-f6c2-4c43-b485-fd27a12fe405.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/58c6e770-c336-4cb1-a33e-bfe8d5f96025.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/58c6e770-c336-4cb1-a33e-bfe8d5f96025.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/5af5af40-8045-42f3-8ace-006f70d642ed.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/5af5af40-8045-42f3-8ace-006f70d642ed.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/5c6575e4-201b-463a-b4f9-faf9902f2486.Снимок экрана от 2020-03-25 18-39-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/5c6575e4-201b-463a-b4f9-faf9902f2486.Снимок экрана от 2020-03-25 18-39-10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/5e5f470a-423e-46d7-b4e4-7b42186f75c2.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/5e5f470a-423e-46d7-b4e4-7b42186f75c2.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/5ff95cf3-77b9-4468-9827-85ae93807346.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/5ff95cf3-77b9-4468-9827-85ae93807346.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/6123918c-19f2-4a4e-9f01-b5b180639a0a.Снимок экрана от 2020-03-21 11-17-05.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/6123918c-19f2-4a4e-9f01-b5b180639a0a.Снимок экрана от 2020-03-21 11-17-05.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/61b1703f-7380-4740-a775-2496eea8a42e.Снимок экрана от 2020-03-31 11-23-38.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/61b1703f-7380-4740-a775-2496eea8a42e.Снимок экрана от 2020-03-31 11-23-38.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/61cc97e4-f7c2-4fb1-9ab5-ba344f3ac2a1.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/61cc97e4-f7c2-4fb1-9ab5-ba344f3ac2a1.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/63d9114e-73dd-4e03-ab95-b26b68598fa5.Снимок экрана от 2020-03-25 18-39-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/63d9114e-73dd-4e03-ab95-b26b68598fa5.Снимок экрана от 2020-03-25 18-39-10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/66082976-0f73-4384-be5b-eb0a2ba80f5b.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/66082976-0f73-4384-be5b-eb0a2ba80f5b.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/679e0bf7-dec6-4579-8247-000f1561b140.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/679e0bf7-dec6-4579-8247-000f1561b140.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/685b6f21-6f8b-4ff6-b393-b8bcaba27aa4.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/685b6f21-6f8b-4ff6-b393-b8bcaba27aa4.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/696ad7e8-d2d2-4df5-812d-6a57612d675e.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/696ad7e8-d2d2-4df5-812d-6a57612d675e.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/71780671-8b85-48d5-af61-58b205019585.Снимок экрана от 2020-04-05 10-42-54.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/71780671-8b85-48d5-af61-58b205019585.Снимок экрана от 2020-04-05 10-42-54.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/71889d4b-12b0-4c1d-82b2-93b336c61156.Снимок экрана от 2020-03-31 13-01-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/71889d4b-12b0-4c1d-82b2-93b336c61156.Снимок экрана от 2020-03-31 13-01-13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/72feb462-ae44-4506-bcc1-6094002b1dcd.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/72feb462-ae44-4506-bcc1-6094002b1dcd.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/734004bf-aa5a-4775-a90d-896c41510e3c.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/734004bf-aa5a-4775-a90d-896c41510e3c.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/74e0cf28-7cd2-428b-9870-9dbf6b1002bb.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/74e0cf28-7cd2-428b-9870-9dbf6b1002bb.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/766d35b3-6889-4efc-ae05-f82d1ea000c9.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/766d35b3-6889-4efc-ae05-f82d1ea000c9.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/781843ce-b2b5-40c3-a63b-672441f14a2b.Снимок экрана от 2020-03-24 23-26-44.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/781843ce-b2b5-40c3-a63b-672441f14a2b.Снимок экрана от 2020-03-24 23-26-44.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/79bfef1f-f553-4b36-b6a4-4afee31f37e7.Снимок экрана от 2020-03-25 18-39-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/79bfef1f-f553-4b36-b6a4-4afee31f37e7.Снимок экрана от 2020-03-25 18-39-10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/79cc7687-1e5e-458b-959b-c0728536db59.Снимок экрана от 2020-04-05 09-52-43.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/79cc7687-1e5e-458b-959b-c0728536db59.Снимок экрана от 2020-04-05 09-52-43.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/7a96411e-cb66-4317-b8a2-d5c0c8cd2a28.Снимок экрана от 2020-03-24 20-48-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/7a96411e-cb66-4317-b8a2-d5c0c8cd2a28.Снимок экрана от 2020-03-24 20-48-29.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/7ae3735e-1f8d-4ea7-b133-1b1c5d0bb1a5.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/7ae3735e-1f8d-4ea7-b133-1b1c5d0bb1a5.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/83866e47-48d8-45ba-af24-06264d275f79.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/83866e47-48d8-45ba-af24-06264d275f79.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/84949c50-fec9-4070-b001-780be3ec00dc.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/84949c50-fec9-4070-b001-780be3ec00dc.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/84968526-ad1f-4ab9-9ccb-69bee658722c.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/84968526-ad1f-4ab9-9ccb-69bee658722c.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/8538a3b2-0913-40d8-bf5f-97fc520ad48b.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/8538a3b2-0913-40d8-bf5f-97fc520ad48b.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/86061ddc-4104-4393-b9d2-d36c2294f9eb.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/86061ddc-4104-4393-b9d2-d36c2294f9eb.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/86ea6a9f-19f8-4864-b779-eb1d7580d9b0.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/86ea6a9f-19f8-4864-b779-eb1d7580d9b0.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/8740d373-8611-4768-98c5-c8268572463d.IMG_7808.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/8740d373-8611-4768-98c5-c8268572463d.IMG_7808.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/87e0cd52-0392-4a59-afd6-e2947be318fb.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/87e0cd52-0392-4a59-afd6-e2947be318fb.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/8912444e-2e6c-4b2f-8dc7-116c668bf348.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/8912444e-2e6c-4b2f-8dc7-116c668bf348.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/8aae4f48-b055-4b3d-b441-dd634724a190.solution 2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/8aae4f48-b055-4b3d-b441-dd634724a190.solution 2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/90a8b4e1-ef56-43dc-be0b-38e11f5b04dc.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/90a8b4e1-ef56-43dc-be0b-38e11f5b04dc.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/913eb7cf-3ef4-459e-b50a-ed64cdbb820e.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/913eb7cf-3ef4-459e-b50a-ed64cdbb820e.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/92133cdf-34f7-4c53-a25a-3b81f71fdc6f.Снимок экрана от 2020-03-24 23-26-44.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/92133cdf-34f7-4c53-a25a-3b81f71fdc6f.Снимок экрана от 2020-03-24 23-26-44.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/92934389-8ad2-4cba-9d8a-9d99d74b2478.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/92934389-8ad2-4cba-9d8a-9d99d74b2478.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/92df4455-8304-42c6-92fc-84aa2453bb6a.Снимок экрана от 2020-03-25 00-12-47.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/92df4455-8304-42c6-92fc-84aa2453bb6a.Снимок экрана от 2020-03-25 00-12-47.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/946d3620-46ac-4559-8f99-0e4afa66f2eb.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/946d3620-46ac-4559-8f99-0e4afa66f2eb.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/952fa912-58c8-4562-aa20-442e778c60c9.Снимок экрана от 2020-04-05 10-42-54.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/952fa912-58c8-4562-aa20-442e778c60c9.Снимок экрана от 2020-04-05 10-42-54.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/955d8d0e-5a16-47c8-96df-3f730b5b801a.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/955d8d0e-5a16-47c8-96df-3f730b5b801a.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/95c5e0bf-b2b9-4715-857e-ec0d0295c47b.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/95c5e0bf-b2b9-4715-857e-ec0d0295c47b.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/96c7824d-b287-457e-8c03-729b2f3a1285.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/96c7824d-b287-457e-8c03-729b2f3a1285.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/985f329a-af44-4827-befc-a7cc58d420e4.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/985f329a-af44-4827-befc-a7cc58d420e4.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/992c154b-0158-4ec6-882a-ec6f4f20bcaf.IMG_7808.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/992c154b-0158-4ec6-882a-ec6f4f20bcaf.IMG_7808.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/9b2a9c74-c963-4e5d-ae4b-9dcf0ce713b6.358Cx0pfm2I.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/9b2a9c74-c963-4e5d-ae4b-9dcf0ce713b6.358Cx0pfm2I.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/9da3aa1f-43fb-4248-a32b-185eeae9be0b.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/9da3aa1f-43fb-4248-a32b-185eeae9be0b.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/9ecb0fa7-7208-4d4d-bf60-5de23c054c36.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/9ecb0fa7-7208-4d4d-bf60-5de23c054c36.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/a24bb8ef-60f5-4307-a584-a76955193d2b.Снимок экрана от 2020-04-01 11-45-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/a24bb8ef-60f5-4307-a584-a76955193d2b.Снимок экрана от 2020-04-01 11-45-17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/a24c5a36-0338-4ca3-bbe7-38b3c46cadc4.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/a24c5a36-0338-4ca3-bbe7-38b3c46cadc4.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/a285346c-914e-4832-b2d1-bcdc857c54a0.358Cx0pfm2I.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/a285346c-914e-4832-b2d1-bcdc857c54a0.358Cx0pfm2I.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/a310e49b-d9b0-40b6-b5d3-684ec64b2b35.IMG_20200319_175153.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/a310e49b-d9b0-40b6-b5d3-684ec64b2b35.IMG_20200319_175153.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/a31cd716-06a8-4d71-ab1c-64b40b611b45.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/a31cd716-06a8-4d71-ab1c-64b40b611b45.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/a4a3022a-7fb7-42e0-875f-c126fd6ec527.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/a4a3022a-7fb7-42e0-875f-c126fd6ec527.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/a6101377-fe4f-4af5-8131-29e582d5711b.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/a6101377-fe4f-4af5-8131-29e582d5711b.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/ac4352e1-2b3c-4a66-bb4b-f60566283c0a.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/ac4352e1-2b3c-4a66-bb4b-f60566283c0a.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/ad5d088b-433f-4f9f-ac08-6890cce6cdde.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/ad5d088b-433f-4f9f-ac08-6890cce6cdde.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/b029b8b5-ff7e-49e4-88bc-7fbffdeb69bf.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/b029b8b5-ff7e-49e4-88bc-7fbffdeb69bf.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/b166a642-aab3-4b8d-91f6-f0d6f07661c6.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/b166a642-aab3-4b8d-91f6-f0d6f07661c6.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/b32b7341-5412-436b-b5a5-32bdb42dfa61.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/b32b7341-5412-436b-b5a5-32bdb42dfa61.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/b521413b-0ca6-4ca9-8df7-f4e3e8a17753.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/b521413b-0ca6-4ca9-8df7-f4e3e8a17753.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/b7f9832f-00b9-4226-a92f-aaf6095261cb.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/b7f9832f-00b9-4226-a92f-aaf6095261cb.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/b80c2e0a-e5af-426e-a47f-64a8735a66a2.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/b80c2e0a-e5af-426e-a47f-64a8735a66a2.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/b89713b1-3cc0-49f9-af6f-61f2d40dc815.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/b89713b1-3cc0-49f9-af6f-61f2d40dc815.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/ba5b0e9f-dd72-4edc-8faa-c9596ddae9c2.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/ba5b0e9f-dd72-4edc-8faa-c9596ddae9c2.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/bdd30f6f-6a90-42b0-9d5a-1a53d81f196b.Снимок экрана от 2020-03-25 18-39-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/bdd30f6f-6a90-42b0-9d5a-1a53d81f196b.Снимок экрана от 2020-03-25 18-39-10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/beb12b0d-6036-4623-a25c-045ba551d703.Снимок экрана от 2020-03-25 18-39-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/beb12b0d-6036-4623-a25c-045ba551d703.Снимок экрана от 2020-03-25 18-39-14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/c1c7cf66-ea47-43dc-946f-d97edfc28a9e.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/c1c7cf66-ea47-43dc-946f-d97edfc28a9e.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/c1cfdec2-da9e-42f9-88bd-27903e0f983f.Снимок экрана от 2020-03-31 13-01-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/c1cfdec2-da9e-42f9-88bd-27903e0f983f.Снимок экрана от 2020-03-31 13-01-13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/c32c4989-b7b8-443f-97bc-b217cfc20e0f.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/c32c4989-b7b8-443f-97bc-b217cfc20e0f.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/c39aae9c-78de-4ff2-8ba2-5b42a2619a68.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/c39aae9c-78de-4ff2-8ba2-5b42a2619a68.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/c48fdac9-cf60-49d7-8591-4d84cfbd6058.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/c48fdac9-cf60-49d7-8591-4d84cfbd6058.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/c6a2770d-51db-473c-a1be-1b0e5524fe9b.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/c6a2770d-51db-473c-a1be-1b0e5524fe9b.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/ca0fa12e-aaff-43ca-8c76-7ad0626d5e6e.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/ca0fa12e-aaff-43ca-8c76-7ad0626d5e6e.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/cadaebfe-8f38-4cb6-b4b6-09350a9257e1.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/cadaebfe-8f38-4cb6-b4b6-09350a9257e1.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/cc48a08f-9542-4c6f-bc98-d99266a2e1d3.Снимок экрана от 2020-04-01 11-45-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/cc48a08f-9542-4c6f-bc98-d99266a2e1d3.Снимок экрана от 2020-04-01 11-45-17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/cd8a1fe1-d592-400d-b0e5-437e515a8b6f.ldina_led_voda_164084_1920x1080.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/cd8a1fe1-d592-400d-b0e5-437e515a8b6f.ldina_led_voda_164084_1920x1080.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/cda6df25-81cd-4d78-aa75-c8a256f4e6dc.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/cda6df25-81cd-4d78-aa75-c8a256f4e6dc.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/ce08d71d-70a0-420e-8c89-f9c76050894d.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/ce08d71d-70a0-420e-8c89-f9c76050894d.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/ce10d845-6a02-42b3-8ae1-5c553bc37168.Снимок экрана от 2020-03-25 18-39-01.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/ce10d845-6a02-42b3-8ae1-5c553bc37168.Снимок экрана от 2020-03-25 18-39-01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/cf1baf80-3650-4b5e-a970-913d0432f4e0.solution 1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/cf1baf80-3650-4b5e-a970-913d0432f4e0.solution 1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/d08e6952-b83a-48e1-a4c4-3f7ca57fc174.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/d08e6952-b83a-48e1-a4c4-3f7ca57fc174.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/d0a58392-c8d7-468a-a4f4-eea10be75b85.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/d0a58392-c8d7-468a-a4f4-eea10be75b85.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/d3f2909b-3631-44d6-9370-30c1160685dd.photo_2019-12-05_12-24-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/d3f2909b-3631-44d6-9370-30c1160685dd.photo_2019-12-05_12-24-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/d4332acb-0583-49c8-bf51-5b178702e786.Снимок экрана от 2020-03-25 00-12-47.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/d4332acb-0583-49c8-bf51-5b178702e786.Снимок экрана от 2020-03-25 00-12-47.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/d46bd340-58cc-40f4-9169-320d66f22e6b.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/d46bd340-58cc-40f4-9169-320d66f22e6b.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/d65040e7-5c9a-4978-aa7d-2cc6dab3ae7f.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/d65040e7-5c9a-4978-aa7d-2cc6dab3ae7f.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/d66b661e-8a00-41d3-a94c-b01216637ab0.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/d66b661e-8a00-41d3-a94c-b01216637ab0.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/d68890b5-a5a9-45af-b9a6-d1c542cf4cb2.solution 2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/d68890b5-a5a9-45af-b9a6-d1c542cf4cb2.solution 2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/d68ed05c-d13f-4863-bb92-ff70c244f31d.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/d68ed05c-d13f-4863-bb92-ff70c244f31d.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/d76678a0-50b2-4924-bb57-87035ecf75b0.Снимок экрана от 2020-03-21 11-17-05.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/d76678a0-50b2-4924-bb57-87035ecf75b0.Снимок экрана от 2020-03-21 11-17-05.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/d7ba7ae9-20e4-447b-83c2-a85ab8ea4f03.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/d7ba7ae9-20e4-447b-83c2-a85ab8ea4f03.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/d923ff06-32d5-4df3-8333-d3dad8aecd2f.Снимок экрана от 2020-03-31 11-23-38.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/d923ff06-32d5-4df3-8333-d3dad8aecd2f.Снимок экрана от 2020-03-31 11-23-38.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/d9e551ab-2bb5-4d9a-93f4-dab079724421.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/d9e551ab-2bb5-4d9a-93f4-dab079724421.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/dbdd790c-144e-4623-89e6-32d9d1150f7b.Снимок экрана от 2020-03-24 20-48-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/dbdd790c-144e-4623-89e6-32d9d1150f7b.Снимок экрана от 2020-03-24 20-48-29.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/dd5621af-0435-4dff-a681-ea7ec1c2ce77.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/dd5621af-0435-4dff-a681-ea7ec1c2ce77.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/dd635a5c-4dcd-48b8-a809-a0553c9fb33f.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/dd635a5c-4dcd-48b8-a809-a0553c9fb33f.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/ddfc569f-1ce0-4ed6-ac7c-55e614af28ec.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/ddfc569f-1ce0-4ed6-ac7c-55e614af28ec.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/dedc9f4e-6c24-45e3-b4b2-b6c4feea060e.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/dedc9f4e-6c24-45e3-b4b2-b6c4feea060e.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/e1053d04-86fb-40db-b0d3-eadf4b3f25ec.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/e1053d04-86fb-40db-b0d3-eadf4b3f25ec.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/e1ade54b-afc3-4d1b-b87e-28b9484c8e08.lS5gRmur3Tc.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/e1ade54b-afc3-4d1b-b87e-28b9484c8e08.lS5gRmur3Tc.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/e29b46a3-0d31-4ce1-a6f9-b7230e0f2167.Снимок экрана от 2020-04-01 11-45-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/e29b46a3-0d31-4ce1-a6f9-b7230e0f2167.Снимок экрана от 2020-04-01 11-45-17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/e85f2fb1-9a48-4b52-bb72-aeb65495fc30.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/e85f2fb1-9a48-4b52-bb72-aeb65495fc30.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/ea5694f8-f00c-4915-a8ae-75d047d9ed27.photo_2020-03-21_19-26-11.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/ea5694f8-f00c-4915-a8ae-75d047d9ed27.photo_2020-03-21_19-26-11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/eaccf1bb-a07e-4819-badc-bfca2959c515.Снимок экрана от 2020-03-25 16-58-35.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/eaccf1bb-a07e-4819-badc-bfca2959c515.Снимок экрана от 2020-03-25 16-58-35.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/ee517340-6c6f-4f57-9e0a-cee0c156be8b.Снимок экрана от 2020-03-25 18-39-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/ee517340-6c6f-4f57-9e0a-cee0c156be8b.Снимок экрана от 2020-03-25 18-39-14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/f08bf915-9171-42b0-b0e7-945884f2dd01.Снимок экрана от 2020-03-24 20-49-09.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/f08bf915-9171-42b0-b0e7-945884f2dd01.Снимок экрана от 2020-03-24 20-49-09.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/f1b57db2-d02f-43f3-8f01-19136df2c008.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/f1b57db2-d02f-43f3-8f01-19136df2c008.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/f3223313-8186-458a-b3e3-47db545a9780.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/f3223313-8186-458a-b3e3-47db545a9780.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/f48d714f-28c3-4edf-a0c2-50ec921c2169.Снимок экрана от 2020-04-04 13-41-58.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/f48d714f-28c3-4edf-a0c2-50ec921c2169.Снимок экрана от 2020-04-04 13-41-58.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/f512e74e-2510-4fd8-ab4f-a5fa34c5a642.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/f512e74e-2510-4fd8-ab4f-a5fa34c5a642.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/f5161d29-bb17-4d84-928d-422dbd1f70c5.Снимок экрана от 2020-03-25 18-39-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/f5161d29-bb17-4d84-928d-422dbd1f70c5.Снимок экрана от 2020-03-25 18-39-14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/f637679a-416b-4130-b13e-8285cd7073a3.IMG_20200319_175824_023.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/f637679a-416b-4130-b13e-8285cd7073a3.IMG_20200319_175824_023.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/f725dc3e-c478-42d2-b2e6-1f988a06c889.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/f725dc3e-c478-42d2-b2e6-1f988a06c889.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/fa409358-9487-4745-97a8-ac461d002b4d.Снимок экрана от 2020-03-24 23-26-44.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/fa409358-9487-4745-97a8-ac461d002b4d.Снимок экрана от 2020-03-24 23-26-44.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/fae4af97-36c3-4b8c-824b-6ff76c06c228.kraska_razvody_rozovyj_138237_1920x1080.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/fae4af97-36c3-4b8c-824b-6ff76c06c228.kraska_razvody_rozovyj_138237_1920x1080.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/fbeeb42c-650a-4882-91ba-faf87e21cd77.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/fbeeb42c-650a-4882-91ba-faf87e21cd77.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/fc7414a0-a602-40d1-8aec-9a1f80c54b77.Снимок экрана от 2020-04-05 10-42-54.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/fc7414a0-a602-40d1-8aec-9a1f80c54b77.Снимок экрана от 2020-04-05 10-42-54.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/fd591ae2-9b86-4250-bc1b-0bf8210f3500.Снимок экрана от 2020-04-05 09-52-43.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/fd591ae2-9b86-4250-bc1b-0bf8210f3500.Снимок экрана от 2020-04-05 09-52-43.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/fdf455b2-baf3-4414-ad3b-5cdb40d556e7.1529950038_1418026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/fdf455b2-baf3-4414-ad3b-5cdb40d556e7.1529950038_1418026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/fea3e2fa-31b9-4b6e-bf98-53472d4c5b3d.640-05_lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/fea3e2fa-31b9-4b6e-bf98-53472d4c5b3d.640-05_lg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/feca8fb8-0e22-4fbb-8db1-30c1aacbf569.Снимок экрана от 2020-03-25 18-39-01.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/feca8fb8-0e22-4fbb-8db1-30c1aacbf569.Снимок экрана от 2020-03-25 18-39-01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productImages/ff244cdc-68a8-4a50-9195-e7d71b189e97.photo_2019-12-05_12-22-04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productImages/ff244cdc-68a8-4a50-9195-e7d71b189e97.photo_2019-12-05_12-22-04.jpg" afterDir="false" />
-    </list>
+    <list default="true" id="9739963b-258d-4989-be48-e316df16c2bb" name="Default Changelist" comment="" />
+    <list id="d3b98515-92ef-42e2-a858-5281c03b0c25" name="Added: validation for promo code" comment="" />
     <list id="a5435536-5e2d-4bcc-af27-145a0e584bf9" name="Deploy" comment="" />
     <list id="70e8ae3a-98d4-4ae8-9fd8-46de935d5280" name="test3" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -484,6 +49,7 @@
         <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -513,6 +79,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -525,6 +92,8 @@
       <recent name="org.computerShop" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static/" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
     </key>
   </component>
@@ -588,6 +157,7 @@
       <changelist id="9739963b-258d-4989-be48-e316df16c2bb" name="Default Changelist" comment="" />
       <changelist id="70e8ae3a-98d4-4ae8-9fd8-46de935d5280" name="test3" comment="" />
       <changelist id="a5435536-5e2d-4bcc-af27-145a0e584bf9" name="Deploy" comment="" />
+      <changelist id="d3b98515-92ef-42e2-a858-5281c03b0c25" name="Added: validation for promo code" comment="" />
       <created>1583309056036</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -629,7 +199,15 @@
       <workItem from="1585981642988" duration="14094000" />
       <workItem from="1586068765850" duration="25948000" />
       <workItem from="1586154875676" duration="2942000" />
-      <workItem from="1586160643713" duration="12810000" />
+      <workItem from="1586160643713" duration="13409000" />
+      <workItem from="1586242026526" duration="9953000" />
+      <workItem from="1586280164844" duration="2372000" />
+      <workItem from="1586327949320" duration="8368000" />
+      <workItem from="1586376974866" duration="2979000" />
+      <workItem from="1586417795257" duration="28581000" />
+      <workItem from="1586497081588" duration="21246000" />
+      <workItem from="1586627364784" duration="6737000" />
+      <workItem from="1586641709715" duration="523000" />
     </task>
     <servers />
   </component>
@@ -670,10 +248,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="309" y="59" width="1033" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.741@0.27.1366.741" timestamp="1586158373160" />
-    <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1586108097910">
+    <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1586627536547">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1586108097910" />
+    <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1586627536547" />
     <state x="268" y="325" width="829" height="152" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1585567976541">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -686,10 +264,14 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="790" y="27" width="566" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1366.741@0.27.1366.741" timestamp="1585209366662" />
-    <state width="530" height="540" key="DebuggerActiveHint" timestamp="1586166048817">
+    <state x="416" y="146" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586450275067">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="530" height="540" key="DebuggerActiveHint/0.27.1366.741@0.27.1366.741" timestamp="1586166048817" />
+    <state x="416" y="146" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1366.741@0.27.1366.741" timestamp="1586450275067" />
+    <state width="530" height="540" key="DebuggerActiveHint" timestamp="1586512737505">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="530" height="540" key="DebuggerActiveHint/0.27.1366.741@0.27.1366.741" timestamp="1586512737505" />
     <state x="100" y="127" width="1166" height="541" key="DiffContextDialog" timestamp="1585408710780">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -698,54 +280,58 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="466" y="155" width="424" height="491" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1585836951207" />
-    <state width="1320" height="175" key="GridCell.Tab.0.bottom" timestamp="1586183012847">
+    <state x="523" y="292" width="310" height="217" key="Github.ShareDialog" timestamp="1586641387524">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="175" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1586183012847" />
-    <state width="1320" height="175" key="GridCell.Tab.0.center" timestamp="1586183012846">
+    <state x="523" y="292" width="310" height="217" key="Github.ShareDialog/0.27.1366.741@0.27.1366.741" timestamp="1586641387524" />
+    <state width="1320" height="131" key="GridCell.Tab.0.bottom" timestamp="1586641654853">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="175" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1586183012846" />
-    <state width="1320" height="175" key="GridCell.Tab.0.left" timestamp="1586183012845">
+    <state width="1320" height="131" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1586641654853" />
+    <state width="1320" height="131" key="GridCell.Tab.0.center" timestamp="1586641654852">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="175" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1586183012845" />
-    <state width="1320" height="175" key="GridCell.Tab.0.right" timestamp="1586183012846">
+    <state width="1320" height="131" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1586641654852" />
+    <state width="1320" height="131" key="GridCell.Tab.0.left" timestamp="1586641654852">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="175" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1586183012846" />
-    <state width="1320" height="175" key="GridCell.Tab.1.bottom" timestamp="1586183012848">
+    <state width="1320" height="131" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1586641654852" />
+    <state width="1320" height="131" key="GridCell.Tab.0.right" timestamp="1586641654852">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="175" key="GridCell.Tab.1.bottom/0.27.1366.741@0.27.1366.741" timestamp="1586183012848" />
-    <state width="1320" height="175" key="GridCell.Tab.1.center" timestamp="1586183012847">
+    <state width="1320" height="131" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1586641654852" />
+    <state width="1320" height="131" key="GridCell.Tab.1.bottom" timestamp="1586641654854">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="175" key="GridCell.Tab.1.center/0.27.1366.741@0.27.1366.741" timestamp="1586183012847" />
-    <state width="1320" height="175" key="GridCell.Tab.1.left" timestamp="1586183012847">
+    <state width="1320" height="131" key="GridCell.Tab.1.bottom/0.27.1366.741@0.27.1366.741" timestamp="1586641654854" />
+    <state width="1320" height="131" key="GridCell.Tab.1.center" timestamp="1586641654853">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="175" key="GridCell.Tab.1.left/0.27.1366.741@0.27.1366.741" timestamp="1586183012847" />
-    <state width="1320" height="175" key="GridCell.Tab.1.right" timestamp="1586183012848">
+    <state width="1320" height="131" key="GridCell.Tab.1.center/0.27.1366.741@0.27.1366.741" timestamp="1586641654853" />
+    <state width="1320" height="131" key="GridCell.Tab.1.left" timestamp="1586641654853">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="175" key="GridCell.Tab.1.right/0.27.1366.741@0.27.1366.741" timestamp="1586183012848" />
-    <state width="1320" height="258" key="GridCell.Tab.2.bottom" timestamp="1586166071409">
+    <state width="1320" height="131" key="GridCell.Tab.1.left/0.27.1366.741@0.27.1366.741" timestamp="1586641654853" />
+    <state width="1320" height="131" key="GridCell.Tab.1.right" timestamp="1586641654853">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="258" key="GridCell.Tab.2.bottom/0.27.1366.741@0.27.1366.741" timestamp="1586166071409" />
-    <state width="1320" height="258" key="GridCell.Tab.2.center" timestamp="1586166071408">
+    <state width="1320" height="131" key="GridCell.Tab.1.right/0.27.1366.741@0.27.1366.741" timestamp="1586641654853" />
+    <state width="1320" height="131" key="GridCell.Tab.2.bottom" timestamp="1586641654855">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="258" key="GridCell.Tab.2.center/0.27.1366.741@0.27.1366.741" timestamp="1586166071408" />
-    <state width="1320" height="258" key="GridCell.Tab.2.left" timestamp="1586166071407">
+    <state width="1320" height="131" key="GridCell.Tab.2.bottom/0.27.1366.741@0.27.1366.741" timestamp="1586641654855" />
+    <state width="1320" height="131" key="GridCell.Tab.2.center" timestamp="1586641654855">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="258" key="GridCell.Tab.2.left/0.27.1366.741@0.27.1366.741" timestamp="1586166071407" />
-    <state width="1320" height="258" key="GridCell.Tab.2.right" timestamp="1586166071408">
+    <state width="1320" height="131" key="GridCell.Tab.2.center/0.27.1366.741@0.27.1366.741" timestamp="1586641654855" />
+    <state width="1320" height="131" key="GridCell.Tab.2.left" timestamp="1586641654854">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="258" key="GridCell.Tab.2.right/0.27.1366.741@0.27.1366.741" timestamp="1586166071408" />
+    <state width="1320" height="131" key="GridCell.Tab.2.left/0.27.1366.741@0.27.1366.741" timestamp="1586641654854" />
+    <state width="1320" height="131" key="GridCell.Tab.2.right" timestamp="1586641654855">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="131" key="GridCell.Tab.2.right/0.27.1366.741@0.27.1366.741" timestamp="1586641654855" />
     <state width="1320" height="186" key="GridCell.Tab.3.bottom" timestamp="1585553762540">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -762,49 +348,47 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="1320" height="186" key="GridCell.Tab.3.right/0.27.1366.741@0.27.1366.741" timestamp="1585553762539" />
-    <state x="526" y="314" width="303" height="174" key="VCS.ChangelistChooser" timestamp="1585823463364">
+    <state x="526" y="314" width="303" height="174" key="VCS.ChangelistChooser" timestamp="1586547599371">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="526" y="314" width="303" height="174" key="VCS.ChangelistChooser/0.27.1366.741@0.27.1366.741" timestamp="1585823463364" />
+    <state x="526" y="314" width="303" height="174" key="VCS.ChangelistChooser/0.27.1366.741@0.27.1366.741" timestamp="1586547599371" />
     <state width="683" height="370" key="XDebugger.FullValuePopup" timestamp="1585399327786">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="683" height="370" key="XDebugger.FullValuePopup/0.27.1366.741@0.27.1366.741" timestamp="1585399327786" />
-    <state x="579" y="294" width="377" height="321" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1586168755560">
+    <state x="579" y="294" width="377" height="321" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1586628096307">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="579" y="294" width="377" height="321" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.27.1366.741@0.27.1366.741" timestamp="1586168755560" />
+    <state x="579" y="294" width="377" height="321" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.27.1366.741@0.27.1366.741" timestamp="1586628096307" />
     <state x="402" y="27" width="552" height="741" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1584613302544">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="402" y="27" width="552" height="741" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.27.1366.741@0.27.1366.741" timestamp="1584613302544" />
-    <state x="339" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1586160642010">
+    <state x="339" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1586641710600">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="339" y="225" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1586160642010" />
+    <state x="339" y="225" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1586641710600" />
     <state x="381" y="225" key="com.intellij.ide.util.TipDialog/56.27.1310.741@56.27.1310.741" timestamp="1583738201721" />
     <state x="392" y="225" key="com.intellij.ide.util.TipDialog/70.27.1296.741@70.27.1296.741" timestamp="1586154875167" />
     <state x="82" y="85" width="1192" height="631" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1585736491932">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="82" y="85" width="1192" height="631" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.27.1366.741@0.27.1366.741" timestamp="1585736491932" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1584708598149">
+    <state x="347" y="174" key="run.anything.popup" timestamp="1586449297659">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1584708598149" />
+    <state x="347" y="174" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1586449297659" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1586513087402">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1586513087402" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java</url>
-          <line>51</line>
-          <properties class="org.computerShop.controller.MainController" method="createProduct" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/CategoryController.java</url>
-          <line>36</line>
+          <line>39</line>
           <properties class="org.computerShop.controller.CategoryController" method="createCategory" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
@@ -826,13 +410,13 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/CategoryController.java</url>
-          <line>42</line>
+          <line>45</line>
           <properties class="org.computerShop.controller.CategoryController" method="deleteCategory" />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CategoryServiceImpl.java</url>
-          <line>56</line>
+          <line>68</line>
           <properties class="org.computerShop.service.impl.CategoryServiceImpl" method="editCategory">
             <option name="EMULATED" value="true" />
           </properties>
@@ -840,7 +424,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java</url>
-          <line>56</line>
+          <line>64</line>
           <properties class="org.computerShop.controller.MainController" method="deleteProduct" />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
@@ -854,25 +438,25 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/OrderController.java</url>
-          <line>36</line>
+          <line>34</line>
           <properties class="org.computerShop.controller.OrderController" method="getCustoms" />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/OrderController.java</url>
-          <line>50</line>
+          <line>48</line>
           <properties class="org.computerShop.controller.OrderController" method="setCustomStatus" />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/OrderController.java</url>
-          <line>58</line>
+          <line>56</line>
           <properties class="org.computerShop.controller.OrderController" method="deleteCustom" />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java</url>
-          <line>270</line>
+          <line>234</line>
           <properties class="org.computerShop.service.impl.CustomServiceImpl" method="getAllForUser">
             <option name="EMULATED" value="true" />
           </properties>
@@ -880,7 +464,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java</url>
-          <line>74</line>
+          <line>82</line>
           <properties class="org.computerShop.controller.MainController" method="productsByCategory" />
           <option name="timeStamp" value="48" />
         </line-breakpoint>
@@ -894,7 +478,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java</url>
-          <line>56</line>
+          <line>57</line>
           <properties class="org.computerShop.service.impl.CustomServiceImpl" method="createOrder">
             <option name="EMULATED" value="true" />
           </properties>
@@ -902,13 +486,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/OrderController.java</url>
-          <line>29</line>
+          <line>27</line>
           <properties class="org.computerShop.controller.OrderController" method="createOrder" />
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java</url>
-          <line>224</line>
+          <line>191</line>
           <properties class="org.computerShop.service.impl.CustomServiceImpl" method="changeStatus">
             <option name="EMULATED" value="true" />
           </properties>
@@ -916,7 +500,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java</url>
-          <line>162</line>
+          <line>130</line>
           <properties class="org.computerShop.service.impl.CustomServiceImpl" method="setStatus">
             <option name="EMULATED" value="true" />
           </properties>
@@ -924,7 +508,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java</url>
-          <line>253</line>
+          <line>220</line>
           <properties class="org.computerShop.service.impl.CustomServiceImpl" method="setCancel">
             <option name="EMULATED" value="true" />
           </properties>
@@ -932,13 +516,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/OrderController.java</url>
-          <line>64</line>
+          <line>62</line>
           <properties class="org.computerShop.controller.OrderController" method="cancel" />
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/OrderController.java</url>
-          <line>70</line>
+          <line>68</line>
           <properties class="org.computerShop.controller.OrderController" method="getAllForUser" />
           <option name="timeStamp" value="60" />
         </line-breakpoint>
@@ -958,7 +542,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java</url>
-          <line>150</line>
+          <line>149</line>
           <properties class="org.computerShop.service.impl.ProductServiceImpl" method="filter">
             <option name="EMULATED" value="true" />
           </properties>
@@ -966,24 +550,60 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java</url>
-          <line>80</line>
+          <line>88</line>
           <properties class="org.computerShop.controller.MainController" method="filter" />
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java</url>
-          <line>101</line>
+          <line>109</line>
           <properties class="org.computerShop.controller.MainController" method="createGpu" />
           <option name="timeStamp" value="67" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java</url>
+          <line>241</line>
+          <properties class="org.computerShop.service.impl.CustomServiceImpl" method="checkAmount">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/OrderController.java</url>
+          <line>73</line>
+          <properties class="org.computerShop.controller.OrderController" method="checkAmount" />
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java</url>
+          <line>120</line>
+          <properties class="org.computerShop.controller.MainController" method="checkDiscount" />
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/PromotionalCodeServiceImpl.java</url>
+          <line>75</line>
+          <properties class="org.computerShop.service.impl.PromotionalCodeServiceImpl" method="findCode">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java</url>
+          <line>59</line>
+          <properties class="org.computerShop.controller.MainController" method="createProduct">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/CategoryController.java</url>
-          <line>33</line>
+          <line>36</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CategoryServiceImpl.java</url>
-          <line>30</line>
+          <line>41</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

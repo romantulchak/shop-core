@@ -4,16 +4,27 @@ import org.computerShop.model.Category;
 import org.computerShop.repository.CategoryRepo;
 import org.computerShop.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
+
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
     private CategoryRepo categoryRepo;
+
+
+    @Value("${upload.CategoryPath}")
+    private String uploadPath;
+    private String path;
 
     @Autowired
     public CategoryServiceImpl(CategoryRepo categoryRepo){
@@ -31,6 +42,7 @@ public class CategoryServiceImpl implements CategoryService {
         List<Category> categoriesFromDb = categoryRepo.findAll();
 
          if (!categoriesFromDb.contains(category) && !category.getCategoryName().isEmpty()){
+             category.setImagePath(path);
             categoryRepo.save(category);
             return new ResponseEntity<>("Was created " + category.getCategoryName(), HttpStatus.OK);
         }else {
@@ -60,5 +72,18 @@ public class CategoryServiceImpl implements CategoryService {
             categoryRepo.save(category);
         }
         return new ResponseEntity<>("Ok", HttpStatus.OK);
+    }
+    @Override
+    public void pushImage(MultipartFile multipartFile) throws IOException {
+        if(multipartFile != null){
+            File uploadDir = new File(uploadPath);
+            if(!uploadDir.exists()){
+                uploadDir.mkdir();
+            }
+            String uuidFile = UUID.randomUUID().toString();
+            String resultFullName = uuidFile + "." + multipartFile.getOriginalFilename();
+            multipartFile.transferTo(new File(uploadPath + "/" + resultFullName));
+            path = "http://localhost:8080/categoryImages/" + resultFullName;
+        }
     }
 }
