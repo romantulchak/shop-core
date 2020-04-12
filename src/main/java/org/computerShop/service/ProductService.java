@@ -31,8 +31,9 @@ public interface ProductService {
 
     List<Product> filter(String[] brands, String[] cpus, String[] gpus );
 
+    List<Product> mostPurchased();
 
-
+    ResponseEntity<String> setDiscountPrice(Product product, short percent);
 
 
 }

@@ -39,4 +39,7 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
     @Query(value = "SELECT p FROM Product p where p.promotionalCodes = ?1")
     Product findByPromotionalCode(long id);
 
+
+    List<Product> findTop5ByOrderByNumberOfBuyDesc();
+
 }

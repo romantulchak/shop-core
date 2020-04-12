@@ -42,6 +42,8 @@ public class Custom  {
     @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private String customerPostalCode;
 
+
+    //TODO: видалити
     @NotNull
     @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private int amount;

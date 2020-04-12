@@ -173,7 +173,23 @@ public class ProductServiceImpl implements ProductService {
         return products;
     }
 
+    @Override
+    public List<Product> mostPurchased() {
+        List<Product> products = productRepo.findTop5ByOrderByNumberOfBuyDesc();
+        System.out.println(products);
+        return  productRepo.findTop5ByOrderByNumberOfBuyDesc();
+    }
 
-
+    @Override
+    public ResponseEntity<String> setDiscountPrice(Product product, short percent) {
+        if(product != null && percent != 0){
+            int discountPrice = (int) Math.round(product.getProductPrice() - (product.getProductPrice() * (percent / 100.0)));
+            product.setGlobalDiscount(!product.isGlobalDiscount());
+            product.setDiscountPrice(discountPrice);
+            productRepo.save(product);
+            return new ResponseEntity<>("Discount price has been set", HttpStatus.OK);
+        }
+        return new ResponseEntity<>("Something wrong!", HttpStatus.OK);
+    }
 }
 

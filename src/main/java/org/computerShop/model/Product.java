@@ -34,7 +34,7 @@ public class Product implements Serializable {
     private String description;
 
     //TODO: зробити знижку для всі якщо потрібно
-
+    @JsonView(Views.ProductFull.class)
     private int discountPrice;
 
 
@@ -76,8 +76,10 @@ public class Product implements Serializable {
     @JsonView(Views.ProductFull.class)
     private Set<PromotionalCode> promotionalCodes;
 
+    private int numberOfBuy = 0;
 
-
+    @JsonView(Views.ProductFull.class)
+    private boolean isGlobalDiscount = false;
 
 
     public List<CustomProduct> getCustomProducts() {
@@ -183,6 +185,23 @@ public class Product implements Serializable {
 
     public void setDiscountPrice(int discountPrice) {
         this.discountPrice = discountPrice;
+    }
+
+
+    public int getNumberOfBuy() {
+        return numberOfBuy;
+    }
+
+    public void setNumberOfBuy(int numberOfBuy) {
+        this.numberOfBuy = numberOfBuy;
+    }
+
+    public boolean isGlobalDiscount() {
+        return isGlobalDiscount;
+    }
+
+    public void setGlobalDiscount(boolean globalDiscount) {
+        isGlobalDiscount = globalDiscount;
     }
 
     @PreRemove

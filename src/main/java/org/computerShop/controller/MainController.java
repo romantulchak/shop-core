@@ -112,6 +112,7 @@ public class MainController {
     }
 
 
+    //TODO: пофіксити повернення коду
     @PostMapping("/createPromo/{productId}/{percent}/{numberOfDays}/{numberOfUses}")
     public ResponseEntity<String> createPromo(@PathVariable("productId") Long id, @PathVariable("percent") short percent, @PathVariable("numberOfDays") long numberOfDays, @PathVariable("numberOfUses") int numberOfUses) {
         return promotionalCodeService.createPromo(percent, numberOfDays, numberOfUses, id);
@@ -121,4 +122,17 @@ public class MainController {
     public ResponseEntity<?> checkDiscount(@RequestParam("code") String code, @PathVariable("id") long productId){
         return promotionalCodeService.findCode(code, productId);
     }
+
+    @GetMapping("/mostPurchased")
+    @JsonView(Views.ProductFull.class)
+    public List<Product> mostPurchased(){
+        return productService.mostPurchased();
+    }
+
+    @PutMapping("/setDiscountPrice/{percent}")
+    @JsonView(Views.ProductFull.class)
+    public ResponseEntity<String> discountPrice(@RequestBody Product product, @PathVariable("percent") short percent){
+        return productService.setDiscountPrice(product, percent);
+    }
+
 }
