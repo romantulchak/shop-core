@@ -184,12 +184,19 @@ public class ProductServiceImpl implements ProductService {
     public ResponseEntity<String> setDiscountPrice(Product product, short percent) {
         if(product != null && percent != 0){
             int discountPrice = (int) Math.round(product.getProductPrice() - (product.getProductPrice() * (percent / 100.0)));
-            product.setGlobalDiscount(!product.isGlobalDiscount());
+            product.setGlobalDiscount(product.isGlobalDiscount());
             product.setDiscountPrice(discountPrice);
             productRepo.save(product);
             return new ResponseEntity<>("Discount price has been set", HttpStatus.OK);
         }
         return new ResponseEntity<>("Something wrong!", HttpStatus.OK);
+    }
+
+    @Override
+    public List<Product> lastTenProducts() {
+
+
+        return productRepo.findFirst8ByOrderByIdDesc();
     }
 }
 

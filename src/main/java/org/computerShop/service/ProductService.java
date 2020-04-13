@@ -35,5 +35,6 @@ public interface ProductService {
 
     ResponseEntity<String> setDiscountPrice(Product product, short percent);
 
+    List<Product> lastTenProducts();
 
 }

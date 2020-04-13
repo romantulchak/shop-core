@@ -4,19 +4,12 @@
     <list default="true" id="9739963b-258d-4989-be48-e316df16c2bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Custom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Custom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/repository/ProductRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/CustomServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/model/Custom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/model/Custom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/model/Product.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/repository/ProductRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/repository/ProductRepo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/CustomServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/CustomServiceImpl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/CustomServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/CustomServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/computerShop/service/impl/ProductServiceImpl.class" afterDir="false" />
     </list>
     <list id="d3b98515-92ef-42e2-a858-5281c03b0c25" name="Added: validation for promo code" comment="" />
@@ -227,6 +220,7 @@
       <workItem from="1586627364784" duration="6737000" />
       <workItem from="1586641709715" duration="523000" />
       <workItem from="1586675336128" duration="22474000" />
+      <workItem from="1586758096744" duration="13770000" />
     </task>
     <servers />
   </component>
@@ -267,10 +261,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="309" y="59" width="1033" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.741@0.27.1366.741" timestamp="1586158373160" />
-    <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1586720134320">
+    <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1586778166063">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1586720134320" />
+    <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1586778166063" />
     <state x="268" y="325" width="829" height="152" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1585567976541">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -287,10 +281,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="416" y="146" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1366.741@0.27.1366.741" timestamp="1586450275067" />
-    <state width="530" height="540" key="DebuggerActiveHint" timestamp="1586721928582">
+    <state width="530" height="540" key="DebuggerActiveHint" timestamp="1586805769992">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="530" height="540" key="DebuggerActiveHint/0.27.1366.741@0.27.1366.741" timestamp="1586721928582" />
+    <state width="530" height="540" key="DebuggerActiveHint/0.27.1366.741@0.27.1366.741" timestamp="1586805769992" />
     <state x="100" y="127" width="1166" height="541" key="DiffContextDialog" timestamp="1585408710780">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -303,54 +297,54 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="523" y="292" width="310" height="217" key="Github.ShareDialog/0.27.1366.741@0.27.1366.741" timestamp="1586641387524" />
-    <state width="1320" height="256" key="GridCell.Tab.0.bottom" timestamp="1586726076116">
+    <state width="1320" height="256" key="GridCell.Tab.0.bottom" timestamp="1586806785318">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="256" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1586726076116" />
-    <state width="1320" height="256" key="GridCell.Tab.0.center" timestamp="1586726076115">
+    <state width="1320" height="256" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1586806785318" />
+    <state width="1320" height="256" key="GridCell.Tab.0.center" timestamp="1586806785318">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="256" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1586726076115" />
-    <state width="1320" height="256" key="GridCell.Tab.0.left" timestamp="1586726076114">
+    <state width="1320" height="256" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1586806785318" />
+    <state width="1320" height="256" key="GridCell.Tab.0.left" timestamp="1586806785318">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="256" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1586726076114" />
-    <state width="1320" height="256" key="GridCell.Tab.0.right" timestamp="1586726076115">
+    <state width="1320" height="256" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1586806785318" />
+    <state width="1320" height="256" key="GridCell.Tab.0.right" timestamp="1586806785318">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="256" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1586726076115" />
-    <state width="1320" height="256" key="GridCell.Tab.1.bottom" timestamp="1586726076117">
+    <state width="1320" height="256" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1586806785318" />
+    <state width="1320" height="256" key="GridCell.Tab.1.bottom" timestamp="1586806785319">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="256" key="GridCell.Tab.1.bottom/0.27.1366.741@0.27.1366.741" timestamp="1586726076117" />
-    <state width="1320" height="256" key="GridCell.Tab.1.center" timestamp="1586726076117">
+    <state width="1320" height="256" key="GridCell.Tab.1.bottom/0.27.1366.741@0.27.1366.741" timestamp="1586806785319" />
+    <state width="1320" height="256" key="GridCell.Tab.1.center" timestamp="1586806785319">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="256" key="GridCell.Tab.1.center/0.27.1366.741@0.27.1366.741" timestamp="1586726076117" />
-    <state width="1320" height="256" key="GridCell.Tab.1.left" timestamp="1586726076117">
+    <state width="1320" height="256" key="GridCell.Tab.1.center/0.27.1366.741@0.27.1366.741" timestamp="1586806785319" />
+    <state width="1320" height="256" key="GridCell.Tab.1.left" timestamp="1586806785319">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="256" key="GridCell.Tab.1.left/0.27.1366.741@0.27.1366.741" timestamp="1586726076117" />
-    <state width="1320" height="256" key="GridCell.Tab.1.right" timestamp="1586726076117">
+    <state width="1320" height="256" key="GridCell.Tab.1.left/0.27.1366.741@0.27.1366.741" timestamp="1586806785319" />
+    <state width="1320" height="256" key="GridCell.Tab.1.right" timestamp="1586806785319">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="256" key="GridCell.Tab.1.right/0.27.1366.741@0.27.1366.741" timestamp="1586726076117" />
-    <state width="1320" height="256" key="GridCell.Tab.2.bottom" timestamp="1586726076118">
+    <state width="1320" height="256" key="GridCell.Tab.1.right/0.27.1366.741@0.27.1366.741" timestamp="1586806785319" />
+    <state width="1320" height="256" key="GridCell.Tab.2.bottom" timestamp="1586806785321">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="256" key="GridCell.Tab.2.bottom/0.27.1366.741@0.27.1366.741" timestamp="1586726076118" />
-    <state width="1320" height="256" key="GridCell.Tab.2.center" timestamp="1586726076118">
+    <state width="1320" height="256" key="GridCell.Tab.2.bottom/0.27.1366.741@0.27.1366.741" timestamp="1586806785321" />
+    <state width="1320" height="256" key="GridCell.Tab.2.center" timestamp="1586806785320">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="256" key="GridCell.Tab.2.center/0.27.1366.741@0.27.1366.741" timestamp="1586726076118" />
-    <state width="1320" height="256" key="GridCell.Tab.2.left" timestamp="1586726076118">
+    <state width="1320" height="256" key="GridCell.Tab.2.center/0.27.1366.741@0.27.1366.741" timestamp="1586806785320" />
+    <state width="1320" height="256" key="GridCell.Tab.2.left" timestamp="1586806785320">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="256" key="GridCell.Tab.2.left/0.27.1366.741@0.27.1366.741" timestamp="1586726076118" />
-    <state width="1320" height="256" key="GridCell.Tab.2.right" timestamp="1586726076118">
+    <state width="1320" height="256" key="GridCell.Tab.2.left/0.27.1366.741@0.27.1366.741" timestamp="1586806785320" />
+    <state width="1320" height="256" key="GridCell.Tab.2.right" timestamp="1586806785321">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="256" key="GridCell.Tab.2.right/0.27.1366.741@0.27.1366.741" timestamp="1586726076118" />
+    <state width="1320" height="256" key="GridCell.Tab.2.right/0.27.1366.741@0.27.1366.741" timestamp="1586806785321" />
     <state width="1320" height="186" key="GridCell.Tab.3.bottom" timestamp="1585553762540">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -383,10 +377,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="402" y="27" width="552" height="741" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.27.1366.741@0.27.1366.741" timestamp="1584613302544" />
-    <state x="339" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1586675516424">
+    <state x="339" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1586758253723">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="339" y="225" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1586675516424" />
+    <state x="339" y="225" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1586758253723" />
     <state x="381" y="225" key="com.intellij.ide.util.TipDialog/56.27.1310.741@56.27.1310.741" timestamp="1583738201721" />
     <state x="392" y="225" key="com.intellij.ide.util.TipDialog/70.27.1296.741@70.27.1296.741" timestamp="1586154875167" />
     <state x="82" y="85" width="1192" height="631" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1585736491932">
@@ -614,12 +608,6 @@
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/MainController.java</url>
-          <line>127</line>
-          <properties class="org.computerShop.controller.MainController" method="mostPurchased" />
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java</url>
           <line>176</line>
           <properties class="org.computerShop.service.impl.ProductServiceImpl" method="mostPurchased">
@@ -632,6 +620,14 @@
           <line>133</line>
           <properties class="org.computerShop.controller.MainController" method="discountPrice" />
           <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/service/impl/ProductServiceImpl.java</url>
+          <line>183</line>
+          <properties class="org.computerShop.service.impl.ProductServiceImpl" method="setDiscountPrice">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/computerShop/controller/CategoryController.java</url>

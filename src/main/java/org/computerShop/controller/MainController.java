@@ -135,4 +135,10 @@ public class MainController {
         return productService.setDiscountPrice(product, percent);
     }
 
+    @GetMapping("/lastTenProducts")
+    @JsonView(Views.ProductFull.class)
+    public List<Product> lastTenProducts(){
+        return productService.lastTenProducts();
+    }
+
 }
