@@ -61,13 +61,14 @@ public class CustomServiceImpl implements CustomService {
         custom.setCreatedDate(LocalDateTime.now());
         custom.setIdentificationNumber(identificationNumber);
         custom.setStatuses(allStatuses());
+        custom.setAmount(custom.getItems().size());
         customRepo.save(custom);
         custom.getItems().forEach(item-> {
             Product product = productRepo.findById(item.getId()).orElse(null);
             if (product != null) {
                 product.setAmountInStock(product.getAmountInStock() - item.getAmount());
                 product.setNumberOfBuy(product.getNumberOfBuy() + item.getAmount());
-                CustomProduct customProduct = new CustomProduct(custom, product, item.getAmount());
+                CustomProduct customProduct = new CustomProduct(custom, product, item.getAmount(), product.getProductPrice());
                 productRepo.save(product);
                 customProductRepo.save(customProduct);
             }
@@ -116,9 +117,9 @@ public class CustomServiceImpl implements CustomService {
 
     //TODO: враховувати Cancel
     @Override
-    public List<Custom> getAllByIdentificationNumber(String identificationNumber) {
-        List<Custom> customs = customRepo.findAllByIdentificationNumber(identificationNumber);
-        return customRepo.findAllByIdentificationNumber(identificationNumber);
+    public Custom getByIdentificationNumber(String identificationNumber) {
+
+        return customRepo.findFirstByIdentificationNumber(identificationNumber);
     }
 
 
@@ -127,6 +128,8 @@ public class CustomServiceImpl implements CustomService {
     public List<Custom> getAll(){
         return customRepo.findAll();
     }
+
+    //TODO: баг з датою якщо забрати виконання
 
     @Override
     public ResponseEntity<String> setStatus(Custom custom, int status) {

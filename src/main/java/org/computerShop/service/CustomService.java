@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CustomService {
 
-    List<Custom> getAllByIdentificationNumber(String identificationNumber);
+    Custom getByIdentificationNumber(String identificationNumber);
     String createOrder(Custom custom);
     List<Custom> getAll();
     ResponseEntity<String> setStatus(Custom custom, int status);

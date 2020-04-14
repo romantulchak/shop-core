@@ -11,11 +11,11 @@ public class Image {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
 
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,Views.CustomFUll.class})
     private long id;
 
 
-    @JsonView({Views.ProductFull.class, Views.UserFull.class})
+    @JsonView({Views.ProductFull.class, Views.UserFull.class,Views.CustomFUll.class})
     private String imagePath;
 
     @ManyToOne(cascade = CascadeType.REMOVE)

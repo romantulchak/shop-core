@@ -19,17 +19,23 @@ public class CustomProduct {
     private Product product;
 
 
-    @JsonView(Views.CustomFUll.class)
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private int amount;
+
+
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class})
+    private int currentProductPrice;
+
 
 
     public CustomProduct(){
 
     }
-    public CustomProduct(Custom custom, Product product, int amount){
+    public CustomProduct(Custom custom, Product product, int amount, int currentProductPrice){
         this.custom = custom;
         this.product = product;
         this.amount = amount;
+        this.currentProductPrice = currentProductPrice;
     }
 
 
@@ -63,5 +69,13 @@ public class CustomProduct {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public int getCurrentProductPrice() {
+        return currentProductPrice;
+    }
+
+    public void setCurrentProductPrice(int currentProductPrice) {
+        this.currentProductPrice = currentProductPrice;
     }
 }

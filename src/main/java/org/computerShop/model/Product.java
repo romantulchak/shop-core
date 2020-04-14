@@ -27,7 +27,7 @@ public class Product implements Serializable {
 
     @Column(name = "productPrice")
     @JsonView({Views.ProductFull.class,Views.CustomFUll.class,Views.UserFull.class})
-    private double productPrice;
+    private int productPrice;
 
     @Column(length = 100000)
     @JsonView(Views.ProductFull.class)
@@ -122,11 +122,11 @@ public class Product implements Serializable {
         this.productName = productName;
     }
 
-    public double getProductPrice() {
+    public int getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(double productPrice) {
+    public void setProductPrice(int productPrice) {
         this.productPrice = productPrice;
     }
 

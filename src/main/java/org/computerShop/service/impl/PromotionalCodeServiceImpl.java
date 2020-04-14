@@ -84,7 +84,7 @@ public class PromotionalCodeServiceImpl implements PromotionalCodeService {
                     promotionalCodeRepo.save(promotionalCode);
                     return new ResponseEntity<Integer>(promotionalCode.getPercent(), HttpStatus.OK);
                 }else{
-                    return new ResponseEntity<>("DETERMINED", HttpStatus.OK);
+                    return new ResponseEntity<>("EXPIRED", HttpStatus.OK);
                 }
             }else{
                 return new ResponseEntity<>("UNCORRECTED_PRODUCT" , HttpStatus.OK);

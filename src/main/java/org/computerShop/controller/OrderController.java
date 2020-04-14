@@ -38,8 +38,8 @@ public class OrderController {
 
     @GetMapping("/findByIdentificationNumber/{identificationNumber}")
     @JsonView(Views.CustomFUll.class)
-    public List<Custom> findByIdentificationNumber(@PathVariable("identificationNumber") String identificationNumber){
-        return customService.getAllByIdentificationNumber(identificationNumber);
+    public Custom findByIdentificationNumber(@PathVariable("identificationNumber") String identificationNumber){
+        return customService.getByIdentificationNumber(identificationNumber);
     }
 
 

@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface CustomRepo extends JpaRepository<Custom, Long> {
 
+    Custom findFirstByIdentificationNumber(String identificationNumber);
     List<Custom> findAllByIdentificationNumber(String identificationNumber);
-
 
 }
