@@ -118,7 +118,6 @@ public class CustomServiceImpl implements CustomService {
     //TODO: враховувати Cancel
     @Override
     public Custom getByIdentificationNumber(String identificationNumber) {
-
         return customRepo.findFirstByIdentificationNumber(identificationNumber);
     }
 
@@ -126,7 +125,7 @@ public class CustomServiceImpl implements CustomService {
     //TODO: fix it
     @Override
     public List<Custom> getAll(){
-        return customRepo.findAll();
+        return customRepo.findAllByOrderByIdDesc();
     }
 
     //TODO: баг з датою якщо забрати виконання

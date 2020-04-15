@@ -1,12 +1,10 @@
 package org.computerShop.service.impl;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import org.computerShop.email.SendEmail;
 import org.computerShop.model.*;
 import org.computerShop.model.accessory.CPU;
-import org.computerShop.repository.CategoryRepo;
-import org.computerShop.repository.CpuRepo;
-import org.computerShop.repository.ImageRepo;
-import org.computerShop.repository.ProductRepo;
+import org.computerShop.repository.*;
 import org.computerShop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -31,20 +29,21 @@ public class ProductServiceImpl implements ProductService {
     private CategoryRepo categoryRepo;
     private ImageRepo imageRepo;
     private CpuRepo cpuRepo;
+    private RemindMeRepo remindMeRepo;
 
     @Autowired
-    public ProductServiceImpl(ProductRepo productRepo, ImageRepo imageRepo, CategoryRepo categoryRepo, CpuRepo cpuRepo){
+    public ProductServiceImpl(ProductRepo productRepo, ImageRepo imageRepo, CategoryRepo categoryRepo, CpuRepo cpuRepo, RemindMeRepo remindMeRepo){
         this.productRepo = productRepo;
         this.imageRepo = imageRepo;
         this.categoryRepo = categoryRepo;
         this.cpuRepo = cpuRepo;
+        this.remindMeRepo = remindMeRepo;
     }
 
 
 
     @Override
     public List<Product> allProducts() {
-        List<Product> products = productRepo.findAll();
         return productRepo.findAll();
     }
 
@@ -55,7 +54,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ResponseEntity<String> createProduct(Product product) {
-        System.out.println(images);
         //product.getImage().addAll(images);
         List<Product> productsFromDb = productRepo.findAll();
         if (!productsFromDb.contains(product)) {
@@ -73,8 +71,28 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ResponseEntity<String> editProduct(Product product) {
-        return null;
+    public ResponseEntity<String> updateProduct(Product product) {
+        List<RemindMe> remindsMe = remindMeRepo.allForProduct(product.getId());
+
+        if(remindsMe != null){
+           product.setRemindMe(remindsMe);
+        }
+
+        productRepo.save(product);
+        if(product.getRemindMe() != null && product.getAmountInStock() != 0){
+            SendEmail sendEmail = new SendEmail();
+            for (RemindMe remindMe:product.getRemindMe()) {
+                sendEmail.sendMail(remindMe.getEmail(), "Remind", "Product: " + product.getProductName() + " is available");
+            }
+            return new ResponseEntity<>("Ok", HttpStatus.OK);
+        }else {
+            return new ResponseEntity<>("Something wrong", HttpStatus.OK);
+        }
+
+
+
+
+
     }
 
     //TODO: пофіксити видалення
@@ -182,12 +200,20 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ResponseEntity<String> setDiscountPrice(Product product, short percent) {
-        if(product != null && percent != 0){
-            int discountPrice = (int) Math.round(product.getProductPrice() - (product.getProductPrice() * (percent / 100.0)));
-            product.setGlobalDiscount(product.isGlobalDiscount());
-            product.setDiscountPrice(discountPrice);
-            productRepo.save(product);
-            return new ResponseEntity<>("Discount price has been set", HttpStatus.OK);
+        if(product != null){
+            if(percent != 0) {
+                int discountPrice = (int) Math.round(product.getProductPrice() - (product.getProductPrice() * (percent / 100.0)));
+                product.setGlobalDiscount(product.isGlobalDiscount());
+                product.setDiscountPrice(discountPrice);
+                productRepo.save(product);
+                return new ResponseEntity<>("Discount price has been set", HttpStatus.OK);
+            }else {
+                product.setGlobalDiscount(false);
+                product.setDiscountPrice(0);
+                productRepo.save(product);
+                return new ResponseEntity<>("Discount price has been removed", HttpStatus.OK);
+            }
+
         }
         return new ResponseEntity<>("Something wrong!", HttpStatus.OK);
     }

@@ -1,5 +1,11 @@
 package org.computerShop.email;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -12,12 +18,19 @@ import java.util.Properties;
 
 public class SendEmail {
 
-    private final String username = "KzzxD29@gmail.com";
-    private final String password = "291099asd";
+
+    //TODO: fix it
+
+
+    @Value("${user.email.login}")
+    private String username;
+
+    @Value("${user.email.password}")
+    private String password;
 
     public void sendMail(String emailTo, String title, String text){
         Properties prop = new Properties();
-
+        System.out.println(username);
         prop.put("mail.smtp.host", "smtp.gmail.com");
         prop.put("mail.smtp.port", "465");
         prop.put("mail.smtp.auth", "true");
@@ -48,5 +61,19 @@ public class SendEmail {
         }
     }
 
+    public String getUsername() {
+        return username;
+    }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

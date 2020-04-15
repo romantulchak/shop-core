@@ -54,6 +54,11 @@ public class MainController {
         return productService.filterByPrice();
     }
 
+    @GetMapping("/findById/{id}")
+    @JsonView(Views.ProductFull.class)
+    public Product findById(@PathVariable("id") Product product){
+        return product;
+    }
 
     @PostMapping("/createProduct")
     @PreAuthorize("hasRole('ADMIN')")
@@ -131,7 +136,7 @@ public class MainController {
 
     @PutMapping("/setDiscountPrice/{percent}")
     @JsonView(Views.ProductFull.class)
-    public ResponseEntity<String> discountPrice(@RequestBody Product product, @PathVariable("percent") short percent){
+    public ResponseEntity<String> discountPrice(@RequestBody Product product, @PathVariable(value = "percent", required = false) short percent){
         return productService.setDiscountPrice(product, percent);
     }
 
@@ -139,6 +144,12 @@ public class MainController {
     @JsonView(Views.ProductFull.class)
     public List<Product> lastTenProducts(){
         return productService.lastTenProducts();
+    }
+
+
+    @PutMapping("/updateProduct")
+    public ResponseEntity<String> updateProduct(@RequestBody Product product){
+        return productService.updateProduct(product);
     }
 
 }

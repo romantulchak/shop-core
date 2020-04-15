@@ -76,10 +76,15 @@ public class Product implements Serializable {
     @JsonView(Views.ProductFull.class)
     private Set<PromotionalCode> promotionalCodes;
 
+
     private int numberOfBuy = 0;
 
     @JsonView(Views.ProductFull.class)
     private boolean isGlobalDiscount = false;
+
+
+    @OneToMany(mappedBy = "product")
+    private List<RemindMe> remindMe;
 
 
     public List<CustomProduct> getCustomProducts() {
@@ -202,6 +207,14 @@ public class Product implements Serializable {
 
     public void setGlobalDiscount(boolean globalDiscount) {
         isGlobalDiscount = globalDiscount;
+    }
+
+    public List<RemindMe> getRemindMe() {
+        return remindMe;
+    }
+
+    public void setRemindMe(List<RemindMe> remindMe) {
+        this.remindMe = remindMe;
     }
 
     @PreRemove
