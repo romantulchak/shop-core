@@ -21,7 +21,7 @@ public interface ProductService {
 
     ResponseEntity<String> createProduct(Product product);
 
-    ResponseEntity<String> updateProduct(Product product);
+    ResponseEntity<?> updateProduct(Product product);
 
     ResponseEntity<String> deleteProduct(Product product);
 

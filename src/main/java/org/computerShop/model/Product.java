@@ -83,7 +83,7 @@ public class Product implements Serializable {
     private boolean isGlobalDiscount = false;
 
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     private List<RemindMe> remindMe;
 
 

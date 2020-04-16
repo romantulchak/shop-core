@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,6 +22,8 @@ import java.util.*;
 @Service
 public class ProductServiceImpl implements ProductService {
 
+
+    private SimpMessagingTemplate simpMessagingTemplate;
     @Value("${upload.path}")
     private String uploadPath;
     private List<Image> images;
@@ -38,13 +41,15 @@ public class ProductServiceImpl implements ProductService {
                               CategoryRepo categoryRepo,
                               CpuRepo cpuRepo,
                               RemindMeRepo remindMeRepo,
-                              SendEmail sendEmail){
+                              SendEmail sendEmail,
+                              SimpMessagingTemplate simpMessagingTemplate){
         this.productRepo = productRepo;
         this.imageRepo = imageRepo;
         this.categoryRepo = categoryRepo;
         this.cpuRepo = cpuRepo;
         this.remindMeRepo = remindMeRepo;
         this.sendEmail = sendEmail;
+        this.simpMessagingTemplate = simpMessagingTemplate;
     }
 
 
@@ -78,7 +83,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ResponseEntity<String> updateProduct(Product product) {
+    public ResponseEntity<?> updateProduct(Product product) {
         List<RemindMe> remindsMe = remindMeRepo.allForProduct(product.getId());
 
         if(remindsMe != null){
@@ -86,6 +91,7 @@ public class ProductServiceImpl implements ProductService {
         }
 
         productRepo.save(product);
+        simpMessagingTemplate.convertAndSend("/topic/update", true);
         if(product.getRemindMe() != null && product.getAmountInStock() != 0){
 
             for (RemindMe remindMe:product.getRemindMe()) {
@@ -136,6 +142,7 @@ public class ProductServiceImpl implements ProductService {
         Product productFromDb = productRepo.findById(product.getId()).orElse(null);
         if (productFromDb != null){
             productRepo.delete(product);
+            simpMessagingTemplate.convertAndSend("/topic/update", true);
             return new ResponseEntity<>("Was deleted " + product.getProductName(), HttpStatus.OK);
         }
         return new ResponseEntity<>("Product " + product.getProductName() + " not found", HttpStatus.OK);
@@ -213,11 +220,13 @@ public class ProductServiceImpl implements ProductService {
                 product.setGlobalDiscount(true);
                 product.setDiscountPrice(discountPrice);
                 productRepo.save(product);
+                simpMessagingTemplate.convertAndSend("/topic/editProduct", true);
                 return new ResponseEntity<>("Discount price has been set", HttpStatus.OK);
             }else {
                 product.setGlobalDiscount(false);
                 product.setDiscountPrice(0);
                 productRepo.save(product);
+                simpMessagingTemplate.convertAndSend("/topic/editProduct", true);
                 return new ResponseEntity<>("Discount price has been removed", HttpStatus.OK);
             }
 

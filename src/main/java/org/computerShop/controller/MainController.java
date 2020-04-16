@@ -14,6 +14,8 @@ import org.computerShop.service.impl.ProductServiceImpl;
 import org.computerShop.service.impl.PromotionalCodeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -147,8 +149,9 @@ public class MainController {
     }
 
 
+
     @PutMapping("/updateProduct")
-    public ResponseEntity<String> updateProduct(@RequestBody Product product){
+    public ResponseEntity<?> updateProduct(@RequestBody Product product){
         return productService.updateProduct(product);
     }
 

@@ -11,6 +11,7 @@ import org.computerShop.service.CustomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -30,15 +31,18 @@ public class CustomServiceImpl implements CustomService {
     private ProductRepo productRepo;
     private CustomProductRepo customProductRepo;
     private SendEmail sendEmail;
+    private SimpMessagingTemplate simpMessagingTemplate;
     @Autowired
     public CustomServiceImpl(CustomRepo customRepo,
                              ProductRepo productRepo,
                              CustomProductRepo customProductRepo,
-                             SendEmail sendEmail){
+                             SendEmail sendEmail,
+                             SimpMessagingTemplate simpMessagingTemplate){
         this.customRepo = customRepo;
         this.productRepo = productRepo;
         this.customProductRepo = customProductRepo;
         this.sendEmail = sendEmail;
+        this.simpMessagingTemplate = simpMessagingTemplate;
     }
 
 
@@ -83,6 +87,7 @@ public class CustomServiceImpl implements CustomService {
         if (custom.getEmail() != null) {
             sendEmail.sendMail(custom.getEmail(), "Your order number", contentToSend(products, custom, identificationNumber).toString());
         }
+        simpMessagingTemplate.convertAndSend("/topic/update", true);
         return identificationNumber;
     }
 
