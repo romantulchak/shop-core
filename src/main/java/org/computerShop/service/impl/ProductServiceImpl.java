@@ -30,14 +30,21 @@ public class ProductServiceImpl implements ProductService {
     private ImageRepo imageRepo;
     private CpuRepo cpuRepo;
     private RemindMeRepo remindMeRepo;
+    private SendEmail sendEmail;
 
     @Autowired
-    public ProductServiceImpl(ProductRepo productRepo, ImageRepo imageRepo, CategoryRepo categoryRepo, CpuRepo cpuRepo, RemindMeRepo remindMeRepo){
+    public ProductServiceImpl(ProductRepo productRepo,
+                              ImageRepo imageRepo,
+                              CategoryRepo categoryRepo,
+                              CpuRepo cpuRepo,
+                              RemindMeRepo remindMeRepo,
+                              SendEmail sendEmail){
         this.productRepo = productRepo;
         this.imageRepo = imageRepo;
         this.categoryRepo = categoryRepo;
         this.cpuRepo = cpuRepo;
         this.remindMeRepo = remindMeRepo;
+        this.sendEmail = sendEmail;
     }
 
 
@@ -80,7 +87,7 @@ public class ProductServiceImpl implements ProductService {
 
         productRepo.save(product);
         if(product.getRemindMe() != null && product.getAmountInStock() != 0){
-            SendEmail sendEmail = new SendEmail();
+
             for (RemindMe remindMe:product.getRemindMe()) {
                 sendEmail.sendMail(remindMe.getEmail(), "Remind", "Product: " + product.getProductName() + " is available");
             }
@@ -203,7 +210,7 @@ public class ProductServiceImpl implements ProductService {
         if(product != null){
             if(percent != 0) {
                 int discountPrice = (int) Math.round(product.getProductPrice() - (product.getProductPrice() * (percent / 100.0)));
-                product.setGlobalDiscount(product.isGlobalDiscount());
+                product.setGlobalDiscount(true);
                 product.setDiscountPrice(discountPrice);
                 productRepo.save(product);
                 return new ResponseEntity<>("Discount price has been set", HttpStatus.OK);

@@ -15,12 +15,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Properties;
-
+@Component
+@PropertySource(value = "classpath:application-email.properties")
 public class SendEmail {
-
-
-    //TODO: fix it
-
 
     @Value("${user.email.login}")
     private String username;
@@ -43,8 +40,6 @@ public class SendEmail {
                 return new PasswordAuthentication(username, password);
             }
         });
-
-
         try {
             Message message = new MimeMessage(sessions);
             message.setFrom(new InternetAddress("KzzxD29@gmail.com"));
@@ -64,15 +59,12 @@ public class SendEmail {
     public String getUsername() {
         return username;
     }
-
     public void setUsername(String username) {
         this.username = username;
     }
-
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }

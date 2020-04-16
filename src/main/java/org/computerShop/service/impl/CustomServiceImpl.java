@@ -29,11 +29,16 @@ public class CustomServiceImpl implements CustomService {
     private CustomRepo customRepo;
     private ProductRepo productRepo;
     private CustomProductRepo customProductRepo;
+    private SendEmail sendEmail;
     @Autowired
-    public CustomServiceImpl(CustomRepo customRepo, ProductRepo productRepo, CustomProductRepo customProductRepo){
+    public CustomServiceImpl(CustomRepo customRepo,
+                             ProductRepo productRepo,
+                             CustomProductRepo customProductRepo,
+                             SendEmail sendEmail){
         this.customRepo = customRepo;
         this.productRepo = productRepo;
         this.customProductRepo = customProductRepo;
+        this.sendEmail = sendEmail;
     }
 
 
@@ -74,9 +79,9 @@ public class CustomServiceImpl implements CustomService {
             }
         });
 
-        SendEmail email = new SendEmail();
+
         if (custom.getEmail() != null) {
-            email.sendMail(custom.getEmail(), "Your order number", contentToSend(products, custom, identificationNumber).toString());
+            sendEmail.sendMail(custom.getEmail(), "Your order number", contentToSend(products, custom, identificationNumber).toString());
         }
         return identificationNumber;
     }
