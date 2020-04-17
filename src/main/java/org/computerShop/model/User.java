@@ -1,6 +1,7 @@
 package org.computerShop.model;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.sun.istack.Nullable;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
@@ -89,6 +90,9 @@ public class User {
     private List<Custom> custom;
 
 
+    @Nullable
+    @OneToOne
+    private Subscription subscription;
 
     public User() {
         this.firstName = firstName;
@@ -207,5 +211,13 @@ public class User {
 
     public void setMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
+    }
+
+    public Subscription getSubscription() {
+        return subscription;
+    }
+
+    public void setSubscription(Subscription subscription) {
+        this.subscription = subscription;
     }
 }

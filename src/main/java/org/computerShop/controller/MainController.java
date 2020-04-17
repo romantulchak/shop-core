@@ -28,7 +28,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 @RestController
-@CrossOrigin(value = "http://localhost:4200")
+@CrossOrigin(value = "*", maxAge = 3600)
 @RequestMapping("/api/products")
 public class MainController {
 
@@ -62,10 +62,10 @@ public class MainController {
         return product;
     }
 
-    @PostMapping("/createProduct")
+    @PostMapping("/createProduct/{notifySubscribers}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<String> createProduct(@RequestBody Product product){
-            return productService.createProduct(product);
+    public ResponseEntity<String> createProduct(@RequestBody Product product,@PathVariable(value = "notifySubscribers", required = false) boolean notifySubscribers){
+            return productService.createProduct(product,notifySubscribers);
     }
     @DeleteMapping("/deleteProduct/{id}")
     @PreAuthorize("hasRole('ADMIN')")
@@ -120,7 +120,7 @@ public class MainController {
 
 
     //TODO: пофіксити повернення коду
-    @PostMapping("/createPromo/{productId}/{percent}/{numberOfDays}/{numberOfUses}")
+    @PostMapping("/createPromo/{productId}/{percent}/{numberOfDays}/{numberOfUses}}")
     public ResponseEntity<String> createPromo(@PathVariable("productId") Long id, @PathVariable("percent") short percent, @PathVariable("numberOfDays") long numberOfDays, @PathVariable("numberOfUses") int numberOfUses) {
         return promotionalCodeService.createPromo(percent, numberOfDays, numberOfUses, id);
     }
@@ -136,10 +136,10 @@ public class MainController {
         return productService.mostPurchased();
     }
 
-    @PutMapping("/setDiscountPrice/{percent}")
+    @PutMapping("/setDiscountPrice/{percent}/{notifySubscribers}")
     @JsonView(Views.ProductFull.class)
-    public ResponseEntity<String> discountPrice(@RequestBody Product product, @PathVariable(value = "percent", required = false) short percent){
-        return productService.setDiscountPrice(product, percent);
+    public ResponseEntity<String> discountPrice(@RequestBody Product product, @PathVariable(value = "percent", required = false) short percent, @PathVariable("notifySubscribers") boolean notifySubscribers){
+        return productService.setDiscountPrice(product, percent, notifySubscribers);
     }
 
     @GetMapping("/lastTenProducts")

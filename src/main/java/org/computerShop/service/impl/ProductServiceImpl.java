@@ -31,9 +31,12 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepo productRepo;
     private CategoryRepo categoryRepo;
     private ImageRepo imageRepo;
+   //TODO: перенести
     private CpuRepo cpuRepo;
+
     private RemindMeRepo remindMeRepo;
     private SendEmail sendEmail;
+    private SubscriptionRepo subscriptionRepo;
 
     @Autowired
     public ProductServiceImpl(ProductRepo productRepo,
@@ -42,7 +45,8 @@ public class ProductServiceImpl implements ProductService {
                               CpuRepo cpuRepo,
                               RemindMeRepo remindMeRepo,
                               SendEmail sendEmail,
-                              SimpMessagingTemplate simpMessagingTemplate){
+                              SimpMessagingTemplate simpMessagingTemplate,
+                              SubscriptionRepo subscriptionRepo){
         this.productRepo = productRepo;
         this.imageRepo = imageRepo;
         this.categoryRepo = categoryRepo;
@@ -50,6 +54,7 @@ public class ProductServiceImpl implements ProductService {
         this.remindMeRepo = remindMeRepo;
         this.sendEmail = sendEmail;
         this.simpMessagingTemplate = simpMessagingTemplate;
+        this.subscriptionRepo = subscriptionRepo;
     }
 
 
@@ -65,10 +70,18 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ResponseEntity<String> createProduct(Product product) {
+    public ResponseEntity<String> createProduct(Product product, boolean notifySubscribers) {
         //product.getImage().addAll(images);
         List<Product> productsFromDb = productRepo.findAll();
         if (!productsFromDb.contains(product)) {
+
+            if(notifySubscribers){
+                subscriptionRepo.findAll().forEach(el->{
+                    sendEmail.sendMail(el.getEmail(), "Now you can buy new " + product.getCategory().getCategoryName() + " in our shop", "Already available " + product.getProductName() + " price: " + product.getProductPrice());
+                });
+            }
+
+
             productRepo.save(product);
 
             if (images != null){
@@ -91,7 +104,7 @@ public class ProductServiceImpl implements ProductService {
         }
 
         productRepo.save(product);
-        simpMessagingTemplate.convertAndSend("/topic/update", true);
+        simpMessagingTemplate.convertAndSend("/topic/update", "updateProducts");
         if(product.getRemindMe() != null && product.getAmountInStock() != 0){
 
             for (RemindMe remindMe:product.getRemindMe()) {
@@ -113,7 +126,6 @@ public class ProductServiceImpl implements ProductService {
     public HttpStatus pushImage(MultipartFile[] files) throws IOException {
         images = new ArrayList<>();
         if (files != null){
-
             for (MultipartFile file: files){
                 if (file != null && !file.getOriginalFilename().isEmpty()){
                     File uploadDir = new File(uploadPath);
@@ -127,12 +139,9 @@ public class ProductServiceImpl implements ProductService {
                     Image image = new Image(imagePath);
                     images.add(image);
                 }
-
             }
 
-
         }
-
         return HttpStatus.OK;
     }
 
@@ -142,7 +151,7 @@ public class ProductServiceImpl implements ProductService {
         Product productFromDb = productRepo.findById(product.getId()).orElse(null);
         if (productFromDb != null){
             productRepo.delete(product);
-            simpMessagingTemplate.convertAndSend("/topic/update", true);
+            simpMessagingTemplate.convertAndSend("/topic/update", "updateProducts");
             return new ResponseEntity<>("Was deleted " + product.getProductName(), HttpStatus.OK);
         }
         return new ResponseEntity<>("Product " + product.getProductName() + " not found", HttpStatus.OK);
@@ -213,20 +222,25 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ResponseEntity<String> setDiscountPrice(Product product, short percent) {
+    public ResponseEntity<String> setDiscountPrice(Product product, short percent, boolean notifySubscribers) {
         if(product != null){
             if(percent != 0) {
                 int discountPrice = (int) Math.round(product.getProductPrice() - (product.getProductPrice() * (percent / 100.0)));
                 product.setGlobalDiscount(true);
                 product.setDiscountPrice(discountPrice);
                 productRepo.save(product);
-                simpMessagingTemplate.convertAndSend("/topic/editProduct", true);
+                if(notifySubscribers){
+                    subscriptionRepo.findAll().forEach(el->{
+                        sendEmail.sendMail(el.getEmail(), "GLOBAL DISCOUNT" + product.getCategory().getCategoryName() + " in our shop", "Now you can buy this product whit discount price " + product.getProductName() + " price: " + product.getProductPrice() + " discount price: " + product.getDiscountPrice());
+                    });
+                }
+                simpMessagingTemplate.convertAndSend("/topic/update", "updateProducts");
                 return new ResponseEntity<>("Discount price has been set", HttpStatus.OK);
             }else {
                 product.setGlobalDiscount(false);
                 product.setDiscountPrice(0);
                 productRepo.save(product);
-                simpMessagingTemplate.convertAndSend("/topic/editProduct", true);
+                simpMessagingTemplate.convertAndSend("/topic/update", "updateProducts");
                 return new ResponseEntity<>("Discount price has been removed", HttpStatus.OK);
             }
 

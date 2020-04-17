@@ -32,6 +32,12 @@ public class CustomServiceImpl implements CustomService {
     private CustomProductRepo customProductRepo;
     private SendEmail sendEmail;
     private SimpMessagingTemplate simpMessagingTemplate;
+
+
+
+
+
+
     @Autowired
     public CustomServiceImpl(CustomRepo customRepo,
                              ProductRepo productRepo,
@@ -78,6 +84,7 @@ public class CustomServiceImpl implements CustomService {
                 product.setAmountInStock(product.getAmountInStock() - item.getAmount());
                 product.setNumberOfBuy(product.getNumberOfBuy() + item.getAmount());
                 CustomProduct customProduct = new CustomProduct(custom, product, item.getAmount(), product.getProductPrice());
+                products.add(product);
                 productRepo.save(product);
                 customProductRepo.save(customProduct);
             }

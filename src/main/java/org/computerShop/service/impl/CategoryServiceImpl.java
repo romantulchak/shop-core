@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -20,15 +21,16 @@ import java.util.UUID;
 public class CategoryServiceImpl implements CategoryService {
 
     private CategoryRepo categoryRepo;
-
+    private SimpMessagingTemplate simpMessagingTemplate;
 
     @Value("${upload.CategoryPath}")
     private String uploadPath;
     private String path;
 
     @Autowired
-    public CategoryServiceImpl(CategoryRepo categoryRepo){
+    public CategoryServiceImpl(CategoryRepo categoryRepo, SimpMessagingTemplate simpMessagingTemplate){
         this.categoryRepo = categoryRepo;
+        this.simpMessagingTemplate = simpMessagingTemplate;
     }
 
 
@@ -44,13 +46,12 @@ public class CategoryServiceImpl implements CategoryService {
          if (!categoriesFromDb.contains(category) && !category.getCategoryName().isEmpty()){
              category.setImagePath(path);
             categoryRepo.save(category);
-            return new ResponseEntity<>("Was created " + category.getCategoryName(), HttpStatus.OK);
+             simpMessagingTemplate.convertAndSend("/topic/update", "updateCategory");
+             return new ResponseEntity<>("Was created " + category.getCategoryName(), HttpStatus.OK);
         }else {
 
             return new ResponseEntity<>("Bad", HttpStatus.OK);
         }
-
-
     }
 
 
@@ -59,6 +60,7 @@ public class CategoryServiceImpl implements CategoryService {
         if (category !=null){
 
             categoryRepo.delete(category);
+            simpMessagingTemplate.convertAndSend("/topic/update", "updateCategory");
 
             return new ResponseEntity<>("Ok category", HttpStatus.OK);
         }else {

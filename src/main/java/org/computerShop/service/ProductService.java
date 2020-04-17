@@ -19,7 +19,7 @@ public interface ProductService {
 
     HttpStatus pushImage(MultipartFile[] files) throws IOException;
 
-    ResponseEntity<String> createProduct(Product product);
+    ResponseEntity<String> createProduct(Product product, boolean notifySubscribers);
 
     ResponseEntity<?> updateProduct(Product product);
 
@@ -33,7 +33,7 @@ public interface ProductService {
 
     List<Product> mostPurchased();
 
-    ResponseEntity<String> setDiscountPrice(Product product, short percent);
+    ResponseEntity<String> setDiscountPrice(Product product, short percent, boolean notifySubscribers);
 
     List<Product> lastTenProducts();
 

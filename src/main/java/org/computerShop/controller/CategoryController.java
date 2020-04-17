@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@CrossOrigin(value = "http://localhost:4200")
+@CrossOrigin(value = "*", maxAge = 3600)
 @RequestMapping("/api/categories")
 public class CategoryController {
 

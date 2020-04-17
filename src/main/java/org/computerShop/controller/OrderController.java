@@ -13,7 +13,7 @@ import org.computerShop.model.Custom;
 import java.util.List;
 
 @RestController
-@CrossOrigin(value = "http://localhost:4200")
+@CrossOrigin(value = "*", maxAge = 3600)
 @RequestMapping("/api/order")
 public class OrderController {
 

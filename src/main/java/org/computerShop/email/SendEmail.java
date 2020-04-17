@@ -3,8 +3,10 @@ package org.computerShop.email;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.TemplateEngine;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -18,6 +20,8 @@ import java.util.Properties;
 @Component
 @PropertySource(value = "classpath:application-email.properties")
 public class SendEmail {
+
+
 
     @Value("${user.email.login}")
     private String username;
