@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.thymeleaf.TemplateEngine;
 
 import java.io.File;
 import java.io.IOException;
@@ -38,6 +39,9 @@ public class ProductServiceImpl implements ProductService {
     private SendEmail sendEmail;
     private SubscriptionRepo subscriptionRepo;
 
+
+    private TemplateEngine templateEngine;
+
     @Autowired
     public ProductServiceImpl(ProductRepo productRepo,
                               ImageRepo imageRepo,
@@ -46,7 +50,8 @@ public class ProductServiceImpl implements ProductService {
                               RemindMeRepo remindMeRepo,
                               SendEmail sendEmail,
                               SimpMessagingTemplate simpMessagingTemplate,
-                              SubscriptionRepo subscriptionRepo){
+                              SubscriptionRepo subscriptionRepo,
+                              TemplateEngine templateEngine){
         this.productRepo = productRepo;
         this.imageRepo = imageRepo;
         this.categoryRepo = categoryRepo;
@@ -55,6 +60,7 @@ public class ProductServiceImpl implements ProductService {
         this.sendEmail = sendEmail;
         this.simpMessagingTemplate = simpMessagingTemplate;
         this.subscriptionRepo = subscriptionRepo;
+        this.templateEngine = templateEngine;
     }
 
 
@@ -76,8 +82,10 @@ public class ProductServiceImpl implements ProductService {
         if (!productsFromDb.contains(product)) {
 
             if(notifySubscribers){
+
                 subscriptionRepo.findAll().forEach(el->{
                     sendEmail.sendMail(el.getEmail(), "Now you can buy new " + product.getCategory().getCategoryName() + " in our shop", "Already available " + product.getProductName() + " price: " + product.getProductPrice());
+
                 });
             }
 
@@ -230,8 +238,10 @@ public class ProductServiceImpl implements ProductService {
                 product.setDiscountPrice(discountPrice);
                 productRepo.save(product);
                 if(notifySubscribers){
+                    MailContentBuilder mailContentBuilder = new MailContentBuilder(templateEngine);
                     subscriptionRepo.findAll().forEach(el->{
-                        sendEmail.sendMail(el.getEmail(), "GLOBAL DISCOUNT" + product.getCategory().getCategoryName() + " in our shop", "Now you can buy this product whit discount price " + product.getProductName() + " price: " + product.getProductPrice() + " discount price: " + product.getDiscountPrice());
+                        //sendEmail.sendMail(el.getEmail(), "GLOBAL DISCOUNT" + product.getCategory().getCategoryName() + " in our shop", "Now you can buy this product whit discount price " + product.getProductName() + " price: " + product.getProductPrice() + " discount price: " + product.getDiscountPrice());
+                        sendEmail.sendMail(el.getEmail(), "GLOBAL DISCOUNT", mailContentBuilder.createProductTemplate(product));
                     });
                 }
                 simpMessagingTemplate.convertAndSend("/topic/update", "updateProducts");

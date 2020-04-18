@@ -83,7 +83,13 @@ public class CustomServiceImpl implements CustomService {
             if (product != null) {
                 product.setAmountInStock(product.getAmountInStock() - item.getAmount());
                 product.setNumberOfBuy(product.getNumberOfBuy() + item.getAmount());
-                CustomProduct customProduct = new CustomProduct(custom, product, item.getAmount(), product.getProductPrice());
+                CustomProduct customProduct = null;
+                if(product.isGlobalDiscount()){
+                   customProduct = new CustomProduct(custom, product, item.getAmount(), product.getDiscountPrice());
+                }else {
+                    customProduct = new CustomProduct(custom, product, item.getAmount(), product.getProductPrice());
+                }
+
                 products.add(product);
                 productRepo.save(product);
                 customProductRepo.save(customProduct);

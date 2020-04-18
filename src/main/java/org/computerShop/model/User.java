@@ -38,7 +38,7 @@ public class User {
     @NotBlank
     @Size(max = 50)
     @Email
-    @JsonView(Views.UserFull.class)
+    @JsonView({Views.UserFull.class, Views.ProductFull.class})
     private String email;
 
     @NotBlank
@@ -48,17 +48,17 @@ public class User {
 
     @NotBlank
     @Size(max = 20)
-    @JsonView({Views.UserFull.class})
+    @JsonView({Views.UserFull.class, Views.ProductFull.class})
     private String firstName;
 
     @NotBlank
     @Size(max = 20)
-    @JsonView(Views.UserFull.class)
+    @JsonView({Views.UserFull.class, Views.ProductFull.class})
     private String lastName;
 
     @NotBlank
     @Size(max = 30)
-    @JsonView(Views.UserFull.class)
+    @JsonView({Views.UserFull.class, Views.ProductFull.class})
     private String city;
 
     @NotBlank
@@ -74,6 +74,12 @@ public class User {
     @NotBlank
     @JsonView(Views.UserFull.class)
     private String mobilePhone;
+
+
+    @OneToMany
+    @JsonView({Views.UserFull.class})
+    private List<OpinionProduct> opinionProducts;
+
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable( name = "user_roles",
@@ -219,5 +225,13 @@ public class User {
 
     public void setSubscription(Subscription subscription) {
         this.subscription = subscription;
+    }
+
+    public List<OpinionProduct> getOpinionProducts() {
+        return opinionProducts;
+    }
+
+    public void setOpinionProducts(List<OpinionProduct> opinionProducts) {
+        this.opinionProducts = opinionProducts;
     }
 }

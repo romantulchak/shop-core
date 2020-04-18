@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+</head>
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    /*
+    body{
+        height: 100vh;
+        display: grid;
+
+
+    }
+
+ .template{
+     width: 70vw;
+     margin: 0 auto;
+     position: relative;
+     background: #ebe7e2;
+     display: grid;
+
+ }
+
+.top__image{
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+.bottom__image{
+position: absolute;
+bottom: 0;
+right: 0;
+}
+
+.title__block{
+display: grid;
+align-items: center;
+text-align: center;
+grid-template-rows: 10em 1em 17em;
+}
+
+.title__block > h1{
+margin-bottom: 0em;
+font-size: 38px;
+line-height: 1.5;
+font-family: monospace;
+color: #0c2e3a;
+align-self: end;
+}
+
+.title__block > hr{
+width: 15em;
+background: #0C2E3A;
+height: 2px;
+justify-self: center;
+align-self: start;
+border-radius: 50%;
+}
+
+.percent{
+align-self: self-start;
+}
+
+.percent__number{
+color: #ff823b;
+font-size: 10em;
+font-weight: 400;
+font-family: 'Bangers', cursive;
+letter-spacing: 15px;
+height: 1.0em;
+}
+
+.percent__span{
+font-size: 120px;
+font-weight: 400;
+letter-spacing: 0
+}
+
+.off{
+color: #0c2e3a;
+font-size: 110px;
+font-family: 'Bangers', cursive;
+font-weight: 900;
+letter-spacing: 15px;
+}
+
+.product__card{
+width: 15em;
+border: 2px dashed #9c5949;
+padding: 10px;
+border-radius: 8px;
+margin: 0 auto 1em auto;
+}
+
+.product__name{
+font-size: 30px;
+border-bottom: 2px solid #378000;
+margin-bottom: 10px;
+color: white;
+font-family: sans-serif;
+-webkit-text-stroke: 1px #000000;
+}
+.prices{
+display: grid;
+grid-template-columns: 1fr 1fr;
+align-items: center;
+}
+
+.product__img{
+border-radius: 8px;
+margin-bottom: 2px;
+}
+
+.old__price{
+font-family: sans-serif;
+color: #4a4642;
+position: relative;
+}
+.old__price::before{
+display: grid;
+content: '';
+width: 90%;
+height: 3px;
+background: #ff1b1b;
+position: absolute;
+top: 10px;
+border: 0;
+border-radius: 18px;
+left: 0;
+right: 0;
+align-items: center;
+}
+
+.new__price{
+font-weight: 900;
+font-family: sans-serif;
+}
+
+.view__button{
+background-color: rgb(255, 130, 59);
+border-width: 0;
+border-style: solid;
+border-color: transparent;
+border-radius: 4px;
+color: rgb(255, 255, 255);
+font-family: sans-serif;
+font-weight: 900;
+max-width: 100%;
+padding: 10px 45px;
+width: auto;
+display: inline-block;
+margin-top: 5px;
+text-align: center;
+}*/
+
+</style>
+<body style="
+        height: 100vh;
+        display: grid;">
+
+<div class="template" style="
+       width: 70vw;
+        margin: 0 auto;
+        position: relative;
+        background: #ebe7e2;
+        display: grid;
+">
+    <h1>Shop: a43</h1>
+
+
+    <div class="title__block" style="
+        display: grid;
+        align-items: center;
+        text-align: center;
+        grid-template-rows: 10em 1em 17em;
+">
+        <h1 style="
+        margin-bottom: 0em;
+        font-size: 38px;
+        line-height: 1.5;
+        font-family: monospace;
+        color: #0c2e3a;
+        align-self: end;
+">SOMETHING BIG
+            <br>
+            IS COMING!
+        </h1>
+        <hr style="
+        width: 15em;
+        background: #0C2E3A;
+        height: 2px;
+        justify-self: center;
+        align-self: start;
+        border-radius: 50%;
+">
+        <div class="percent" style="align-self: self-start;">
+           <div>
+               <h1 class="percent__number" style="
+            color: #ff823b;
+        font-size: 10em;
+        font-weight: 400;
+        font-family: 'Bangers', cursive;
+        letter-spacing: 15px;
+        height: 1.0em;
+">60<span class="percent__span" style="
+
+        font-size: 120px;
+        font-weight: 400;
+        letter-spacing: 0
+">%</span>
+               </h1>
+               <h2 class="off" style="
+            color: #0c2e3a;
+        font-size: 110px;
+        font-family: 'Bangers', cursive;
+        font-weight: 900;
+        letter-spacing: 15px;
+">OFF</h2>
+           </div>
+        </div>
+        <div class="products">
+            <div class="product__card"  style="
+            width: 15em;
+        border: 2px dashed #9c5949;
+        padding: 10px;
+        border-radius: 8px;
+        margin: 0 auto 1em auto;">
+                <h4 class="product__name" style="
+                            font-size: 30px;
+                            border-bottom: 2px solid #378000;
+                            margin-bottom: 10px;
+                            color: white;
+                            font-family: sans-serif;
+                            -webkit-text-stroke: 1px #000000;
+                        "
+                    th:text="${product.getProductName()}">Product name</h4>
+                <img class="product__img" style="
+                                        border-radius: 8px;
+                                        margin-bottom: 2px;
+                                            "
+                     src="https://wallpapertag.com/wallpaper/full/d/9/9/958937-full-hd-desktop-wallpaper-1920x1080-1920x1080-ipad.jpg" width="180px" alt="">
+                <div class="prices" style="
+                display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+                    ">
+                    <h3 class="old__price"
+                        style="
+                            font-family: sans-serif;
+                            color: #4a4642;
+                            position: relative;
+                            text-decoration: line-through;
+                            text-decoration-color: red;
+                            "
+                        th:text="${product.getProductPrice()}">5000 грн</h3>
+                    <h2 class="new__price" style="
+                    font-weight: 900;
+                    font-family: sans-serif;"
+                        th:text="${product.getDiscountPrice()}">4000 грн</h2>
+                </div>
+                <a class="view__button" style="    background-color: rgb(255, 130, 59);
+                border-width: 0;
+                border-style: solid;
+                border-color: transparent;
+                border-radius: 4px;
+                color: rgb(255, 255, 255);
+                font-family: sans-serif;
+                font-weight: 900;
+                max-width: 100%;
+                padding: 10px 45px;
+                width: auto;
+                display: inline-block;
+                margin-top: 5px;
+                text-align: center;"
+                   th:href="${'http://localhost:4200/detailsProduct/'+ product.getId() }">View</a>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <img style="
+        position: absolute;
+        top: 0;
+        left: 0;
+" class="top__image" src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/986/top_3.png" alt="">
+    <img style="
+        position: absolute;
+        bottom: 0;
+        right: 0;
+" class="bottom__image" src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/986/bottom_5.png" alt="">
+
+
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

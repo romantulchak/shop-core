@@ -3,12 +3,13 @@ package org.computerShop.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonView;
+import org.computerShop.maps.Opinion;
 import org.computerShop.model.accessory.CPU;
 import org.computerShop.model.accessory.GPU;
 
 import javax.persistence.*;
-import javax.swing.text.View;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -56,6 +57,10 @@ public class Product implements Serializable {
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     private List<CustomProduct> customProducts;
 
+    @OneToMany(mappedBy = "commentToProduct", cascade = CascadeType.REMOVE)
+    @JsonView({Views.ProductFull.class})
+    private List<OpinionProduct> opinionProducts;
+
     @JsonView(Views.ProductFull.class)
     private int amountInStock;
 
@@ -75,6 +80,9 @@ public class Product implements Serializable {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "product", cascade = CascadeType.REMOVE)
     @JsonView(Views.ProductFull.class)
     private Set<PromotionalCode> promotionalCodes;
+
+
+
 
 
     private int numberOfBuy = 0;
@@ -215,6 +223,14 @@ public class Product implements Serializable {
 
     public void setRemindMe(List<RemindMe> remindMe) {
         this.remindMe = remindMe;
+    }
+
+    public List<OpinionProduct> getOpinionProducts() {
+        return opinionProducts;
+    }
+
+    public void setOpinionProducts(List<OpinionProduct> opinionProducts) {
+        this.opinionProducts = opinionProducts;
     }
 
     @PreRemove
