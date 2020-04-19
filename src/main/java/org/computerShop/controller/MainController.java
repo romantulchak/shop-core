@@ -157,7 +157,10 @@ public class MainController {
         return productService.updateProduct(product);
     }
 
-
-
+    @GetMapping("/similarProducts/{id}/{categoryName}")
+    @JsonView(Views.ProductFull.class)
+    public List<Product> similarProducts(@PathVariable("id") int productId, @PathVariable("categoryName") String categoryName){
+        return productService.similarProducts(productId,categoryName);
+    }
 
 }

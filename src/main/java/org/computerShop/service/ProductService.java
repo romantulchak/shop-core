@@ -37,4 +37,6 @@ public interface ProductService {
 
     List<Product> lastTenProducts();
 
+    List<Product> similarProducts(long productId, String categoryName);
+
 }

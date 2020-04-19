@@ -123,13 +123,7 @@ public class ProductServiceImpl implements ProductService {
         }else {
             return new ResponseEntity<>("Something wrong", HttpStatus.OK);
         }
-
-
-
-
-
     }
-
     //TODO: пофіксити видалення
     @Override
     public HttpStatus pushImage(MultipartFile[] files) throws IOException {
@@ -149,7 +143,6 @@ public class ProductServiceImpl implements ProductService {
                     images.add(image);
                 }
             }
-
         }
         return HttpStatus.OK;
     }
@@ -168,11 +161,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product detailsProduct(Product product){
-        if (product != null){
-            return product;
-        }else {
-            return null;
-        }
+        return product;
     }
 
     //TODO: MAX SIZE PHOTO 10 MB
@@ -182,9 +171,6 @@ public class ProductServiceImpl implements ProductService {
         Category category = categoryRepo.findByCategoryName(categoryName);
         List<Product> products = productRepo.findAllByCategory(category);
         if (products.size() != 0){
-
-
-
             return products;
         }else {
             if(categoryName.contains("undefined") || categoryName.contains("all")) {
@@ -241,8 +227,7 @@ public class ProductServiceImpl implements ProductService {
                 if(notifySubscribers){
                     MailContentBuilder mailContentBuilder = new MailContentBuilder(templateEngine);
                     subscriptionRepo.findAll().forEach(el->{
-                        //sendEmail.sendMail(el.getEmail(), "GLOBAL DISCOUNT" + product.getCategory().getCategoryName() + " in our shop", "Now you can buy this product whit discount price " + product.getProductName() + " price: " + product.getProductPrice() + " discount price: " + product.getDiscountPrice());
-                        sendEmail.sendMail(el.getEmail(), "GLOBAL DISCOUNT", mailContentBuilder.createProductTemplate(product));
+                       sendEmail.sendMail(el.getEmail(), "GLOBAL DISCOUNT", mailContentBuilder.createProductTemplate(product));
                     });
                 }
                 simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateProducts", true));
@@ -254,16 +239,19 @@ public class ProductServiceImpl implements ProductService {
                 simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateProducts", true));
                 return new ResponseEntity<>("Discount price has been removed", HttpStatus.OK);
             }
-
         }
         return new ResponseEntity<>("Something wrong!", HttpStatus.OK);
     }
 
     @Override
     public List<Product> lastTenProducts() {
-
-
         return productRepo.findFirst8ByOrderByIdDesc();
+    }
+
+    @Override
+    public List<Product> similarProducts(long productId, String categoryName) {
+        System.out.println(productRepo.similarProducts(productId, categoryName));
+        return productRepo.similarProducts(productId, categoryName);
     }
 }
 
