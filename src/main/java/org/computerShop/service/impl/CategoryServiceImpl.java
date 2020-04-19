@@ -3,6 +3,7 @@ package org.computerShop.service.impl;
 import org.computerShop.model.Category;
 import org.computerShop.repository.CategoryRepo;
 import org.computerShop.service.CategoryService;
+import org.computerShop.sockets.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -46,7 +47,7 @@ public class CategoryServiceImpl implements CategoryService {
          if (!categoriesFromDb.contains(category) && !category.getCategoryName().isEmpty()){
              category.setImagePath(path);
             categoryRepo.save(category);
-             simpMessagingTemplate.convertAndSend("/topic/update", "updateCategory");
+             simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateCategory", true));
              return new ResponseEntity<>("Was created " + category.getCategoryName(), HttpStatus.OK);
         }else {
 
@@ -60,7 +61,7 @@ public class CategoryServiceImpl implements CategoryService {
         if (category !=null){
 
             categoryRepo.delete(category);
-            simpMessagingTemplate.convertAndSend("/topic/update", "updateCategory");
+            simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateCategory", true));
 
             return new ResponseEntity<>("Ok category", HttpStatus.OK);
         }else {
@@ -72,6 +73,7 @@ public class CategoryServiceImpl implements CategoryService {
 
         if (category!=null) {
             categoryRepo.save(category);
+            simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateCategory", true));
         }
         return new ResponseEntity<>("Ok", HttpStatus.OK);
     }

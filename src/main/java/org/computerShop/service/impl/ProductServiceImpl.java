@@ -6,6 +6,7 @@ import org.computerShop.model.*;
 import org.computerShop.model.accessory.CPU;
 import org.computerShop.repository.*;
 import org.computerShop.service.ProductService;
+import org.computerShop.sockets.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.jpa.repository.Query;
@@ -112,7 +113,7 @@ public class ProductServiceImpl implements ProductService {
         }
 
         productRepo.save(product);
-        simpMessagingTemplate.convertAndSend("/topic/update", "updateProducts");
+        simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateProducts", true));
         if(product.getRemindMe() != null && product.getAmountInStock() != 0){
 
             for (RemindMe remindMe:product.getRemindMe()) {
@@ -159,7 +160,7 @@ public class ProductServiceImpl implements ProductService {
         Product productFromDb = productRepo.findById(product.getId()).orElse(null);
         if (productFromDb != null){
             productRepo.delete(product);
-            simpMessagingTemplate.convertAndSend("/topic/update", "updateProducts");
+            simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateProducts", true));
             return new ResponseEntity<>("Was deleted " + product.getProductName(), HttpStatus.OK);
         }
         return new ResponseEntity<>("Product " + product.getProductName() + " not found", HttpStatus.OK);
@@ -244,13 +245,13 @@ public class ProductServiceImpl implements ProductService {
                         sendEmail.sendMail(el.getEmail(), "GLOBAL DISCOUNT", mailContentBuilder.createProductTemplate(product));
                     });
                 }
-                simpMessagingTemplate.convertAndSend("/topic/update", "updateProducts");
+                simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateProducts", true));
                 return new ResponseEntity<>("Discount price has been set", HttpStatus.OK);
             }else {
                 product.setGlobalDiscount(false);
                 product.setDiscountPrice(0);
                 productRepo.save(product);
-                simpMessagingTemplate.convertAndSend("/topic/update", "updateProducts");
+                simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateProducts", true));
                 return new ResponseEntity<>("Discount price has been removed", HttpStatus.OK);
             }
 

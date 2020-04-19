@@ -57,7 +57,7 @@ public class Product implements Serializable {
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     private List<CustomProduct> customProducts;
 
-    @OneToMany(mappedBy = "commentToProduct", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "commentToProduct", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
     @JsonView({Views.ProductFull.class})
     private List<OpinionProduct> opinionProducts;
 

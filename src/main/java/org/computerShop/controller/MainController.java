@@ -13,6 +13,7 @@ import org.computerShop.service.impl.GpuServiceImpl;
 import org.computerShop.service.impl.ProductServiceImpl;
 import org.computerShop.service.impl.PromotionalCodeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -47,6 +48,7 @@ public class MainController {
     @GetMapping
     @JsonView(Views.ProductFull.class)
     public List<Product> main(){
+
         return productService.allProducts();
     }
 
@@ -120,7 +122,7 @@ public class MainController {
 
 
     //TODO: пофіксити повернення коду
-    @PostMapping("/createPromo/{productId}/{percent}/{numberOfDays}/{numberOfUses}}")
+    @PostMapping("/createPromo/{productId}/{percent}/{numberOfDays}/{numberOfUses}")
     public ResponseEntity<String> createPromo(@PathVariable("productId") Long id, @PathVariable("percent") short percent, @PathVariable("numberOfDays") long numberOfDays, @PathVariable("numberOfUses") int numberOfUses) {
         return promotionalCodeService.createPromo(percent, numberOfDays, numberOfUses, id);
     }

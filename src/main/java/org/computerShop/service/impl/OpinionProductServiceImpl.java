@@ -38,8 +38,7 @@ public class OpinionProductServiceImpl implements OpinionProductService {
             opinionProduct.setUser(user);
             opinionProduct.setDateTime(LocalDateTime.now());
             opinionProductRepo.save(opinionProduct);
-            OpinionMessage opinionMessage = new OpinionMessage("updateOpinion", opinionProduct.getCommentToProduct().getId());
-            simpMessagingTemplate.convertAndSend("/topic/update", opinionMessage);
+            simpMessagingTemplate.convertAndSend("/topic/update", new OpinionMessage("updateOpinion", opinionProduct.getCommentToProduct().getId()));
             return new ResponseEntity<>("Ok", HttpStatus.OK);
         }
         return new ResponseEntity<>("Something wrong", HttpStatus.OK);

@@ -1,23 +1,15 @@
 package org.computerShop.sockets;
 
-public class OpinionMessage {
+public class OpinionMessage extends Message{
 
-    private String title;
     private long productId;
 
 
     public OpinionMessage(String title, long productId) {
-        this.title = title;
+        super(title);
         this.productId = productId;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public long getProductId() {
         return productId;
