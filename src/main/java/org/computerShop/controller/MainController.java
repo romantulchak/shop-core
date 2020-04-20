@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @CrossOrigin(value = "*", maxAge = 3600)
@@ -66,8 +67,11 @@ public class MainController {
 
     @PostMapping("/createProduct/{notifySubscribers}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<String> createProduct(@RequestBody Product product,@PathVariable(value = "notifySubscribers", required = false) boolean notifySubscribers){
-            return productService.createProduct(product,notifySubscribers);
+    public ResponseEntity<String> createProduct(@RequestBody Product product, @PathVariable(value = "notifySubscribers", required = false) boolean notifySubscribers){
+        product.getProperties().forEach((z,x)->{
+            System.out.println(z +" : " + x);
+        });
+        return productService.createProduct(product,notifySubscribers);
     }
     @DeleteMapping("/deleteProduct/{id}")
     @PreAuthorize("hasRole('ADMIN')")

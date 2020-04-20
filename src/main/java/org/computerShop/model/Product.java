@@ -3,7 +3,6 @@ package org.computerShop.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonView;
-import org.computerShop.maps.Opinion;
 import org.computerShop.model.accessory.CPU;
 import org.computerShop.model.accessory.GPU;
 
@@ -11,6 +10,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 @Entity
@@ -81,7 +81,10 @@ public class Product implements Serializable {
     @JsonView(Views.ProductFull.class)
     private Set<PromotionalCode> promotionalCodes;
 
-
+    @ElementCollection
+    @MapKeyColumn(name = "fieldName")
+    @JsonView(Views.ProductFull.class)
+    private Map<String, String> properties;
 
 
 
@@ -232,7 +235,13 @@ public class Product implements Serializable {
     public void setOpinionProducts(List<OpinionProduct> opinionProducts) {
         this.opinionProducts = opinionProducts;
     }
+    public Map<String, String> getProperties() {
+        return properties;
+    }
 
+    public void setProperties(Map<String, String> properties) {
+        this.properties = properties;
+    }
     @PreRemove
     public void delete(){
         this.setCategory(null);
@@ -240,5 +249,6 @@ public class Product implements Serializable {
         this.setCpu(null);
         this.setGpu(null);
     }
+
 
 }

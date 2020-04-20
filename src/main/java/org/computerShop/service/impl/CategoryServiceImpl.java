@@ -1,5 +1,6 @@
 package org.computerShop.service.impl;
 
+import org.computerShop.maps.Fields;
 import org.computerShop.model.Category;
 import org.computerShop.repository.CategoryRepo;
 import org.computerShop.service.CategoryService;
@@ -15,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -41,12 +43,18 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public ResponseEntity<String> createCategory(Category category){
+    public ResponseEntity<String> createCategory(Category category, List<String> fields){
         List<Category> categoriesFromDb = categoryRepo.findAll();
-
          if (!categoriesFromDb.contains(category) && !category.getCategoryName().isEmpty()){
              category.setImagePath(path);
-            categoryRepo.save(category);
+             List<Fields> fieldsToSave = new ArrayList<>();
+             fields.forEach(el->{
+                 Fields fields1 = new Fields();
+                 fields1.setFieldName(el);
+                 fieldsToSave.add(fields1);
+             });
+             category.setFields(fieldsToSave);
+             categoryRepo.save(category);
              simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateCategory", true));
              return new ResponseEntity<>("Was created " + category.getCategoryName(), HttpStatus.OK);
         }else {

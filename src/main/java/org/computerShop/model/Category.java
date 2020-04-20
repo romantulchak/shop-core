@@ -1,9 +1,11 @@
 package org.computerShop.model;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import org.computerShop.maps.Fields;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -25,6 +27,13 @@ public class Category implements Serializable {
     @Column(name = "imagePath")
     @JsonView(Views.CategoryFull.class)
     private String imagePath;
+
+
+    @ElementCollection
+    @JsonView({Views.CategoryFull.class,Views.ProductFull.class})
+    private List<Fields> fields;
+
+
 
     public long getId() {
         return id;
@@ -56,6 +65,14 @@ public class Category implements Serializable {
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
+    }
+
+    public List<Fields> getFields() {
+        return fields;
+    }
+
+    public void setFields(List<Fields> fields) {
+        this.fields = fields;
     }
 
     @Override
