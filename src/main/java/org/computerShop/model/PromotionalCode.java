@@ -17,8 +17,6 @@ public class PromotionalCode  implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-
-
     @NotBlank
     @Size(min = 8, max = 8, message = "Max size 8 and Min size 8")
     @JsonView(Views.ProductFull.class)
@@ -31,18 +29,12 @@ public class PromotionalCode  implements Serializable {
     @DateTimeFormat(iso =  DateTimeFormat.ISO.DATE_TIME, pattern = "dd-MM-yyyy HH:ss")
     private LocalDateTime expirationDate;
 
-
     private int numberOfUses;
-
 
     private short percent;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Product product;
-
-
-
-
 
     public PromotionalCode() {
     }
@@ -111,6 +103,5 @@ public class PromotionalCode  implements Serializable {
     public void setPercent(short percent) {
         this.percent = percent;
     }
-
 
 }

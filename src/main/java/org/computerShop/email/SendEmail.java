@@ -29,6 +29,16 @@ public class SendEmail {
     @Value("${user.email.password}")
     private String password;
 
+    public SendEmail(){
+
+    }
+
+    public SendEmail(String username, String password){
+        this.username = username;
+        this.password = password;
+    }
+
+
     public void sendMail(String emailTo, String title, String text){
         Properties prop = new Properties();
         System.out.println(username);

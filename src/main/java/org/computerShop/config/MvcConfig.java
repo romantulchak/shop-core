@@ -15,13 +15,10 @@ public class MvcConfig implements WebMvcConfigurer {
     @Value("${upload.CategoryPath}")
     private String  path;
 
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/productImages/**").addResourceLocations("file://" + uploadPath + "/" );
         registry.addResourceHandler("/categoryImages/**").addResourceLocations("file://" + path + "/" );
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
     }
-
-
 }

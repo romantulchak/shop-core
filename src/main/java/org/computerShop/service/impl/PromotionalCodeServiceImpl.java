@@ -2,7 +2,6 @@ package org.computerShop.service.impl;
 
 import org.computerShop.model.Product;
 import org.computerShop.model.PromotionalCode;
-import org.computerShop.model.enums.EPromo;
 import org.computerShop.repository.ProductRepo;
 import org.computerShop.repository.PromotionalCodeRepo;
 import org.computerShop.service.PromotionalCodeService;

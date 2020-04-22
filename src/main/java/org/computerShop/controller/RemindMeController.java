@@ -18,7 +18,6 @@ public class RemindMeController {
         this.remindMeService = remindMeService;
     }
 
-
     @PostMapping("/create")
     public ResponseEntity<String> createRemindMe(@RequestBody RemindMe remindMe){
         return remindMeService.createRemindMe(remindMe);

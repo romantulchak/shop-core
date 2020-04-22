@@ -23,7 +23,6 @@ public class BrandController {
         this.brandService = brandService;
     }
 
-
     @GetMapping
     @JsonView(Views.BrandFull.class)
     public List<Brand> getAllBrands(){
@@ -32,7 +31,6 @@ public class BrandController {
 
     @PostMapping("/createBrand")
     public ResponseEntity<String> createBrand(@RequestBody Brand brand){
-
         return brandService.createBrand(brand);
     }
 }

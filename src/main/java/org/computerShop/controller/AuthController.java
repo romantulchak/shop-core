@@ -80,7 +80,6 @@ public class AuthController {
         ));
     }
 
-
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
         if (userRepo.existsByUsername(signUpRequest.getUsername())) {
@@ -94,17 +93,14 @@ public class AuthController {
                     .badRequest()
                     .body(new MessageResponse("Error: Email is already in use!"));
         }
-
         // Create new user's account
         User user = new User(signUpRequest.getUsername(),
                 signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()),
                 signUpRequest.getFirstName(),signUpRequest.getLastName(), signUpRequest.getCity(), signUpRequest.getAddress(), signUpRequest.getPostalCode(), signUpRequest.getMobilePhone()
         );
-
         Set<String> strRoles = signUpRequest.getRole();
         Set<Role> roles = new HashSet<>();
-
         if (strRoles == null) {
             Role userRole = roleRepo.findByName(ERole.ROLE_USER)
                     .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
@@ -133,11 +129,8 @@ public class AuthController {
                 }
             });
         }
-
         user.setRoles(roles);
         userRepo.save(user);
-
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
-
 }

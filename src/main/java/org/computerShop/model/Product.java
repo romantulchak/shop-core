@@ -34,10 +34,8 @@ public class Product implements Serializable {
     @JsonView(Views.ProductFull.class)
     private String description;
 
-    //TODO: зробити знижку для всі якщо потрібно
     @JsonView(Views.ProductFull.class)
     private int discountPrice;
-
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class})
@@ -64,18 +62,15 @@ public class Product implements Serializable {
     @JsonView(Views.ProductFull.class)
     private int amountInStock;
 
-
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "cpu_id")
     @JsonView(Views.ProductFull.class)
     private CPU cpu;
 
-
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name="gpu_id")
     @JsonView(Views.ProductFull.class)
     private GPU gpu;
-
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "product", cascade = CascadeType.REMOVE)
     @JsonView(Views.ProductFull.class)
@@ -86,17 +81,13 @@ public class Product implements Serializable {
     @JsonView(Views.ProductFull.class)
     private Map<String, String> properties;
 
-
-
     private int numberOfBuy = 0;
 
     @JsonView(Views.ProductFull.class)
     private boolean isGlobalDiscount = false;
 
-
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     private List<RemindMe> remindMe;
-
 
     public List<CustomProduct> getCustomProducts() {
         return customProducts;
@@ -170,7 +161,6 @@ public class Product implements Serializable {
         this.amountInStock = amountInStock;
     }
 
-
     public CPU getCpu() {
         return cpu;
     }
@@ -202,7 +192,6 @@ public class Product implements Serializable {
     public void setDiscountPrice(int discountPrice) {
         this.discountPrice = discountPrice;
     }
-
 
     public int getNumberOfBuy() {
         return numberOfBuy;

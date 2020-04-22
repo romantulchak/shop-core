@@ -78,21 +78,14 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ResponseEntity<String> createProduct(Product product, boolean notifySubscribers) {
-        //product.getImage().addAll(images);
         List<Product> productsFromDb = productRepo.findAll();
         if (!productsFromDb.contains(product)) {
-
             if(notifySubscribers){
-
                 subscriptionRepo.findAll().forEach(el->{
                     sendEmail.sendMail(el.getEmail(), "Now you can buy new " + product.getCategory().getCategoryName() + " in our shop", "Already available " + product.getProductName() + " price: " + product.getProductPrice());
-
                 });
             }
-
-
             productRepo.save(product);
-
             if (images != null){
                 for (Image image : images){
                     image.setProduct(product);
@@ -107,7 +100,6 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ResponseEntity<?> updateProduct(Product product) {
         List<RemindMe> remindsMe = remindMeRepo.allForProduct(product.getId());
-
         if(remindsMe != null){
            product.setRemindMe(remindsMe);
         }
@@ -115,7 +107,6 @@ public class ProductServiceImpl implements ProductService {
         productRepo.save(product);
         simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateProducts", true));
         if(product.getRemindMe() != null && product.getAmountInStock() != 0){
-
             for (RemindMe remindMe:product.getRemindMe()) {
                 sendEmail.sendMail(remindMe.getEmail(), "Remind", "Product: " + product.getProductName() + " is available");
             }

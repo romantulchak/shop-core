@@ -19,12 +19,8 @@ public class SubscriptionController {
         this.subscriptionService = subscriptionService;
     }
 
-
-
     @PostMapping("/{id}")
     public ResponseEntity<String> follow(@RequestBody Subscription subscription, @PathVariable("id") User user){
         return this.subscriptionService.createSubscription(subscription, user);
     }
-
-
 }

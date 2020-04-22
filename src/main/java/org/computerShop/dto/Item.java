@@ -1,4 +1,4 @@
-package org.computerShop.model;
+package org.computerShop.dto;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,7 +9,6 @@ public class Item {
 
     private Long id;
     private int amount;
-
 
     public Long getId() {
         return id;

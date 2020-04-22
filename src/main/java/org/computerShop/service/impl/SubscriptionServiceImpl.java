@@ -15,14 +15,10 @@ public class SubscriptionServiceImpl implements SubscriptionService {
 
     private SubscriptionRepo subscriptionRepo;
 
-
-
-
     @Autowired
     public SubscriptionServiceImpl(SubscriptionRepo subscriptionRepo){
         this.subscriptionRepo = subscriptionRepo;
     }
-
 
     @Override
     public ResponseEntity<String> createSubscription(Subscription subscription, User user) {
@@ -31,7 +27,6 @@ public class SubscriptionServiceImpl implements SubscriptionService {
                 if(user != null){
                     subscription.setUser(user);
                 }
-
                 subscriptionRepo.save(subscription);
                 return new ResponseEntity<>("Ok", HttpStatus.OK);
             }else{

@@ -3,7 +3,6 @@ package org.computerShop.model;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 public class Image {
@@ -14,13 +13,11 @@ public class Image {
     @JsonView({Views.ProductFull.class,Views.CustomFUll.class})
     private long id;
 
-
     @JsonView({Views.ProductFull.class, Views.UserFull.class,Views.CustomFUll.class})
     private String imagePath;
 
     @ManyToOne(cascade = CascadeType.REMOVE)
     private Product product;
-
 
     public Image(){
 

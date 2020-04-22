@@ -22,7 +22,6 @@ public class ProfileController {
         this.profileService = profileService;
     }
 
-
     @GetMapping("/userDetails/{id}")
     public UserDto currentUser(@PathVariable("id") User user){
         return profileService.getCurrentUser(user);

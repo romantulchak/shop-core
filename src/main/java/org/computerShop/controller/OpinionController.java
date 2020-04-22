@@ -25,28 +25,21 @@ public class OpinionController {
         this.opinionProductService = opinionProductService;
     }
 
-
-
-
-
     @PostMapping("/createOpinion/{userId}")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> createOpinion(@RequestBody OpinionProduct opinionProduct, @PathVariable("userId") long userId){
         return opinionProductService.createOpinion(opinionProduct, userId);
     }
 
-
     @GetMapping("/getAverageRanking/{productId}")
     public double getAverageRanking(@PathVariable("productId") long productId){
         return opinionProductService.getAverageRanking(productId);
 
     }
+
     @GetMapping("/getOpinionForProduct/{productId}")
     @JsonView(Views.ProductFull.class)
     public List<OpinionProduct> getOpinionForProduct(@PathVariable("productId") long id){
         return opinionProductService.getOpinionForProduct(id);
     }
-
-
-
 }

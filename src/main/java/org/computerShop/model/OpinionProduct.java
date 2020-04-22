@@ -24,14 +24,12 @@ public class OpinionProduct {
     @Size(max = 1000000)
     @JsonView(Views.ProductFull.class)
     private String text;
+
     @JsonView(Views.ProductFull.class)
     private LocalDateTime dateTime;
 
-
     @JsonView(Views.ProductFull.class)
     private short rating = 5;
-
-
 
     public OpinionProduct(Product commentToProduct, User user, String text, LocalDateTime dateTime, short rating) {
         this.commentToProduct = commentToProduct;
@@ -40,7 +38,6 @@ public class OpinionProduct {
         this.dateTime = dateTime;
         this.rating = rating;
     }
-
 
     public OpinionProduct() {
     }

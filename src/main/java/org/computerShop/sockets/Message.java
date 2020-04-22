@@ -4,7 +4,6 @@ public abstract class Message {
 
     private String title;
 
-
     public Message(String title) {
         this.title = title;
     }

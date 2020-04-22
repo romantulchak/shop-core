@@ -2,7 +2,6 @@ package org.computerShop.controller;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonView;
-import org.computerShop.maps.Fields;
 import org.computerShop.model.Category;
 import org.computerShop.model.Views;
 import org.computerShop.service.impl.CategoryServiceImpl;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -34,14 +32,12 @@ public class CategoryController {
     public List<Category> getCategories(){
         return this.categoryService.getCategories();
     }
-
-
-    @PostMapping("/createCategory")
+    @PostMapping(value = "/createCategory")
     @PreAuthorize("hasRole('ADMIN')")
+    @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
     @JsonView(Views.CategoryFull.class)
-    public ResponseEntity<String> createCategory(@RequestBody Category category, @RequestParam("field") List<String> field){
-
-        return categoryService.createCategory(category, field);
+    public ResponseEntity<String> createCategory(@RequestBody Category category){
+        return categoryService.createCategory(category);
     }
     @DeleteMapping("/deleteCategory/{id}")
     @PreAuthorize("hasRole('ADMIN')")

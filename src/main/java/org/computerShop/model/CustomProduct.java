@@ -18,15 +18,11 @@ public class CustomProduct {
     @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private Product product;
 
-
     @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private int amount;
 
-
     @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private int currentProductPrice;
-
-
 
     public CustomProduct(){
 
@@ -37,7 +33,6 @@ public class CustomProduct {
         this.amount = amount;
         this.currentProductPrice = currentProductPrice;
     }
-
 
     public long getId() {
         return id;

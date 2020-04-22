@@ -30,10 +30,10 @@ public class ProfileServiceImpl implements ProfileService {
 
         User userToSave = userRepo.findById(user.getId()).orElse(null);
 
-       //userRepo.save(user);
-   // return new ResponseEntity<>("sad", HttpStatus.OK);
+        //userRepo.save(user);
+        // return new ResponseEntity<>("sad", HttpStatus.OK);
 
- if (userToSave != null){
+        if (userToSave != null){
             userToSave.setFirstName(user.getFirstName());
             userToSave.setLastName(user.getLastName());
             userToSave.setCity(user.getCity());
@@ -56,12 +56,8 @@ public class ProfileServiceImpl implements ProfileService {
             user.getRoles().forEach(x->{
                 userRoles.add(x.getName().toString());
             });
-
-
             return new UserDto(user.getId(), user.getUsername(), user.getEmail(), user.getFirstName(), user.getLastName(), user.getCity(), user.getAddress(), user.getPostalCode(),user.getMobilePhone(),userRoles);
         }
-
-
         return null;
     }
 }

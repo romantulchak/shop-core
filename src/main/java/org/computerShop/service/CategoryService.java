@@ -10,7 +10,7 @@ import java.util.List;
 public interface CategoryService {
 
     List<Category> getCategories();
-    ResponseEntity<String> createCategory(Category category, List<String> fields);
+    ResponseEntity<String> createCategory(Category category);
     ResponseEntity<String> deleteCategory(Category category);
     ResponseEntity<String> editCategory(Category category);
     void pushImage(MultipartFile multipartFile) throws IOException;

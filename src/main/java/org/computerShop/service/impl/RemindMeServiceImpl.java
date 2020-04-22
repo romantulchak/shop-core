@@ -11,21 +11,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class RemindMeServiceImpl implements RemindMeService {
 
-
     private RemindMeRepo remindMeRepo;
-
 
     @Autowired
     public RemindMeServiceImpl(RemindMeRepo remindMeRepo){
         this.remindMeRepo = remindMeRepo;
     }
 
-
-
-
     @Override
     public ResponseEntity<String> createRemindMe(RemindMe remindMe) {
-
 
         if(remindMe != null){
             remindMeRepo.save(remindMe);

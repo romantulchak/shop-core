@@ -27,8 +27,8 @@ public class OrderController {
     @PostMapping("/createOrder")
     public String createOrder(@RequestBody Custom custom){
         return customService.createOrder(custom);
-
     }
+
     @GetMapping("/getAll")
     @PreAuthorize("hasRole('ADMIN')")
     @JsonView(Views.CustomFUll.class)
@@ -42,12 +42,10 @@ public class OrderController {
         return customService.getByIdentificationNumber(identificationNumber);
     }
 
-
     @PutMapping("/setStatus")
     @PreAuthorize("hasRole('ADMIN')")
     @JsonView(Views.CustomFUll.class)
     public ResponseEntity<String> setCustomStatus(@RequestParam(value = "statusCode", required = false) String code, @RequestBody Custom custom){
-
         //TODO:FIX коли приходять не цифри
         return customService.setStatus(custom, Integer.parseInt(code));
     }

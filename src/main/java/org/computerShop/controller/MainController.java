@@ -79,7 +79,6 @@ public class MainController {
         return this.productService.deleteProduct(product);
     }
     @PostMapping("/pushImage")
-    @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
     @PreAuthorize("hasRole('ADMIN')")
     public void saveImage(@RequestParam("file") MultipartFile[] files) throws Exception{
         productService.pushImage(files);

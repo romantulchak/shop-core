@@ -2,8 +2,8 @@ package org.computerShop.model;
 
 
 import com.fasterxml.jackson.annotation.JsonView;
+import org.computerShop.dto.Item;
 import org.computerShop.maps.Status;
-import org.hibernate.annotations.Cascade;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -68,11 +68,6 @@ public class Custom  {
     @JsonView({Views.CustomFUll.class, Views.UserFull.class, Views.CustomUser.class})
     private String identificationNumber;
 
-/*
-    @ManyToOne(cascade = CascadeType.REMOVE)
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
-    private Product product;
-*/
     @JsonView({Views.CustomFUll.class, Views.UserFull.class, Views.CustomUser.class})
     private boolean cancel = false;
 
@@ -80,9 +75,18 @@ public class Custom  {
     @JsonView({Views.CustomFUll.class, Views.UserFull.class})
     private Set<CustomProduct> customProducts;
 
-
     @ManyToOne
     private User user;
+
+    private transient List<Item> items;
+
+    public Custom(ArrayList<Status> statuses){
+        this.setCreatedDate(LocalDateTime.now());
+        this.setStatuses(statuses);
+
+    }
+
+    public Custom(){}
 
     public User getUser() {
         return user;
@@ -95,6 +99,7 @@ public class Custom  {
     public boolean isCancel(){
         return cancel;
     }
+
     public void setCancel(boolean cancel){
         this.cancel = cancel;
     }
@@ -107,17 +112,6 @@ public class Custom  {
         this.statuses = statuses;
     }
 
-    public Custom(){
-
-    }
-
-    public Custom(ArrayList<Status> statuses){
-        this.setCreatedDate(LocalDateTime.now());
-        this.setStatuses(statuses);
-
-    }
-
-
     public Set<CustomProduct> getCustomProducts() {
         return customProducts;
     }
@@ -129,7 +123,6 @@ public class Custom  {
     public void setId(long id) {
         this.id = id;
     }
-
 
     public int getTotalPrice() {
         return totalPrice;
@@ -147,20 +140,6 @@ public class Custom  {
         this.email = email;
     }
 
-
- /*   public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-*/
-
-
-    private transient List<Item> items;
-
-
     public List<Item> getItems() {
         return items;
     }
@@ -168,7 +147,6 @@ public class Custom  {
     public void setItems(List<Item> items) {
         this.items = items;
     }
-
 
     public long getId(){
         return id;

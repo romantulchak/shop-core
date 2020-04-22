@@ -9,6 +9,5 @@ import java.util.List;
 public interface GpuService {
 
     List<GPU> getAllGpu();
-
     ResponseEntity<String> createGpu(GPU cpu);
 }

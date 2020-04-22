@@ -1,7 +1,8 @@
 package org.computerShop.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonView;
-import org.computerShop.maps.Fields;
+import org.computerShop.dto.CategorySectionDto;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,6 +11,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "categories")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Category implements Serializable {
 
     @Id
@@ -28,12 +30,11 @@ public class Category implements Serializable {
     @JsonView(Views.CategoryFull.class)
     private String imagePath;
 
-
-    @ElementCollection
+    @OneToMany(mappedBy = "category")
     @JsonView({Views.CategoryFull.class,Views.ProductFull.class})
-    private List<Fields> fields;
+    private List<Sections> sectionsInDb;
 
-
+    private transient List<CategorySectionDto> sections;
 
     public long getId() {
         return id;
@@ -66,15 +67,6 @@ public class Category implements Serializable {
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
     }
-
-    public List<Fields> getFields() {
-        return fields;
-    }
-
-    public void setFields(List<Fields> fields) {
-        this.fields = fields;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -90,5 +82,19 @@ public class Category implements Serializable {
         return categoryName.hashCode();
     }
 
+    public List<CategorySectionDto> getSections() {
+        return sections;
+    }
 
+    public void setSections(List<CategorySectionDto> sections) {
+        this.sections = sections;
+    }
+
+    public List<Sections> getSectionsInDb() {
+        return sectionsInDb;
+    }
+
+    public void setSectionsInDb(List<Sections> sectionsInDb) {
+        this.sectionsInDb = sectionsInDb;
+    }
 }

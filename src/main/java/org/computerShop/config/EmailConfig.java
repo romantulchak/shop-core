@@ -17,25 +17,14 @@ public class EmailConfig {
     @Value("${user.email.password}")
     private String password;
 
-
-
-
-    private TemplateEngine templateEngine;
-
     @Bean
     public TemplateEngine templateEngine(){
         return new TemplateEngine();
     }
 
-
-
     @Bean
     public SendEmail sendEmail(){
-        SendEmail sendEmail = new SendEmail();
-        sendEmail.setUsername(username);
-        sendEmail.setPassword(password);
-
-        return sendEmail;
+         return new SendEmail(username, password);
     }
 
 }

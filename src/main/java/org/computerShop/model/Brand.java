@@ -20,7 +20,6 @@ public class Brand implements Serializable {
     @JsonView({Views.ProductFull.class, Views.BrandFull.class})
     private String name;
 
-
     @OneToMany(mappedBy = "brand",cascade = CascadeType.ALL)
     @JsonView(Views.BrandFull.class)
     private Set<Product> products = new LinkedHashSet<>();

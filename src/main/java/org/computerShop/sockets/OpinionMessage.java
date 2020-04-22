@@ -10,7 +10,6 @@ public class OpinionMessage extends Message{
         this.productId = productId;
     }
 
-
     public long getProductId() {
         return productId;
     }
