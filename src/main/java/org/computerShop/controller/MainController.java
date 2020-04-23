@@ -67,10 +67,8 @@ public class MainController {
 
     @PostMapping("/createProduct/{notifySubscribers}")
     @PreAuthorize("hasRole('ADMIN')")
+    @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
     public ResponseEntity<String> createProduct(@RequestBody Product product, @PathVariable(value = "notifySubscribers", required = false) boolean notifySubscribers){
-        product.getProperties().forEach((z,x)->{
-            System.out.println(z +" : " + x);
-        });
         return productService.createProduct(product,notifySubscribers);
     }
     @DeleteMapping("/deleteProduct/{id}")

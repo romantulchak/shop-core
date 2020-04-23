@@ -1,15 +1,13 @@
 package org.computerShop.service.impl;
 
-import com.fasterxml.jackson.annotation.JsonView;
+import org.computerShop.model.ProductSection;
 import org.computerShop.email.SendEmail;
 import org.computerShop.model.*;
-import org.computerShop.model.accessory.CPU;
 import org.computerShop.repository.*;
 import org.computerShop.service.ProductService;
 import org.computerShop.sockets.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -33,6 +31,7 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepo productRepo;
     private CategoryRepo categoryRepo;
     private ImageRepo imageRepo;
+    private ProductSectionRepo productSectionRepo;
    //TODO: перенести
     private CpuRepo cpuRepo;
 
@@ -52,7 +51,8 @@ public class ProductServiceImpl implements ProductService {
                               SendEmail sendEmail,
                               SimpMessagingTemplate simpMessagingTemplate,
                               SubscriptionRepo subscriptionRepo,
-                              TemplateEngine templateEngine){
+                              TemplateEngine templateEngine,
+                              ProductSectionRepo productSectionRepo){
         this.productRepo = productRepo;
         this.imageRepo = imageRepo;
         this.categoryRepo = categoryRepo;
@@ -62,6 +62,7 @@ public class ProductServiceImpl implements ProductService {
         this.simpMessagingTemplate = simpMessagingTemplate;
         this.subscriptionRepo = subscriptionRepo;
         this.templateEngine = templateEngine;
+        this.productSectionRepo = productSectionRepo;
     }
 
 
@@ -92,6 +93,16 @@ public class ProductServiceImpl implements ProductService {
                     imageRepo.save(image);
                 }
             }
+            product.getProperties().forEach((k,v)->{
+                ProductSection productSection = new ProductSection();
+                productSection.setTitle(k);
+                productSection.setProduct(product);
+                v.forEach((key,value)->{
+                    productSection.getSections().put(key,value);
+                });
+                productSectionRepo.save(productSection);
+            });
+
             return new ResponseEntity<>("Ok", HttpStatus.OK);
         }
         return new ResponseEntity<>("Post already exist", HttpStatus.OK);

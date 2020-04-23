@@ -30,7 +30,7 @@ public class Category implements Serializable {
     @JsonView(Views.CategoryFull.class)
     private String imagePath;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     @JsonView({Views.CategoryFull.class,Views.ProductFull.class})
     private List<Sections> sectionsInDb;
 

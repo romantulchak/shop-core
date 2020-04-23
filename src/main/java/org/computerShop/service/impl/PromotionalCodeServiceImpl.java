@@ -95,8 +95,5 @@ public class PromotionalCodeServiceImpl implements PromotionalCodeService {
         return null;
     }
 
-    @Override
-    public ResponseEntity<String> updatePromo(PromotionalCode promotionalCode) {
-        return null;
-    }
+
 }

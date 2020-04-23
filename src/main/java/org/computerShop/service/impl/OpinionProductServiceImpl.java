@@ -46,7 +46,7 @@ public class OpinionProductServiceImpl implements OpinionProductService {
 
     @Override
     public double getAverageRanking(long productId) {
-        return  opinionProductRepo.average(productId);
+        return opinionProductRepo.average(productId);
     }
 
     @Override

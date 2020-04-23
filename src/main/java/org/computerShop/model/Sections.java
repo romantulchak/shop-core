@@ -18,7 +18,7 @@ public class Sections {
     @ManyToOne
     private Category category;
 
-    @OneToMany(mappedBy = "sections")
+    @OneToMany(mappedBy = "sections", cascade = CascadeType.REMOVE)
     @JsonView(Views.CategoryFull.class)
     private List<Fields>fields;
 
