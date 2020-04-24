@@ -13,6 +13,7 @@ import org.computerShop.service.impl.GpuServiceImpl;
 import org.computerShop.service.impl.ProductServiceImpl;
 import org.computerShop.service.impl.PromotionalCodeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -64,6 +65,8 @@ public class MainController {
     public Product findById(@PathVariable("id") Product product){
         return product;
     }
+
+
 
     @PostMapping("/createProduct/{notifySubscribers}")
     @PreAuthorize("hasRole('ADMIN')")

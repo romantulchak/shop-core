@@ -4,6 +4,7 @@ package org.computerShop.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.computerShop.model.accessory.CPU;
 import org.computerShop.model.accessory.GPU;
 
@@ -14,7 +15,7 @@ import java.util.*;
 @Entity
 @Table(name = "products")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Product implements Serializable {
+public class Product {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

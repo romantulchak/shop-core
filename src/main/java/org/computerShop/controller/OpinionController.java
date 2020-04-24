@@ -2,10 +2,12 @@ package org.computerShop.controller;
 
 
 import com.fasterxml.jackson.annotation.JsonView;
+import org.computerShop.dto.OpinionsDto;
 import org.computerShop.model.OpinionProduct;
 import org.computerShop.model.Views;
 import org.computerShop.service.impl.OpinionProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -39,7 +41,8 @@ public class OpinionController {
 
     @GetMapping("/getOpinionForProduct/{productId}")
     @JsonView(Views.ProductFull.class)
-    public List<OpinionProduct> getOpinionForProduct(@PathVariable("productId") long id){
-        return opinionProductService.getOpinionForProduct(id);
+    public OpinionsDto getOpinionForProduct(@PathVariable("productId") long id, @RequestParam(value = "page", defaultValue = "0") int page){
+        System.out.println(page);
+        return opinionProductService.getOpinionForProduct(id, page);
     }
 }

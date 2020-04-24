@@ -8,6 +8,8 @@ import org.computerShop.service.ProductService;
 import org.computerShop.sockets.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -69,6 +71,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> allProducts() {
+        List<Product> products = productRepo.findAll();
         return productRepo.findAll();
     }
 
@@ -255,5 +258,7 @@ public class ProductServiceImpl implements ProductService {
         System.out.println(productRepo.similarProducts(productId, categoryName));
         return productRepo.similarProducts(productId, categoryName);
     }
+
+
 }
 
