@@ -4,6 +4,7 @@ package org.computerShop.controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.computerShop.dto.OpinionsDto;
 import org.computerShop.model.OpinionProduct;
+import org.computerShop.model.User;
 import org.computerShop.model.Views;
 import org.computerShop.service.impl.OpinionProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,10 +40,16 @@ public class OpinionController {
 
     }
 
-    @GetMapping("/getOpinionForProduct/{productId}")
+    @GetMapping("/getOpinionForProduct/{productId}/{userId}")
     @JsonView(Views.ProductFull.class)
-    public OpinionsDto getOpinionForProduct(@PathVariable("productId") long id, @RequestParam(value = "page", defaultValue = "0") int page){
-        System.out.println(page);
-        return opinionProductService.getOpinionForProduct(id, page);
+    public OpinionsDto getOpinionForProduct(@PathVariable("productId") long id, @RequestParam(value = "page", defaultValue = "0") int page, @PathVariable(value = "userId") User user){
+        System.out.println(user);
+        return opinionProductService.getOpinionForProduct(id, page, user);
+    }
+
+    //TODO: when the user is not authorized
+    @GetMapping("/setLike/{userId}/{opinionId}")
+    public ResponseEntity<String> setLike(@PathVariable("userId") User user, @PathVariable("opinionId") OpinionProduct opinionProduct){
+        return opinionProductService.setLike(user, opinionProduct);
     }
 }

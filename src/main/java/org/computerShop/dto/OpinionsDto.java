@@ -8,7 +8,7 @@ import java.util.List;
 
 public class OpinionsDto {
     @JsonView(Views.ProductFull.class)
-    private List<OpinionProduct> comments;
+    private List<CommentsDto> comments;
 
     @JsonView(Views.ProductFull.class)
     private int currentPage;
@@ -19,22 +19,25 @@ public class OpinionsDto {
     @JsonView(Views.ProductFull.class)
     private int commentsCounter;
 
+
+
     public OpinionsDto(){
 
     }
 
-    public OpinionsDto(List<OpinionProduct> comments, int currentPage, int totalPages, int commentsCounter) {
+    public OpinionsDto(List<CommentsDto> comments, int currentPage, int totalPages, int commentsCounter) {
         this.comments = comments;
         this.currentPage = currentPage;
         this.totalPages = totalPages;
         this.commentsCounter = commentsCounter;
     }
 
-    public List<OpinionProduct> getComments() {
+
+    public List<CommentsDto> getComments() {
         return comments;
     }
 
-    public void setComments(List<OpinionProduct> comments) {
+    public void setComments(List<CommentsDto> comments) {
         this.comments = comments;
     }
 
@@ -61,4 +64,5 @@ public class OpinionsDto {
     public void setCommentsCounter(int commentsCounter) {
         this.commentsCounter = commentsCounter;
     }
+
 }

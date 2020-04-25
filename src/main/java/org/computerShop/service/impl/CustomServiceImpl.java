@@ -95,10 +95,8 @@ public class CustomServiceImpl implements CustomService {
                 customProductRepo.save(customProduct);
             }
         });
-
-
         if (custom.getEmail() != null) {
-            sendEmail.sendMail(custom.getEmail(), "Your order number", contentToSend(products, custom, identificationNumber).toString());
+            sendEmail.sendMail(custom.getEmail(),"Your order number",contentToSend(products, custom, identificationNumber).toString());
         }
         simpMessagingTemplate.convertAndSend("/topic/update", true);
         return identificationNumber;
@@ -155,7 +153,6 @@ public class CustomServiceImpl implements CustomService {
 
     @Override
     public ResponseEntity<String> setStatus(Custom custom, int status) {
-
         List<Custom> customs = customRepo.findAllByIdentificationNumber(custom.getIdentificationNumber());
         boolean isSuccess = false;
         switch (status){
@@ -216,8 +213,6 @@ public class CustomServiceImpl implements CustomService {
 
 
     private void changeStatus(int status, List<Custom> customs, int statusToSet){
-
-
         customs.forEach(s->{
             s.getStatuses().stream().filter(x->x.getStatusCode() == status)
                     .findFirst().orElse(new Status()).setStatusDateTime(LocalDateTime.now());
@@ -225,9 +220,7 @@ public class CustomServiceImpl implements CustomService {
                     findFirst()
                     .orElse(new Status())
                     .setStatusCode(statusToSet);
-
         });
-
     }
 
     @Override
@@ -259,7 +252,6 @@ public class CustomServiceImpl implements CustomService {
 
     @Override
     public List<Custom> getAllForUser(User user) {
-
         Collections.reverse(user.getCustom());
         return  user.getCustom();
     }

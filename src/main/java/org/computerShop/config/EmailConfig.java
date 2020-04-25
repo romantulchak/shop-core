@@ -6,10 +6,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.thymeleaf.TemplateEngine;
 
 @Configuration
 @PropertySource(ignoreResourceNotFound = true, value = "classpath:application-email.properties")
+@EnableAsync
 public class EmailConfig {
     @Value("${user.email.login}")
     private String username;

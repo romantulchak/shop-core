@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
@@ -21,13 +22,13 @@ import java.util.Properties;
 @PropertySource(value = "classpath:application-email.properties")
 public class SendEmail {
 
-
-
     @Value("${user.email.login}")
     private String username;
 
     @Value("${user.email.password}")
     private String password;
+
+
 
     public SendEmail(){
 
@@ -38,7 +39,7 @@ public class SendEmail {
         this.password = password;
     }
 
-
+    @Async
     public void sendMail(String emailTo, String title, String text){
         Properties prop = new Properties();
         System.out.println(username);
@@ -82,4 +83,5 @@ public class SendEmail {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

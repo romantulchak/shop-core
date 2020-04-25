@@ -1,5 +1,6 @@
 package org.computerShop.service.impl;
 
+import org.computerShop.dto.CommentsDto;
 import org.computerShop.dto.OpinionsDto;
 import org.computerShop.model.OpinionProduct;
 import org.computerShop.model.User;
@@ -21,6 +22,7 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class OpinionProductServiceImpl implements OpinionProductService {
@@ -41,9 +43,8 @@ public class OpinionProductServiceImpl implements OpinionProductService {
     public ResponseEntity<?> createOpinion(OpinionProduct opinionProduct, long userId) {
         User user = userRepo.findById(userId).orElse(null);
         if(user != null){
-            opinionProduct.setUser(user);
-            opinionProduct.setDateTime(LocalDateTime.now());
-            opinionProductRepo.save(opinionProduct);
+            OpinionProduct opinionProductToSave = new OpinionProduct(opinionProduct.getCommentToProduct(), user, opinionProduct.getText(), LocalDateTime.now(), opinionProduct.getRating(), opinionProduct.getAdvantages(), opinionProduct.getDisadvantages());
+            opinionProductRepo.save(opinionProductToSave);
             simpMessagingTemplate.convertAndSend("/topic/update", new OpinionMessage("updateOpinion", opinionProduct.getCommentToProduct().getId()));
             return new ResponseEntity<>("Ok", HttpStatus.OK);
         }
@@ -58,19 +59,26 @@ public class OpinionProductServiceImpl implements OpinionProductService {
         bd = bd.setScale(1, RoundingMode.HALF_UP);
         return bd.doubleValue();
     }
-/*
+
+
     @Override
-    public List<OpinionProduct> getOpinionForProduct(long productId) {
-        return opinionProductRepo.findAllForProduct(productId);
+    public OpinionsDto getOpinionForProduct(long productId, int page, User user) {
+        Pageable pageable = PageRequest.of(page, 5);
+        Page<CommentsDto> products = null;
+
+          products = opinionProductRepo.findAllForProduct(productId,pageable,user);
+             return new OpinionsDto(products.toList(), pageable.getPageNumber(), products.getTotalPages(), opinionProductRepo.findAllForProduct(productId).size());
     }
 
- */
-
     @Override
-    public OpinionsDto getOpinionForProduct(long productId, int page) {
-        Pageable pageable = PageRequest.of(page, 5);
-        Page<OpinionProduct> products = opinionProductRepo.findAllForProduct(productId, pageable);
-        System.out.println("SIZE: " + products.toList().size());
-        return new OpinionsDto(products.toList(), pageable.getPageNumber(), products.getTotalPages(), opinionProductRepo.findAllForProduct(productId).size());
+    public ResponseEntity<String> setLike(User user, OpinionProduct opinionProduct) {
+        Set<User> likes = opinionProduct.getLikes();
+        if(likes.contains(user)){
+            likes.remove(user);
+        }else{
+            likes.add(user);
+        }
+        opinionProductRepo.save(opinionProduct);
+        return new ResponseEntity<>("Ok", HttpStatus.OK);
     }
 }

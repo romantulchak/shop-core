@@ -86,7 +86,7 @@ public class ProductServiceImpl implements ProductService {
         if (!productsFromDb.contains(product)) {
             if(notifySubscribers){
                 subscriptionRepo.findAll().forEach(el->{
-                    sendEmail.sendMail(el.getEmail(), "Now you can buy new " + product.getCategory().getCategoryName() + " in our shop", "Already available " + product.getProductName() + " price: " + product.getProductPrice());
+                    sendEmail.sendMail(el.getEmail(), "Now you can buy new " + product.getCategory().getCategoryName() + " in our shop","Already available " + product.getProductName() + " price: " + product.getProductPrice());
                 });
             }
             productRepo.save(product);
@@ -117,12 +117,17 @@ public class ProductServiceImpl implements ProductService {
         if(remindsMe != null){
            product.setRemindMe(remindsMe);
         }
-
         productRepo.save(product);
         simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateProducts", true));
         if(product.getRemindMe() != null && product.getAmountInStock() != 0){
             for (RemindMe remindMe:product.getRemindMe()) {
-                sendEmail.sendMail(remindMe.getEmail(), "Remind", "Product: " + product.getProductName() + " is available");
+
+
+                //sendEmail.sendMail(remindMe.getEmail(), "Remind", "Product: " + product.getProductName() + " is available");
+
+
+
+
             }
             return new ResponseEntity<>("Ok", HttpStatus.OK);
         }else {
@@ -232,7 +237,12 @@ public class ProductServiceImpl implements ProductService {
                 if(notifySubscribers){
                     MailContentBuilder mailContentBuilder = new MailContentBuilder(templateEngine);
                     subscriptionRepo.findAll().forEach(el->{
-                       sendEmail.sendMail(el.getEmail(), "GLOBAL DISCOUNT", mailContentBuilder.createProductTemplate(product));
+
+
+                        sendEmail.sendMail(el.getEmail(),"Discount price for:", mailContentBuilder.createProductTemplate(product));
+
+
+
                     });
                 }
                 simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateProducts", true));

@@ -29,7 +29,6 @@ public class GpuServiceImpl implements GpuService {
         if(gpu != null){
             gpuRepo.save(gpu);
             return new ResponseEntity<>("Ok", HttpStatus.OK);
-
         }
         return new ResponseEntity<>("Bad", HttpStatus.OK);
     }
