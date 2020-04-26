@@ -27,15 +27,21 @@ public class CommentsDto {
     private Long likes;
 
     @JsonView(Views.ProductFull.class)
+    private Long dislikes;
+
+
+    @JsonView(Views.ProductFull.class)
     private boolean meLiked;
 
+    @JsonView(Views.ProductFull.class)
+    private boolean meDisliked;
     @JsonView(Views.ProductFull.class)
     private LocalDateTime dateTime;
 
     @JsonView(Views.ProductFull.class)
     private short rating;
 
-    public CommentsDto(OpinionProduct opinionProduct, Long likes, boolean meLiked) {
+    public CommentsDto(OpinionProduct opinionProduct, Long likes, boolean meLiked, Long dislikes, boolean meDisliked) {
         this.id = opinionProduct.getId();
         this.text = opinionProduct.getText();
         this.advantages = opinionProduct.getAdvantages();
@@ -45,17 +51,10 @@ public class CommentsDto {
         this.dateTime = opinionProduct.getDateTime();
         this.rating = opinionProduct.getRating();
         this.commentToProduct = opinionProduct.getCommentToProduct();
+        this.dislikes = dislikes;
+        this.meDisliked = meDisliked;
     }
-    public CommentsDto(OpinionProduct opinionProduct, Long likes) {
-        this.id = opinionProduct.getId();
-        this.text = opinionProduct.getText();
-        this.advantages = opinionProduct.getAdvantages();
-        this.disadvantages = opinionProduct.getDisadvantages();
-        this.likes = likes;
-        this.dateTime = opinionProduct.getDateTime();
-        this.rating = opinionProduct.getRating();
-        this.commentToProduct = opinionProduct.getCommentToProduct();
-    }
+
     public CommentsDto(){
 
     }
@@ -130,5 +129,21 @@ public class CommentsDto {
 
     public void setMeLiked(boolean meLiked) {
         this.meLiked = meLiked;
+    }
+
+    public Long getDislikes() {
+        return dislikes;
+    }
+
+    public void setDislikes(Long dislikes) {
+        this.dislikes = dislikes;
+    }
+
+    public boolean isMeDisliked() {
+        return meDisliked;
+    }
+
+    public void setMeDisliked(boolean meDisliked) {
+        this.meDisliked = meDisliked;
     }
 }

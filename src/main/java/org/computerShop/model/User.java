@@ -100,6 +100,16 @@ public class User {
     @OneToOne
     private Subscription subscription;
 
+
+    @ManyToMany(mappedBy = "likes")
+    private Set<OpinionProduct> likes;
+
+
+    @ManyToMany(mappedBy = "dislikes")
+    private Set<OpinionProduct> dislikes;
+
+
+
     public User() {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -233,5 +243,41 @@ public class User {
 
     public void setOpinionProducts(List<OpinionProduct> opinionProducts) {
         this.opinionProducts = opinionProducts;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", city='" + city + '\'' +
+                ", address='" + address + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", mobilePhone='" + mobilePhone + '\'' +
+                ", opinionProducts=" + opinionProducts +
+                ", roles=" + roles +
+                ", custom=" + custom +
+                ", subscription=" + subscription +
+                '}';
+    }
+
+    public Set<OpinionProduct> getDislikes() {
+        return dislikes;
+    }
+
+    public void setDislikes(Set<OpinionProduct> dislikes) {
+        this.dislikes = dislikes;
+    }
+
+    public Set<OpinionProduct> getLikes() {
+        return likes;
+    }
+
+    public void setLikes(Set<OpinionProduct> likes) {
+        this.likes = likes;
     }
 }

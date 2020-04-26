@@ -46,6 +46,12 @@ public class OpinionProduct {
     @JsonView(Views.ProductFull.class)
     private Set<User> likes = new HashSet<>();
 
+    @ManyToMany
+    @JoinTable(name = "opinions_dislikes",
+                joinColumns = @JoinColumn(name = "opinion_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    private Set<User> dislikes = new HashSet<>();
 
     @JsonView(Views.ProductFull.class)
     private LocalDateTime dateTime;
@@ -136,5 +142,13 @@ public class OpinionProduct {
 
     public void setLikes(Set<User> likes) {
         this.likes = likes;
+    }
+
+    public Set<User> getDislikes() {
+        return dislikes;
+    }
+
+    public void setDislikes(Set<User> dislikes) {
+        this.dislikes = dislikes;
     }
 }

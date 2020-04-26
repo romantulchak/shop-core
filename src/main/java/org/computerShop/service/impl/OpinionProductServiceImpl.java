@@ -64,21 +64,47 @@ public class OpinionProductServiceImpl implements OpinionProductService {
     @Override
     public OpinionsDto getOpinionForProduct(long productId, int page, User user) {
         Pageable pageable = PageRequest.of(page, 5);
-        Page<CommentsDto> products = null;
-
-          products = opinionProductRepo.findAllForProduct(productId,pageable,user);
-             return new OpinionsDto(products.toList(), pageable.getPageNumber(), products.getTotalPages(), opinionProductRepo.findAllForProduct(productId).size());
+        Page<CommentsDto> products = opinionProductRepo.findAllForProduct(productId,pageable,user);
+        return new OpinionsDto(products.toList(), pageable.getPageNumber(), products.getTotalPages(), opinionProductRepo.findAllForProduct(productId).size());
     }
 
     @Override
     public ResponseEntity<String> setLike(User user, OpinionProduct opinionProduct) {
         Set<User> likes = opinionProduct.getLikes();
+        Set<User> dislikes = opinionProduct.getDislikes();
+        if(dislikes.contains(user)){
+            dislikes.remove(user);
+        }
         if(likes.contains(user)){
             likes.remove(user);
         }else{
             likes.add(user);
         }
         opinionProductRepo.save(opinionProduct);
+        return new ResponseEntity<>("Ok", HttpStatus.OK);
+    }
+
+
+
+    @Override
+    public ResponseEntity<String> setDislike(User user, OpinionProduct opinionProduct) {
+        Set<User> dislikes = opinionProduct.getDislikes();
+        Set<User> likes = opinionProduct.getLikes();
+
+        if(likes.contains(user)){
+            likes.remove(user);
+
+
+        }
+        if(dislikes.contains(user)){
+            dislikes.remove(user);
+        }else{
+            dislikes.add(user);
+        }
+        opinionProductRepo.save(opinionProduct);
+
+
+
         return new ResponseEntity<>("Ok", HttpStatus.OK);
     }
 }

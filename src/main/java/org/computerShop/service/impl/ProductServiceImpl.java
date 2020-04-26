@@ -71,7 +71,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> allProducts() {
-        List<Product> products = productRepo.findAll();
+
         return productRepo.findAll();
     }
 

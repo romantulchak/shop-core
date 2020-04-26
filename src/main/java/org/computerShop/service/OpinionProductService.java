@@ -14,4 +14,5 @@ public interface OpinionProductService {
     double getAverageRanking(long productId);
     OpinionsDto getOpinionForProduct(long productId, int page, User user);
     ResponseEntity<String> setLike(User user, OpinionProduct opinionProduct);
+    ResponseEntity<String> setDislike(User user, OpinionProduct opinionProduct);
 }

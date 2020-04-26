@@ -40,10 +40,9 @@ public class OpinionController {
 
     }
 
-    @GetMapping("/getOpinionForProduct/{productId}/{userId}")
+    @GetMapping("/getOpinionForProduct/{productId}")
     @JsonView(Views.ProductFull.class)
-    public OpinionsDto getOpinionForProduct(@PathVariable("productId") long id, @RequestParam(value = "page", defaultValue = "0") int page, @PathVariable(value = "userId") User user){
-        System.out.println(user);
+    public OpinionsDto getOpinionForProduct(@PathVariable("productId") long id, @RequestParam(value = "page", defaultValue = "0") int page, @RequestParam(value = "user", required = false) User user){
         return opinionProductService.getOpinionForProduct(id, page, user);
     }
 
@@ -52,4 +51,9 @@ public class OpinionController {
     public ResponseEntity<String> setLike(@PathVariable("userId") User user, @PathVariable("opinionId") OpinionProduct opinionProduct){
         return opinionProductService.setLike(user, opinionProduct);
     }
+    @GetMapping("/setDislike/{userId}/{opinionId}")
+    public ResponseEntity<String> setDislike(@PathVariable("userId") User user, @PathVariable("opinionId") OpinionProduct opinionProduct){
+        return opinionProductService.setDislike(user, opinionProduct);
+    }
+
 }
