@@ -27,7 +27,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonView({Views.UserFull.class, Views.CustomUser.class, Views.ProductFull.class})
+    @JsonView({Views.UserFull.class, Views.CustomUser.class, Views.ProductFull.class, Views.OpinionsFull.class})
     private Long id;
 
     @NotBlank
@@ -48,12 +48,12 @@ public class User {
 
     @NotBlank
     @Size(max = 20)
-    @JsonView({Views.UserFull.class, Views.ProductFull.class})
+    @JsonView({Views.UserFull.class, Views.ProductFull.class, Views.OpinionsFull.class})
     private String firstName;
 
     @NotBlank
     @Size(max = 20)
-    @JsonView({Views.UserFull.class, Views.ProductFull.class})
+    @JsonView({Views.UserFull.class, Views.ProductFull.class, Views.OpinionsFull.class})
     private String lastName;
 
     @NotBlank
@@ -100,13 +100,6 @@ public class User {
     @OneToOne
     private Subscription subscription;
 
-
-    @ManyToMany(mappedBy = "likes")
-    private Set<OpinionProduct> likes;
-
-
-    @ManyToMany(mappedBy = "dislikes")
-    private Set<OpinionProduct> dislikes;
 
 
 
@@ -265,19 +258,5 @@ public class User {
                 '}';
     }
 
-    public Set<OpinionProduct> getDislikes() {
-        return dislikes;
-    }
 
-    public void setDislikes(Set<OpinionProduct> dislikes) {
-        this.dislikes = dislikes;
-    }
-
-    public Set<OpinionProduct> getLikes() {
-        return likes;
-    }
-
-    public void setLikes(Set<OpinionProduct> likes) {
-        this.likes = likes;
-    }
 }

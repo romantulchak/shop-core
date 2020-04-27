@@ -7,25 +7,23 @@ import org.computerShop.model.Views;
 import java.util.List;
 
 public class OpinionsDto {
-    @JsonView(Views.ProductFull.class)
-    private List<CommentsDto> comments;
+    @JsonView({Views.ProductFull.class, Views.OpinionsFull.class})
+    private List<OpinionProduct> comments;
 
-    @JsonView(Views.ProductFull.class)
+
+
+
+    @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
     private int currentPage;
 
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
     private int totalPages;
 
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
     private int commentsCounter;
 
 
-
-    public OpinionsDto(){
-
-    }
-
-    public OpinionsDto(List<CommentsDto> comments, int currentPage, int totalPages, int commentsCounter) {
+    public OpinionsDto(List<OpinionProduct> comments, int currentPage, int totalPages, int commentsCounter) {
         this.comments = comments;
         this.currentPage = currentPage;
         this.totalPages = totalPages;
@@ -33,11 +31,15 @@ public class OpinionsDto {
     }
 
 
-    public List<CommentsDto> getComments() {
+    public OpinionsDto(){
+
+    }
+
+    public List<OpinionProduct> getComments() {
         return comments;
     }
 
-    public void setComments(List<CommentsDto> comments) {
+    public void setComments(List<OpinionProduct> comments) {
         this.comments = comments;
     }
 

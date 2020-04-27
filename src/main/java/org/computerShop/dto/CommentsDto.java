@@ -3,57 +3,63 @@ package org.computerShop.dto;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.computerShop.model.OpinionProduct;
 import org.computerShop.model.Product;
+import org.computerShop.model.User;
 import org.computerShop.model.Views;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 public class CommentsDto {
-    @JsonView(Views.ProductFull.class)
+
+    @JsonView(Views.OpinionsFull.class)
     private Long id;
 
-    @JsonView(Views.ProductFull.class)
+    @JsonView(Views.OpinionsFull.class)
     private String text;
 
+    @JsonView(Views.OpinionsFull.class)
     private Product commentToProduct;
 
-    @JsonView(Views.ProductFull.class)
+    @JsonView(Views.OpinionsFull.class)
     private String advantages;
 
-    @JsonView(Views.ProductFull.class)
+    @JsonView(Views.OpinionsFull.class)
     private String disadvantages;
 
-    @JsonView(Views.ProductFull.class)
-    private Long likes;
+    @JsonView(Views.OpinionsFull.class)
+    private Set<User> likes;
 
-    @JsonView(Views.ProductFull.class)
-    private Long dislikes;
+    @JsonView(Views.OpinionsFull.class)
+    private Set<User> dislikes;
 
-
-    @JsonView(Views.ProductFull.class)
+    @JsonView(Views.OpinionsFull.class)
     private boolean meLiked;
 
-    @JsonView(Views.ProductFull.class)
+    @JsonView(Views.OpinionsFull.class)
     private boolean meDisliked;
-    @JsonView(Views.ProductFull.class)
+
+    @JsonView(Views.OpinionsFull.class)
     private LocalDateTime dateTime;
 
-    @JsonView(Views.ProductFull.class)
+    @JsonView(Views.OpinionsFull.class)
     private short rating;
 
-    public CommentsDto(OpinionProduct opinionProduct, Long likes, boolean meLiked, Long dislikes, boolean meDisliked) {
+    public CommentsDto(OpinionProduct opinionProduct) {
         this.id = opinionProduct.getId();
         this.text = opinionProduct.getText();
         this.advantages = opinionProduct.getAdvantages();
         this.disadvantages = opinionProduct.getDisadvantages();
-        this.likes = likes;
-        this.meLiked = meLiked;
         this.dateTime = opinionProduct.getDateTime();
         this.rating = opinionProduct.getRating();
         this.commentToProduct = opinionProduct.getCommentToProduct();
-        this.dislikes = dislikes;
-        this.meDisliked = meDisliked;
+        this.likes = opinionProduct.getLikes();
+        this.dislikes = opinionProduct.getDislikes();
+
     }
+
+
+
 
     public CommentsDto(){
 
@@ -91,12 +97,21 @@ public class CommentsDto {
         this.disadvantages = disadvantages;
     }
 
-    public Long getLikes() {
+
+    public Set<User> getLikes() {
         return likes;
     }
 
-    public void setLikes(Long likes) {
+    public void setLikes(Set<User> likes) {
         this.likes = likes;
+    }
+
+    public Set<User> getDislikes() {
+        return dislikes;
+    }
+
+    public void setDislikes(Set<User> dislikes) {
+        this.dislikes = dislikes;
     }
 
     public LocalDateTime getDateTime() {
@@ -131,13 +146,6 @@ public class CommentsDto {
         this.meLiked = meLiked;
     }
 
-    public Long getDislikes() {
-        return dislikes;
-    }
-
-    public void setDislikes(Long dislikes) {
-        this.dislikes = dislikes;
-    }
 
     public boolean isMeDisliked() {
         return meDisliked;
@@ -146,4 +154,6 @@ public class CommentsDto {
     public void setMeDisliked(boolean meDisliked) {
         this.meDisliked = meDisliked;
     }
+
+
 }

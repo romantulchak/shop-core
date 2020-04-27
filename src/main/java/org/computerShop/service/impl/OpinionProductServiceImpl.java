@@ -4,10 +4,10 @@ import org.computerShop.dto.CommentsDto;
 import org.computerShop.dto.OpinionsDto;
 import org.computerShop.model.OpinionProduct;
 import org.computerShop.model.User;
-import org.computerShop.sockets.OpinionMessage;
 import org.computerShop.repository.OpinionProductRepo;
 import org.computerShop.repository.UserRepo;
 import org.computerShop.service.OpinionProductService;
+import org.computerShop.sockets.OpinionMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,10 +19,9 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class OpinionProductServiceImpl implements OpinionProductService {
@@ -45,7 +44,7 @@ public class OpinionProductServiceImpl implements OpinionProductService {
         if(user != null){
             OpinionProduct opinionProductToSave = new OpinionProduct(opinionProduct.getCommentToProduct(), user, opinionProduct.getText(), LocalDateTime.now(), opinionProduct.getRating(), opinionProduct.getAdvantages(), opinionProduct.getDisadvantages());
             opinionProductRepo.save(opinionProductToSave);
-            simpMessagingTemplate.convertAndSend("/topic/update", new OpinionMessage("updateOpinion", opinionProduct.getCommentToProduct().getId()));
+                simpMessagingTemplate.convertAndSend("/topic/update", new OpinionMessage("updateOpinion", opinionProduct.getCommentToProduct().getId()));
             return new ResponseEntity<>("Ok", HttpStatus.OK);
         }
         return new ResponseEntity<>("Something wrong", HttpStatus.OK);
@@ -64,18 +63,36 @@ public class OpinionProductServiceImpl implements OpinionProductService {
     @Override
     public OpinionsDto getOpinionForProduct(long productId, int page, User user) {
         Pageable pageable = PageRequest.of(page, 5);
-        Page<CommentsDto> products = opinionProductRepo.findAllForProduct(productId,pageable,user);
+        Page<OpinionProduct> products = opinionProductRepo.findAllForProduct(productId,pageable);;
+        products.forEach(el->{
+            if(isContains(user, el.getLikes())){
+                el.setMeLiked(true);
+            }else if(isContains(user, el.getDislikes())){
+                el.setMeDisliked(true);
+            }
+        });
         return new OpinionsDto(products.toList(), pageable.getPageNumber(), products.getTotalPages(), opinionProductRepo.findAllForProduct(productId).size());
+    }
+
+
+
+
+    private boolean isContains(User user, Set<User> likes) {
+        return likes.contains(user);
     }
 
     @Override
     public ResponseEntity<String> setLike(User user, OpinionProduct opinionProduct) {
         Set<User> likes = opinionProduct.getLikes();
         Set<User> dislikes = opinionProduct.getDislikes();
-        if(dislikes.contains(user)){
+        return getStringResponseEntity(user, opinionProduct, likes, dislikes);
+    }
+
+    private ResponseEntity<String> getStringResponseEntity(User user, OpinionProduct opinionProduct, Set<User> likes, Set<User> dislikes) {
+        if(isContains(user, dislikes)){
             dislikes.remove(user);
         }
-        if(likes.contains(user)){
+        if(isContains(user, likes)){
             likes.remove(user);
         }else{
             likes.add(user);
@@ -85,26 +102,10 @@ public class OpinionProductServiceImpl implements OpinionProductService {
     }
 
 
-
     @Override
     public ResponseEntity<String> setDislike(User user, OpinionProduct opinionProduct) {
         Set<User> dislikes = opinionProduct.getDislikes();
         Set<User> likes = opinionProduct.getLikes();
-
-        if(likes.contains(user)){
-            likes.remove(user);
-
-
-        }
-        if(dislikes.contains(user)){
-            dislikes.remove(user);
-        }else{
-            dislikes.add(user);
-        }
-        opinionProductRepo.save(opinionProduct);
-
-
-
-        return new ResponseEntity<>("Ok", HttpStatus.OK);
+        return getStringResponseEntity(user, opinionProduct, dislikes, likes);
     }
 }

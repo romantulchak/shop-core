@@ -41,7 +41,7 @@ public class OpinionController {
     }
 
     @GetMapping("/getOpinionForProduct/{productId}")
-    @JsonView(Views.ProductFull.class)
+    @JsonView(Views.OpinionsFull.class)
     public OpinionsDto getOpinionForProduct(@PathVariable("productId") long id, @RequestParam(value = "page", defaultValue = "0") int page, @RequestParam(value = "user", required = false) User user){
         return opinionProductService.getOpinionForProduct(id, page, user);
     }

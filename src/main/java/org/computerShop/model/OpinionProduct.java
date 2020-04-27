@@ -14,27 +14,27 @@ public class OpinionProduct {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
     private long id;
 
     @ManyToOne
     private Product commentToProduct;
 
     @ManyToOne
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class, Views.OpinionsFull.class})
     private User user;
 
     @Size(max = 1000000)
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class, Views.OpinionsFull.class})
     private String text;
 
     @Size(max = 500)
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class, Views.OpinionsFull.class})
     private String advantages;
 
 
     @Size(max = 500)
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class, Views.OpinionsFull.class})
     private String disadvantages;
 
     @ManyToMany
@@ -43,7 +43,7 @@ public class OpinionProduct {
             joinColumns = @JoinColumn(name = "opinion_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
     private Set<User> likes = new HashSet<>();
 
     @ManyToMany
@@ -51,13 +51,25 @@ public class OpinionProduct {
                 joinColumns = @JoinColumn(name = "opinion_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
+    @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
     private Set<User> dislikes = new HashSet<>();
 
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
     private LocalDateTime dateTime;
 
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
     private short rating = 5;
+
+
+    @JsonView({Views.ProductFull.class, Views.OpinionsFull.class})
+    private transient boolean meLiked;
+
+    @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
+    private transient boolean meDisliked;
+
+
+
+
 
     public OpinionProduct(Product commentToProduct, User user, String text, LocalDateTime dateTime, short rating, String advantages, String disadvantages) {
         this.commentToProduct = commentToProduct;
@@ -150,5 +162,21 @@ public class OpinionProduct {
 
     public void setDislikes(Set<User> dislikes) {
         this.dislikes = dislikes;
+    }
+
+    public boolean isMeLiked() {
+        return meLiked;
+    }
+
+    public void setMeLiked(boolean meLiked) {
+        this.meLiked = meLiked;
+    }
+
+    public boolean isMeDisliked() {
+        return meDisliked;
+    }
+
+    public void setMeDisliked(boolean meDisliked) {
+        this.meDisliked = meDisliked;
     }
 }
