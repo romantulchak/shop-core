@@ -1,10 +1,14 @@
 package org.computerShop.service.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.computerShop.dto.CommentsDto;
 import org.computerShop.dto.OpinionsDto;
 import org.computerShop.model.OpinionProduct;
+import org.computerShop.model.Replay;
 import org.computerShop.model.User;
 import org.computerShop.repository.OpinionProductRepo;
+import org.computerShop.repository.ReplayRepo;
 import org.computerShop.repository.UserRepo;
 import org.computerShop.service.OpinionProductService;
 import org.computerShop.sockets.OpinionMessage;
@@ -20,6 +24,7 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -29,12 +34,14 @@ public class OpinionProductServiceImpl implements OpinionProductService {
     private OpinionProductRepo opinionProductRepo;
     private UserRepo userRepo;
     private SimpMessagingTemplate simpMessagingTemplate;
+    private ReplayRepo replayRepo;
 
     @Autowired
-    public OpinionProductServiceImpl(OpinionProductRepo opinionProductRepo, UserRepo userRepo, SimpMessagingTemplate simpMessagingTemplate){
+    public OpinionProductServiceImpl(OpinionProductRepo opinionProductRepo, UserRepo userRepo, SimpMessagingTemplate simpMessagingTemplate, ReplayRepo replayRepo){
         this.opinionProductRepo = opinionProductRepo;
         this.userRepo = userRepo;
         this.simpMessagingTemplate = simpMessagingTemplate;
+        this.replayRepo = replayRepo;
     }
 
 
@@ -98,6 +105,7 @@ public class OpinionProductServiceImpl implements OpinionProductService {
             likes.add(user);
         }
         opinionProductRepo.save(opinionProduct);
+        simpMessagingTemplate.convertAndSend("/topic/update", new OpinionMessage("updateOpinion", opinionProduct.getCommentToProduct().getId()));
         return new ResponseEntity<>("Ok", HttpStatus.OK);
     }
 
@@ -106,6 +114,25 @@ public class OpinionProductServiceImpl implements OpinionProductService {
     public ResponseEntity<String> setDislike(User user, OpinionProduct opinionProduct) {
         Set<User> dislikes = opinionProduct.getDislikes();
         Set<User> likes = opinionProduct.getLikes();
+
         return getStringResponseEntity(user, opinionProduct, dislikes, likes);
+    }
+
+    public List<Replay> getAnswersForOpinion(OpinionProduct opinionProduct){
+        return replayRepo.findForProduct(opinionProduct.getId());
+    }
+
+    @Override
+    public ResponseEntity<String> setAnswer(Replay replay, OpinionProduct opinionProduct, User user){
+       if(replay != null && opinionProduct != null){
+           replay.setOpinionProducts(opinionProduct);
+           replay.setDateTime(LocalDateTime.now());
+           replay.setUser(user);
+           replayRepo.save(replay);
+           simpMessagingTemplate.convertAndSend("/topic/update", new OpinionMessage("updateAnswer", opinionProduct.getCommentToProduct().getId(), opinionProduct.getId()));
+            return new ResponseEntity<>("Ok", HttpStatus.OK);
+       }else {
+           return new ResponseEntity<>("Something wrong", HttpStatus.OK);
+       }
     }
 }

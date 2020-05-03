@@ -2,8 +2,10 @@ package org.computerShop.controller;
 
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.computerShop.dto.OpinionsDto;
 import org.computerShop.model.OpinionProduct;
+import org.computerShop.model.Replay;
 import org.computerShop.model.User;
 import org.computerShop.model.Views;
 import org.computerShop.service.impl.OpinionProductServiceImpl;
@@ -55,5 +57,15 @@ public class OpinionController {
     public ResponseEntity<String> setDislike(@PathVariable("userId") User user, @PathVariable("opinionId") OpinionProduct opinionProduct){
         return opinionProductService.setDislike(user, opinionProduct);
     }
+    @GetMapping("/getAnswers/{id}")
+    @JsonView(Views.OpinionsFull.class)
+    public List<Replay> getAnswers(@PathVariable("id") OpinionProduct opinionProduct){
+        return opinionProductService.getAnswersForOpinion(opinionProduct);
+    }
 
+    @PostMapping("/setAnswer/{id}/{userId}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<String> setAnswer(@RequestBody Replay replay, @PathVariable("id") OpinionProduct opinionProduct, @PathVariable("userId") User user) {
+        return opinionProductService.setAnswer(replay, opinionProduct, user);
+    }
 }

@@ -90,6 +90,8 @@ public class User {
     private Set<Role> roles = new HashSet<>();
 
 
+    @OneToMany(mappedBy = "user")
+    private List<Replay> replays;
 
     @OneToMany(mappedBy = "user")
     @JsonView({Views.CustomFUll.class, Views.UserFull.class})
@@ -258,5 +260,11 @@ public class User {
                 '}';
     }
 
+    public List<Replay> getReplays() {
+        return replays;
+    }
 
+    public void setReplays(List<Replay> replays) {
+        this.replays = replays;
+    }
 }

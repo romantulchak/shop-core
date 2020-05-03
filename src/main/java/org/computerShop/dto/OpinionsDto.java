@@ -66,5 +66,5 @@ public class OpinionsDto {
     public void setCommentsCounter(int commentsCounter) {
         this.commentsCounter = commentsCounter;
     }
-
+    
 }

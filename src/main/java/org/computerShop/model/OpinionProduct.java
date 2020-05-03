@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -67,8 +68,9 @@ public class OpinionProduct {
     @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
     private transient boolean meDisliked;
 
-
-
+    @OneToMany(mappedBy = "opinionProducts")
+    @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
+    private List<Replay> replays;
 
 
     public OpinionProduct(Product commentToProduct, User user, String text, LocalDateTime dateTime, short rating, String advantages, String disadvantages) {
@@ -178,5 +180,13 @@ public class OpinionProduct {
 
     public void setMeDisliked(boolean meDisliked) {
         this.meDisliked = meDisliked;
+    }
+
+    public List<Replay> getReplays() {
+        return replays;
+    }
+
+    public void setReplays(List<Replay> replays) {
+        this.replays = replays;
     }
 }
