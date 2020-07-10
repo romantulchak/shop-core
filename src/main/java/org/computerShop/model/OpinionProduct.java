@@ -18,7 +18,7 @@ public class OpinionProduct {
     @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
     private long id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Product commentToProduct;
 
     @ManyToOne
@@ -38,7 +38,7 @@ public class OpinionProduct {
     @JsonView({Views.ProductFull.class, Views.OpinionsFull.class})
     private String disadvantages;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "opinions_likes",
             joinColumns = @JoinColumn(name = "opinion_id"),
@@ -47,7 +47,7 @@ public class OpinionProduct {
     @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
     private Set<User> likes = new HashSet<>();
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "opinions_dislikes",
                 joinColumns = @JoinColumn(name = "opinion_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")
@@ -68,7 +68,7 @@ public class OpinionProduct {
     @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
     private transient boolean meDisliked;
 
-    @OneToMany(mappedBy = "opinionProducts")
+    @OneToMany(mappedBy = "opinionProducts", cascade = CascadeType.ALL)
     @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
     private List<Replay> replays;
 

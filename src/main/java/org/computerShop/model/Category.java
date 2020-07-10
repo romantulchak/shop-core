@@ -34,6 +34,8 @@ public class Category implements Serializable {
     @JsonView({Views.CategoryFull.class,Views.ProductFull.class})
     private List<Sections> sectionsInDb;
 
+    @JsonView(Views.CategoryFull.class)
+    private String categoryIcon;
     private transient List<CategorySectionDto> sections;
 
     public long getId() {
@@ -96,5 +98,13 @@ public class Category implements Serializable {
 
     public void setSectionsInDb(List<Sections> sectionsInDb) {
         this.sectionsInDb = sectionsInDb;
+    }
+
+    public String getCategoryIcon() {
+        return categoryIcon;
+    }
+
+    public void setCategoryIcon(String categoryIcon) {
+        this.categoryIcon = categoryIcon;
     }
 }

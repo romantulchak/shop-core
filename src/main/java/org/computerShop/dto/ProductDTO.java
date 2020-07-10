@@ -1,83 +1,63 @@
-package org.computerShop.model;
-
+package org.computerShop.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonView;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.computerShop.model.*;
 import org.computerShop.model.accessory.CPU;
 import org.computerShop.model.accessory.GPU;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.*;
 
-@Entity
-@Table(name = "products")
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Product {
+public class ProductDTO {
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
     @JsonView({Views.ProductFull.class, Views.CustomFUll.class, Views.UserFull.class})
     private long id;
 
-    @Column(name = "productName")
     @JsonView({Views.ProductFull.class,Views.CustomFUll.class,Views.UserFull.class})
     private String productName;
 
-    @Column(name = "productPrice")
+
     @JsonView({Views.ProductFull.class,Views.CustomFUll.class,Views.UserFull.class})
     private int productPrice;
 
-    @Column(length = 100000)
+
     @JsonView(Views.ProductFull.class)
     private String description;
 
     @JsonView(Views.ProductFull.class)
     private int discountPrice;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
+
     @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class})
-    @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
     private List<Image> image;
 
-    @ManyToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "category_id", nullable = false)
+
     @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class})
     private Category category;
 
-    @ManyToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "brand_id", nullable = false)
     @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class})
     private Brand brand;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
+
     private List<CustomProduct> customProducts;
 
-    @OneToMany(mappedBy = "commentToProduct", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
     @JsonView({Views.ProductFull.class})
     private List<OpinionProduct> opinionProducts;
 
     @JsonView(Views.ProductFull.class)
     private int amountInStock;
 
-    @ManyToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "cpu_id")
     @JsonView(Views.ProductFull.class)
     private CPU cpu;
 
-    @ManyToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name="gpu_id")
     @JsonView(Views.ProductFull.class)
     private GPU gpu;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product", cascade = CascadeType.REMOVE)
     @JsonView(Views.ProductFull.class)
     private Set<PromotionalCode> promotionalCodes;
 
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     @JsonView(Views.ProductFull.class)
     private List<ProductSection> productSection = new ArrayList<>();
 
@@ -87,16 +67,36 @@ public class Product {
 
     @JsonView(Views.ProductFull.class)
     private boolean isGlobalDiscount = false;
-
-    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
+    @JsonView(Views.ProductFull.class)
     private List<RemindMe> remindMe;
 
-    public List<CustomProduct> getCustomProducts() {
-        return customProducts;
+    @JsonView(Views.ProductFull.class)
+    private Double averageRanking;
+    public ProductDTO(){
+
     }
 
-    public void setCustomProducts(List<CustomProduct> customProducts) {
-        this.customProducts = customProducts;
+    public ProductDTO(Product product, Double averageRanking) {
+        this.id = product.getId();
+        this.productName = product.getProductName();
+        this.productPrice = product.getProductPrice();
+        this.description = product.getDescription();
+        this.discountPrice = product.getDiscountPrice();
+        this.image = product.getImage();
+        this.category = product.getCategory();
+        this.brand = product.getBrand();
+        this.customProducts = product.getCustomProducts();
+        this.opinionProducts = product.getOpinionProducts();
+        this.amountInStock = product.getAmountInStock();
+        this.cpu = product.getCpu();
+        this.gpu = product.getGpu();
+        this.promotionalCodes = product.getPromotionalCodes();
+        this.productSection = product.getProductSection();
+        this.properties = product.getProperties();
+        this.numberOfBuy = product.getNumberOfBuy();
+        this.isGlobalDiscount = product.isGlobalDiscount();
+        this.remindMe = product.getRemindMe();
+        this.averageRanking = averageRanking;
     }
 
     public long getId() {
@@ -105,22 +105,6 @@ public class Product {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public List<Image> getImage() {
-        return image;
-    }
-
-    public void setImage(List<Image> image) {
-        this.image = image;
     }
 
     public String getProductName() {
@@ -139,6 +123,30 @@ public class Product {
         this.productPrice = productPrice;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getDiscountPrice() {
+        return discountPrice;
+    }
+
+    public void setDiscountPrice(int discountPrice) {
+        this.discountPrice = discountPrice;
+    }
+
+    public List<Image> getImage() {
+        return image;
+    }
+
+    public void setImage(List<Image> image) {
+        this.image = image;
+    }
+
     public Category getCategory() {
         return category;
     }
@@ -153,6 +161,22 @@ public class Product {
 
     public void setBrand(Brand brand) {
         this.brand = brand;
+    }
+
+    public List<CustomProduct> getCustomProducts() {
+        return customProducts;
+    }
+
+    public void setCustomProducts(List<CustomProduct> customProducts) {
+        this.customProducts = customProducts;
+    }
+
+    public List<OpinionProduct> getOpinionProducts() {
+        return opinionProducts;
+    }
+
+    public void setOpinionProducts(List<OpinionProduct> opinionProducts) {
+        this.opinionProducts = opinionProducts;
     }
 
     public int getAmountInStock() {
@@ -187,12 +211,20 @@ public class Product {
         this.promotionalCodes = promotionalCodes;
     }
 
-    public int getDiscountPrice() {
-        return discountPrice;
+    public List<ProductSection> getProductSection() {
+        return productSection;
     }
 
-    public void setDiscountPrice(int discountPrice) {
-        this.discountPrice = discountPrice;
+    public void setProductSection(List<ProductSection> productSection) {
+        this.productSection = productSection;
+    }
+
+    public Map<String, LinkedHashMap<String, String>> getProperties() {
+        return properties;
+    }
+
+    public void setProperties(Map<String, LinkedHashMap<String, String>> properties) {
+        this.properties = properties;
     }
 
     public int getNumberOfBuy() {
@@ -219,38 +251,11 @@ public class Product {
         this.remindMe = remindMe;
     }
 
-    public List<OpinionProduct> getOpinionProducts() {
-        return opinionProducts;
+    public Double getAverageRanking() {
+        return averageRanking;
     }
 
-    public void setOpinionProducts(List<OpinionProduct> opinionProducts) {
-        this.opinionProducts = opinionProducts;
+    public void setAverageRanking(Double averageRanking) {
+        this.averageRanking = averageRanking;
     }
-
-
-    public List<ProductSection> getProductSection() {
-        return productSection;
-    }
-
-    public void setProductSection(List<ProductSection> productSection) {
-        this.productSection = productSection;
-    }
-
-    public Map<String, LinkedHashMap<String, String>> getProperties() {
-        return properties;
-    }
-
-    public void setProperties(Map<String, LinkedHashMap<String, String>> properties) {
-        this.properties = properties;
-    }
-
-    @PreRemove
-    public void delete(){
-        this.setCategory(null);
-        this.setBrand(null);
-        this.setCpu(null);
-        this.setGpu(null);
-    }
-
-
 }

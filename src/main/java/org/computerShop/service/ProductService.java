@@ -1,5 +1,6 @@
 package org.computerShop.service;
 
+import org.computerShop.dto.ProductDTO;
 import org.computerShop.model.Category;
 import org.computerShop.model.Product;
 import org.computerShop.model.accessory.CPU;
@@ -24,7 +25,7 @@ public interface ProductService {
     List<Product> filter(String[] brands, String[] cpus, String[] gpus );
     List<Product> mostPurchased();
     ResponseEntity<String> setDiscountPrice(Product product, short percent, boolean notifySubscribers);
-    List<Product> lastTenProducts();
+    List<ProductDTO> lastTenProducts();
     List<Product> similarProducts(long productId, String categoryName);
 
 }

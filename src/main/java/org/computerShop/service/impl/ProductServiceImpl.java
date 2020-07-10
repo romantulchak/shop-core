@@ -1,5 +1,6 @@
 package org.computerShop.service.impl;
 
+import org.computerShop.dto.ProductDTO;
 import org.computerShop.model.ProductSection;
 import org.computerShop.email.SendEmail;
 import org.computerShop.model.*;
@@ -20,6 +21,7 @@ import org.thymeleaf.TemplateEngine;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -34,6 +36,7 @@ public class ProductServiceImpl implements ProductService {
     private CategoryRepo categoryRepo;
     private ImageRepo imageRepo;
     private ProductSectionRepo productSectionRepo;
+    private OpinionProductRepo opinionProductRepo;
    //TODO: перенести
     private CpuRepo cpuRepo;
 
@@ -54,7 +57,8 @@ public class ProductServiceImpl implements ProductService {
                               SimpMessagingTemplate simpMessagingTemplate,
                               SubscriptionRepo subscriptionRepo,
                               TemplateEngine templateEngine,
-                              ProductSectionRepo productSectionRepo){
+                              ProductSectionRepo productSectionRepo,
+                              OpinionProductRepo opinionProductRepo){
         this.productRepo = productRepo;
         this.imageRepo = imageRepo;
         this.categoryRepo = categoryRepo;
@@ -65,6 +69,7 @@ public class ProductServiceImpl implements ProductService {
         this.subscriptionRepo = subscriptionRepo;
         this.templateEngine = templateEngine;
         this.productSectionRepo = productSectionRepo;
+        this.opinionProductRepo = opinionProductRepo;
     }
 
 
@@ -259,8 +264,16 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> lastTenProducts() {
-        return productRepo.findFirst8ByOrderByIdDesc();
+    public List<ProductDTO> lastTenProducts() {
+        List<Product> products = productRepo.findFirst8ByOrderByIdDesc();
+        return products.stream().map(this::convertToProductDto).collect(Collectors.toList());
+    }
+
+    private ProductDTO convertToProductDto(Product product){
+        Double average = opinionProductRepo.average(product.getId());
+        if(average == null)
+            average =0.0;
+        return new ProductDTO(product, average);
     }
 
     @Override

@@ -2,6 +2,7 @@ package org.computerShop.controller;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonView;
+import org.computerShop.dto.ProductDTO;
 import org.computerShop.model.Category;
 import org.computerShop.model.Product;
 import org.computerShop.model.Views;
@@ -150,7 +151,7 @@ public class MainController {
 
     @GetMapping("/lastTenProducts")
     @JsonView(Views.ProductFull.class)
-    public List<Product> lastTenProducts(){
+    public List<ProductDTO> lastTenProducts(){
         return productService.lastTenProducts();
     }
 

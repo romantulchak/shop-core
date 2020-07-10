@@ -49,6 +49,7 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
     List<Product> findFirst8ByOrderByIdDesc();
 
 
+
     @Query(value = "SELECT  p FROM Product p where p.id not in ?1 and p.category.categoryName = ?2  and p.amountInStock > 0 order by p.id desc")
     List<Product> similarProducts(long productId, String categoryName);
 
