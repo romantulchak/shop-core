@@ -2,6 +2,7 @@ package org.computerShop.repository;
 
 import org.computerShop.model.Category;
 import org.computerShop.model.Product;
+import org.computerShop.model.Subcategory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -16,7 +17,7 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
 
 
     List<Product> getAllByOrderByProductPrice();
-    List<Product> findAllByCategory(Category category);
+    List<Product> findAllBySubcategory(Subcategory category);
 
     @Query(value = "SELECT p FROM Product p where p.brand.name IN ?1")
     List<Product> findAllByBrand(String[] name);
@@ -50,8 +51,8 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
 
 
 
-    @Query(value = "SELECT  p FROM Product p where p.id not in ?1 and p.category.categoryName = ?2  and p.amountInStock > 0 order by p.id desc")
-    List<Product> similarProducts(long productId, String categoryName);
+    @Query(value = "SELECT  p FROM Product p where p.id not in ?1 and p.subcategory.subcategoryName = ?2  and p.amountInStock > 0 order by p.id desc")
+    List<Product> similarProducts(long productId, String subcategoryName);
 
 
 

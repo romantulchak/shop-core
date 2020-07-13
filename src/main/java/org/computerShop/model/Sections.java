@@ -10,22 +10,23 @@ public class Sections {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonView({Views.CategoryFull.class,Views.ProductFull.class,Views.SubcategoryFull.class})
     private long id;
 
-    @JsonView(Views.CategoryFull.class)
+    @JsonView({Views.CategoryFull.class,Views.ProductFull.class,Views.SubcategoryFull.class})
     private String title;
 
     @ManyToOne
-    private Category category;
+    private Subcategory subcategory;
 
     @OneToMany(mappedBy = "sections", cascade = CascadeType.REMOVE)
-    @JsonView(Views.CategoryFull.class)
+    @JsonView({Views.CategoryFull.class, Views.ProductFull.class,Views.SubcategoryFull.class})
     private List<Fields>fields;
 
 
-    public Sections(String title, Category category){
+    public Sections(String title, Subcategory subcategory){
         this.title = title;
-        this.category = category;
+        this.subcategory = subcategory;
     }
 
     public Sections() {
@@ -47,12 +48,12 @@ public class Sections {
         this.title = title;
     }
 
-    public Category getCategory() {
-        return category;
+    public Subcategory getSubcategory() {
+        return subcategory;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setSubcategory(Subcategory subcategory) {
+        this.subcategory = subcategory;
     }
 
     public List<Fields> getFields() {

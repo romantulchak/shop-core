@@ -49,9 +49,8 @@ public class MainController {
     }
 
     @GetMapping
-    @JsonView(Views.ProductFull.class)
+    @JsonView(Views.SubcategoryFull.class)
     public List<Product> main(){
-
         return productService.allProducts();
     }
 
@@ -94,7 +93,7 @@ public class MainController {
 
     @GetMapping("/filterByCategory")
     @JsonView(Views.ProductFull.class)
-    public List<Product> productsByCategory(@RequestParam(value = "categoryName", required = false) String category){
+    public List<Product> productsBySubcategory(@RequestParam(value = "categoryName", required = false) String category){
         return productService.filterByCategory(category);
     }
 
@@ -139,7 +138,7 @@ public class MainController {
 
     @GetMapping("/mostPurchased")
     @JsonView(Views.ProductFull.class)
-    public List<Product> mostPurchased(){
+    public List<ProductDTO> mostPurchased(){
         return productService.mostPurchased();
     }
 

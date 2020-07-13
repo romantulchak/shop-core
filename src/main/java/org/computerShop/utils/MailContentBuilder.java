@@ -1,4 +1,4 @@
-package org.computerShop.service.impl;
+package org.computerShop.utils;
 
 import org.computerShop.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;

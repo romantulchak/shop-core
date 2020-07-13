@@ -7,10 +7,9 @@ import org.computerShop.model.*;
 import org.computerShop.repository.*;
 import org.computerShop.service.ProductService;
 import org.computerShop.sockets.ResponseMessage;
+import org.computerShop.utils.MailContentBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -34,6 +33,7 @@ public class ProductServiceImpl implements ProductService {
 
     private ProductRepo productRepo;
     private CategoryRepo categoryRepo;
+    private SubcategoryRepo subcategoryRepo;
     private ImageRepo imageRepo;
     private ProductSectionRepo productSectionRepo;
     private OpinionProductRepo opinionProductRepo;
@@ -58,7 +58,8 @@ public class ProductServiceImpl implements ProductService {
                               SubscriptionRepo subscriptionRepo,
                               TemplateEngine templateEngine,
                               ProductSectionRepo productSectionRepo,
-                              OpinionProductRepo opinionProductRepo){
+                              OpinionProductRepo opinionProductRepo,
+                              SubcategoryRepo subcategoryRepo){
         this.productRepo = productRepo;
         this.imageRepo = imageRepo;
         this.categoryRepo = categoryRepo;
@@ -70,6 +71,7 @@ public class ProductServiceImpl implements ProductService {
         this.templateEngine = templateEngine;
         this.productSectionRepo = productSectionRepo;
         this.opinionProductRepo = opinionProductRepo;
+        this.subcategoryRepo = subcategoryRepo;
     }
 
 
@@ -91,9 +93,10 @@ public class ProductServiceImpl implements ProductService {
         if (!productsFromDb.contains(product)) {
             if(notifySubscribers){
                 subscriptionRepo.findAll().forEach(el->{
-                    sendEmail.sendMail(el.getEmail(), "Now you can buy new " + product.getCategory().getCategoryName() + " in our shop","Already available " + product.getProductName() + " price: " + product.getProductPrice());
+                    sendEmail.sendMail(el.getEmail(), "Now you can buy new " + product.getSubcategory().getSubcategoryName() + " in our shop","Already available " + product.getProductName() + " price: " + product.getProductPrice());
                 });
             }
+
             productRepo.save(product);
             if (images != null){
                 for (Image image : images){
@@ -125,15 +128,7 @@ public class ProductServiceImpl implements ProductService {
         productRepo.save(product);
         simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateProducts", true));
         if(product.getRemindMe() != null && product.getAmountInStock() != 0){
-            for (RemindMe remindMe:product.getRemindMe()) {
-
-
-                //sendEmail.sendMail(remindMe.getEmail(), "Remind", "Product: " + product.getProductName() + " is available");
-
-
-
-
-            }
+            //sendEmail.sendMail(remindMe.getEmail(), "Remind", "Product: " + product.getProductName() + " is available");
             return new ResponseEntity<>("Ok", HttpStatus.OK);
         }else {
             return new ResponseEntity<>("Something wrong", HttpStatus.OK);
@@ -183,8 +178,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> filterByCategory(String categoryName){
-        Category category = categoryRepo.findByCategoryName(categoryName);
-        List<Product> products = productRepo.findAllByCategory(category);
+        Subcategory subcategory = subcategoryRepo.findBySubcategoryName(categoryName);
+
+        List<Product> products = productRepo.findAllBySubcategory(subcategory);
         if (products.size() != 0){
             return products;
         }else {
@@ -194,6 +190,7 @@ public class ProductServiceImpl implements ProductService {
                 return products;
             }
         }
+
 
     }
 
@@ -225,10 +222,9 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> mostPurchased() {
+    public List<ProductDTO> mostPurchased() {
         List<Product> products = productRepo.findTop5ByOrderByNumberOfBuyDesc();
-        System.out.println(products);
-        return  productRepo.findTop5ByOrderByNumberOfBuyDesc();
+        return  products.stream().map(this::convertToProductDto).collect(Collectors.toList());
     }
 
     @Override
@@ -241,14 +237,7 @@ public class ProductServiceImpl implements ProductService {
                 productRepo.save(product);
                 if(notifySubscribers){
                     MailContentBuilder mailContentBuilder = new MailContentBuilder(templateEngine);
-                    subscriptionRepo.findAll().forEach(el->{
-
-
-                        sendEmail.sendMail(el.getEmail(),"Discount price for:", mailContentBuilder.createProductTemplate(product));
-
-
-
-                    });
+                    subscriptionRepo.findAll().forEach(el-> sendEmail.sendMail(el.getEmail(),"Discount price for:", mailContentBuilder.createProductTemplate(product)));
                 }
                 simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateProducts", true));
                 return new ResponseEntity<>("Discount price has been set", HttpStatus.OK);

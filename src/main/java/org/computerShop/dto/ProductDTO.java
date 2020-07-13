@@ -34,7 +34,7 @@ public class ProductDTO {
 
 
     @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class})
-    private Category category;
+    private Subcategory subcategory;
 
     @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class})
     private Brand brand;
@@ -72,6 +72,11 @@ public class ProductDTO {
 
     @JsonView(Views.ProductFull.class)
     private Double averageRanking;
+
+    @JsonView(Views.ProductFull.class)
+    private Subcategory subcategories;
+
+
     public ProductDTO(){
 
     }
@@ -83,7 +88,7 @@ public class ProductDTO {
         this.description = product.getDescription();
         this.discountPrice = product.getDiscountPrice();
         this.image = product.getImage();
-        this.category = product.getCategory();
+        this.subcategory = product.getSubcategory();
         this.brand = product.getBrand();
         this.customProducts = product.getCustomProducts();
         this.opinionProducts = product.getOpinionProducts();
@@ -97,6 +102,7 @@ public class ProductDTO {
         this.isGlobalDiscount = product.isGlobalDiscount();
         this.remindMe = product.getRemindMe();
         this.averageRanking = averageRanking;
+        this.subcategory = product.getSubcategory();
     }
 
     public long getId() {
@@ -147,12 +153,12 @@ public class ProductDTO {
         this.image = image;
     }
 
-    public Category getCategory() {
-        return category;
+    public Subcategory getSubcategory() {
+        return subcategory;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setSubcategory(Subcategory subcategory) {
+        this.subcategory = subcategory;
     }
 
     public Brand getBrand() {
@@ -257,5 +263,13 @@ public class ProductDTO {
 
     public void setAverageRanking(Double averageRanking) {
         this.averageRanking = averageRanking;
+    }
+
+    public Subcategory getSubcategories() {
+        return subcategories;
+    }
+
+    public void setSubcategories(Subcategory subcategories) {
+        this.subcategories = subcategories;
     }
 }

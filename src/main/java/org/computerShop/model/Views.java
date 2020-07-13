@@ -8,4 +8,5 @@ public class Views {
     public interface CustomUser{}
     public interface BrandFull{}
     public interface OpinionsFull{}
+    public interface SubcategoryFull{}
 }

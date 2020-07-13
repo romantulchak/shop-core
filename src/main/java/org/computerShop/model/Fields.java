@@ -12,7 +12,7 @@ public class Fields {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @JsonView(Views.CategoryFull.class)
+    @JsonView({Views.CategoryFull.class, Views.ProductFull.class, Views.SubcategoryFull.class})
     private String name;
 
     @ManyToOne

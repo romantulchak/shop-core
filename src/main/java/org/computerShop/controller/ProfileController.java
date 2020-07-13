@@ -35,12 +35,6 @@ public class ProfileController {
 
 
 
-
-
-
-
-
-
     @GetMapping("/all")
     public String allAccess() {
         return "Public Content.";

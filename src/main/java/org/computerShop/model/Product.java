@@ -19,73 +19,72 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @JsonView({Views.ProductFull.class, Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.ProductFull.class, Views.CustomFUll.class, Views.UserFull.class,Views.SubcategoryFull.class})
     private long id;
 
     @Column(name = "productName")
-    @JsonView({Views.ProductFull.class,Views.CustomFUll.class,Views.UserFull.class})
+    @JsonView({Views.ProductFull.class,Views.CustomFUll.class,Views.UserFull.class,Views.SubcategoryFull.class})
     private String productName;
 
     @Column(name = "productPrice")
-    @JsonView({Views.ProductFull.class,Views.CustomFUll.class,Views.UserFull.class})
+    @JsonView({Views.ProductFull.class,Views.CustomFUll.class,Views.UserFull.class,Views.SubcategoryFull.class})
     private int productPrice;
 
     @Column(length = 100000)
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,Views.SubcategoryFull.class})
     private String description;
 
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,Views.SubcategoryFull.class})
     private int discountPrice;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
-    @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class,Views.SubcategoryFull.class})
     @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
     private List<Image> image;
 
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "category_id", nullable = false)
-    @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class})
-    private Category category;
+    @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class,Views.SubcategoryFull.class})
+    private Subcategory subcategory;
 
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "brand_id", nullable = false)
-    @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class})
+    @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class,Views.SubcategoryFull.class})
     private Brand brand;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     private List<CustomProduct> customProducts;
 
-    @OneToMany(mappedBy = "commentToProduct", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
-    @JsonView({Views.ProductFull.class})
+    @OneToMany(mappedBy = "commentToProduct", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonView({Views.ProductFull.class,Views.SubcategoryFull.class})
     private List<OpinionProduct> opinionProducts;
 
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,Views.SubcategoryFull.class})
     private int amountInStock;
 
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "cpu_id")
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,Views.SubcategoryFull.class})
     private CPU cpu;
 
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name="gpu_id")
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,Views.SubcategoryFull.class})
     private GPU gpu;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "product", cascade = CascadeType.REMOVE)
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,Views.SubcategoryFull.class})
     private Set<PromotionalCode> promotionalCodes;
 
-
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,Views.SubcategoryFull.class})
     private List<ProductSection> productSection = new ArrayList<>();
 
     private transient Map<String, LinkedHashMap<String, String>> properties;
 
     private int numberOfBuy = 0;
 
-    @JsonView(Views.ProductFull.class)
+    @JsonView({Views.ProductFull.class,Views.SubcategoryFull.class})
     private boolean isGlobalDiscount = false;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
@@ -139,12 +138,13 @@ public class Product {
         this.productPrice = productPrice;
     }
 
-    public Category getCategory() {
-        return category;
+    public Subcategory getSubcategory() {
+        return subcategory;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+
+    public void setSubcategory(Subcategory subcategory) {
+        this.subcategory = subcategory;
     }
 
     public Brand getBrand() {
@@ -246,7 +246,7 @@ public class Product {
 
     @PreRemove
     public void delete(){
-        this.setCategory(null);
+        this.setSubcategory(null);
         this.setBrand(null);
         this.setCpu(null);
         this.setGpu(null);

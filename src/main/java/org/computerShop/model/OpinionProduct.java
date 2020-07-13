@@ -18,7 +18,7 @@ public class OpinionProduct {
     @JsonView({Views.ProductFull.class,Views.OpinionsFull.class})
     private long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Product commentToProduct;
 
     @ManyToOne

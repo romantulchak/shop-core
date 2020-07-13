@@ -12,7 +12,7 @@ import java.util.Set;
 @Entity
 @Table(name = "categories")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Category implements Serializable {
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,23 +20,23 @@ public class Category implements Serializable {
     private long id;
 
     @Column(name = "categoryName")
-    @JsonView({Views.ProductFull.class, Views.CategoryFull.class, Views.CustomFUll.class ,Views.UserFull.class})
+    @JsonView({Views.ProductFull.class, Views.CategoryFull.class, Views.CustomFUll.class ,Views.UserFull.class, Views.SubcategoryFull.class})
     private String categoryName;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private Set<Product> product;
 
     @Column(name = "imagePath")
     @JsonView(Views.CategoryFull.class)
     private String imagePath;
 
+
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    @JsonView({Views.CategoryFull.class,Views.ProductFull.class})
-    private List<Sections> sectionsInDb;
+    @JsonView(Views.CategoryFull.class)
+    private List<Subcategory> subcategories;
 
     @JsonView(Views.CategoryFull.class)
     private String categoryIcon;
-    private transient List<CategorySectionDto> sections;
+
+
 
     public long getId() {
         return id;
@@ -54,13 +54,6 @@ public class Category implements Serializable {
         this.categoryName = categoryName;
     }
 
-    public Set<Product> getProduct() {
-        return product;
-    }
-
-    public void setProduct(Set<Product> product) {
-        this.product = product;
-    }
 
     public String getImagePath() {
         return imagePath;
@@ -84,22 +77,6 @@ public class Category implements Serializable {
         return categoryName.hashCode();
     }
 
-    public List<CategorySectionDto> getSections() {
-        return sections;
-    }
-
-    public void setSections(List<CategorySectionDto> sections) {
-        this.sections = sections;
-    }
-
-    public List<Sections> getSectionsInDb() {
-        return sectionsInDb;
-    }
-
-    public void setSectionsInDb(List<Sections> sectionsInDb) {
-        this.sectionsInDb = sectionsInDb;
-    }
-
     public String getCategoryIcon() {
         return categoryIcon;
     }
@@ -107,4 +84,13 @@ public class Category implements Serializable {
     public void setCategoryIcon(String categoryIcon) {
         this.categoryIcon = categoryIcon;
     }
+
+    public List<Subcategory> getSubcategories() {
+        return subcategories;
+    }
+
+    public void setSubcategories(List<Subcategory> subcategories) {
+        this.subcategories = subcategories;
+    }
+
 }

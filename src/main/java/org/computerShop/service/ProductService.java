@@ -23,7 +23,7 @@ public interface ProductService {
     Product detailsProduct(Product product);
     List<Product> filterByCategory(String category);
     List<Product> filter(String[] brands, String[] cpus, String[] gpus );
-    List<Product> mostPurchased();
+    List<ProductDTO> mostPurchased();
     ResponseEntity<String> setDiscountPrice(Product product, short percent, boolean notifySubscribers);
     List<ProductDTO> lastTenProducts();
     List<Product> similarProducts(long productId, String categoryName);
