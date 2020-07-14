@@ -21,7 +21,7 @@ public interface ProductService {
     ResponseEntity<?> updateProduct(Product product);
     ResponseEntity<String> deleteProduct(Product product);
     Product detailsProduct(Product product);
-    List<Product> filterByCategory(String category);
+    List<ProductDTO> filterByCategory(String category);
     List<Product> filter(String[] brands, String[] cpus, String[] gpus );
     List<ProductDTO> mostPurchased();
     ResponseEntity<String> setDiscountPrice(Product product, short percent, boolean notifySubscribers);

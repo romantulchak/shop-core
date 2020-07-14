@@ -177,17 +177,21 @@ public class ProductServiceImpl implements ProductService {
     //TODO: MAX SIZE PHOTO 10 MB
 
     @Override
-    public List<Product> filterByCategory(String categoryName){
+    public List<ProductDTO> filterByCategory(String categoryName){
+        List<Product> products = null;
         Subcategory subcategory = subcategoryRepo.findBySubcategoryName(categoryName);
-
-        List<Product> products = productRepo.findAllBySubcategory(subcategory);
+        if(subcategory != null){
+            products = productRepo.findAllBySubcategory(subcategory);
+        }else{
+            products = productRepo.findByCategory(categoryName);
+        }
         if (products.size() != 0){
-            return products;
+            return products.stream().map(this::convertToProductDto).collect(Collectors.toList());
         }else {
             if(categoryName.contains("undefined") || categoryName.contains("all")) {
-                return productRepo.findAll();
+                return productRepo.findAll().stream().map(this::convertToProductDto).collect(Collectors.toList());
             }else{
-                return products;
+                return products.stream().map(this::convertToProductDto).collect(Collectors.toList());
             }
         }
 

@@ -7,7 +7,7 @@
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
           <factory-entry name="Entities" />
-          <factory-entry name="entityManagerFactory" value="0abab12f-147a-433f-bbc7-dd96bf35cf79" />
+          <factory-entry name="entityManagerFactory" value="3624afd9-c36d-4440-a6af-c8d4e8f97789" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
@@ -116,8 +116,7 @@
     <orderEntry type="library" name="Maven: com.sun.istack:istack-commons-runtime:3.0.7" level="project" />
     <orderEntry type="library" name="Maven: org.jvnet.staxex:stax-ex:1.8" level="project" />
     <orderEntry type="library" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" level="project" />
-    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.19" level="project" />
-    <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.6.1" level="project" />
+    <orderEntry type="library" name="Maven: org.postgresql:postgresql:42.2.14" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.11" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Maven: org.thymeleaf:thymeleaf:3.0.11.RELEASE" level="project" />

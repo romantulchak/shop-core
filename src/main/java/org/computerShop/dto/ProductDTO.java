@@ -76,6 +76,9 @@ public class ProductDTO {
     @JsonView(Views.ProductFull.class)
     private Subcategory subcategories;
 
+    @JsonView(Views.ProductFull.class)
+    private Category category;
+
 
     public ProductDTO(){
 
@@ -103,6 +106,7 @@ public class ProductDTO {
         this.remindMe = product.getRemindMe();
         this.averageRanking = averageRanking;
         this.subcategory = product.getSubcategory();
+        this.category = product.getCategory();
     }
 
     public long getId() {
@@ -271,5 +275,13 @@ public class ProductDTO {
 
     public void setSubcategories(Subcategory subcategories) {
         this.subcategories = subcategories;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

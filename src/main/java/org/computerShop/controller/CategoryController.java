@@ -28,7 +28,6 @@ public class CategoryController {
 
     @GetMapping
     @JsonView(Views.CategoryFull.class)
-
     public List<Category> getCategories(){
         return this.categoryService.getCategories();
     }

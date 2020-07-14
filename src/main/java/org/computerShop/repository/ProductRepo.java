@@ -1,5 +1,6 @@
 package org.computerShop.repository;
 
+import org.computerShop.dto.ProductDTO;
 import org.computerShop.model.Category;
 import org.computerShop.model.Product;
 import org.computerShop.model.Subcategory;
@@ -18,7 +19,8 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
 
     List<Product> getAllByOrderByProductPrice();
     List<Product> findAllBySubcategory(Subcategory category);
-
+    @Query(value = "SELECT p FROM Product p left join p.category c where c.categoryName = ?1")
+    List<Product> findByCategory(String categoryName);
     @Query(value = "SELECT p FROM Product p where p.brand.name IN ?1")
     List<Product> findAllByBrand(String[] name);
 

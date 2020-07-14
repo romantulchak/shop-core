@@ -19,6 +19,9 @@ public class Sections {
     @ManyToOne
     private Subcategory subcategory;
 
+    @ManyToOne
+    private Category category;
+
     @OneToMany(mappedBy = "sections", cascade = CascadeType.REMOVE)
     @JsonView({Views.CategoryFull.class, Views.ProductFull.class,Views.SubcategoryFull.class})
     private List<Fields>fields;
@@ -28,7 +31,10 @@ public class Sections {
         this.title = title;
         this.subcategory = subcategory;
     }
-
+    public Sections(String title, Category category){
+        this.title = title;
+        this.category = category;
+    }
     public Sections() {
     }
 
@@ -62,5 +68,13 @@ public class Sections {
 
     public void setFields(List<Fields> fields) {
         this.fields = fields;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

@@ -47,6 +47,14 @@ public class CategoryServiceImpl implements CategoryService {
         if (!categoryRepo.existsByCategoryName(category.getCategoryName()) && !category.getCategoryName().isEmpty()){
             category.setImagePath(path);
             categoryRepo.save(category);
+            category.getSections().forEach(e->{
+                Sections sections = new Sections(e.getTitle(), category);
+                sectionsRepo.save(sections);
+                for (Field field : e.getFields()) {
+                    Fields fields1 = new Fields(field.getName(), sections);
+                    fieldsRepo.save(fields1);
+                }
+            });
             simpMessagingTemplate.convertAndSend("/topic/update", new ResponseMessage("updateCategory", true));
             return new ResponseEntity<>("Was created " + category.getCategoryName(), HttpStatus.OK);
         }else {

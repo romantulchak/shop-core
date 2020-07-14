@@ -43,7 +43,6 @@ public class Product {
     private List<Image> image;
 
     @ManyToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "category_id", nullable = false)
     @JsonView({Views.ProductFull.class,Views.CustomFUll.class, Views.UserFull.class,Views.SubcategoryFull.class})
     private Subcategory subcategory;
 
@@ -89,6 +88,10 @@ public class Product {
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     private List<RemindMe> remindMe;
+
+    @ManyToOne
+    @JsonView(Views.ProductFull.class)
+    private Category category;
 
     public List<CustomProduct> getCustomProducts() {
         return customProducts;
@@ -242,6 +245,14 @@ public class Product {
 
     public void setProperties(Map<String, LinkedHashMap<String, String>> properties) {
         this.properties = properties;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     @PreRemove

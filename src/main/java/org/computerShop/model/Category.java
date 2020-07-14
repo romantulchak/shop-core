@@ -36,7 +36,14 @@ public class Category {
     @JsonView(Views.CategoryFull.class)
     private String categoryIcon;
 
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    @JsonView({Views.CategoryFull.class,Views.ProductFull.class, Views.SubcategoryFull.class})
+    private List<Sections> sectionsInDb;
 
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private Set<Product> product;
+
+    private transient List<CategorySectionDto> sections;
 
     public long getId() {
         return id;
@@ -93,4 +100,27 @@ public class Category {
         this.subcategories = subcategories;
     }
 
+    public Set<Product> getProduct() {
+        return product;
+    }
+
+    public void setProduct(Set<Product> product) {
+        this.product = product;
+    }
+
+    public List<CategorySectionDto> getSections() {
+        return sections;
+    }
+
+    public void setSections(List<CategorySectionDto> sections) {
+        this.sections = sections;
+    }
+
+    public List<Sections> getSectionsInDb() {
+        return sectionsInDb;
+    }
+
+    public void setSectionsInDb(List<Sections> sectionsInDb) {
+        this.sectionsInDb = sectionsInDb;
+    }
 }
