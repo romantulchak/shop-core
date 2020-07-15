@@ -49,7 +49,7 @@ public class MainController {
     }
 
     @GetMapping
-    @JsonView(Views.SubcategoryFull.class)
+    @JsonView(Views.ProductFull.class)
     public List<Product> main(){
         return productService.allProducts();
     }
@@ -166,5 +166,9 @@ public class MainController {
     public List<Product> similarProducts(@PathVariable("id") int productId, @PathVariable("categoryName") String categoryName){
         return productService.similarProducts(productId,categoryName);
     }
-
+    @GetMapping("/searchProducts")
+    @JsonView(Views.ProductFull.class)
+    public List<ProductDTO> searchProducts(@RequestParam(value = "productName") String productName){
+        return productService.searchProducts(productName.toLowerCase());
+    }
 }

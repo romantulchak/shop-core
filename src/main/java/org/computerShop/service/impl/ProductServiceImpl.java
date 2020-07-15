@@ -96,7 +96,7 @@ public class ProductServiceImpl implements ProductService {
                     sendEmail.sendMail(el.getEmail(), "Now you can buy new " + product.getSubcategory().getSubcategoryName() + " in our shop","Already available " + product.getProductName() + " price: " + product.getProductPrice());
                 });
             }
-
+            product.setProductNameLowercase(product.getProductName().toLowerCase());
             productRepo.save(product);
             if (images != null){
                 for (Image image : images){
@@ -238,6 +238,7 @@ public class ProductServiceImpl implements ProductService {
                 int discountPrice = (int) Math.round(product.getProductPrice() - (product.getProductPrice() * (percent / 100.0)));
                 product.setGlobalDiscount(true);
                 product.setDiscountPrice(discountPrice);
+                product.setProductNameLowercase(product.getProductNameLowercase());
                 productRepo.save(product);
                 if(notifySubscribers){
                     MailContentBuilder mailContentBuilder = new MailContentBuilder(templateEngine);
@@ -275,6 +276,10 @@ public class ProductServiceImpl implements ProductService {
         return productRepo.similarProducts(productId, categoryName);
     }
 
-
+    @Override
+    public List<ProductDTO> searchProducts(String productName) {
+        List<Product> products = productRepo.findAllByProductNameLowercaseIsContaining(productName);
+        return products.stream().map(this::convertToProductDto).limit(10).collect(Collectors.toList());
+    }
 }
 

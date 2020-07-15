@@ -56,6 +56,7 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
     @Query(value = "SELECT  p FROM Product p where p.id not in ?1 and p.subcategory.subcategoryName = ?2  and p.amountInStock > 0 order by p.id desc")
     List<Product> similarProducts(long productId, String subcategoryName);
 
+    List<Product> findAllByProductNameLowercaseIsContaining(String productName);
 
 
 }

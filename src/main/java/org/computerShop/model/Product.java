@@ -93,6 +93,8 @@ public class Product {
     @JsonView(Views.ProductFull.class)
     private Category category;
 
+    private String productNameLowercase;
+
     public List<CustomProduct> getCustomProducts() {
         return customProducts;
     }
@@ -253,6 +255,14 @@ public class Product {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public String getProductNameLowercase() {
+        return productNameLowercase;
+    }
+
+    public void setProductNameLowercase(String productNameLowercase) {
+        this.productNameLowercase = productNameLowercase;
     }
 
     @PreRemove

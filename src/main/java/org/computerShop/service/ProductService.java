@@ -27,5 +27,6 @@ public interface ProductService {
     ResponseEntity<String> setDiscountPrice(Product product, short percent, boolean notifySubscribers);
     List<ProductDTO> lastTenProducts();
     List<Product> similarProducts(long productId, String categoryName);
+    List<ProductDTO> searchProducts(String productName);
 
 }
