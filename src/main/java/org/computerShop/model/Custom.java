@@ -27,20 +27,16 @@ public class Custom  {
     @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private String costumerLastName;
 
-    @NotNull
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
-    private String costumerAddress;
+    @Embedded
+    private CustomCourier costumerCourier;
 
-    @NotNull
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
-    private String costumerCity;
+    @Embedded
+    private CustomPostOffice customPostOffice;
+
 
     @NotNull
     @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private String customerMobilePhone;
-    @NotNull
-    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
-    private String customerPostalCode;
 
 
     //TODO: видалити
@@ -176,36 +172,12 @@ public class Custom  {
         this.costumerLastName = costumerLastName;
     }
 
-    public String getCostumerAddress() {
-        return costumerAddress;
-    }
-
-    public void setCostumerAddress(String costumerAddress) {
-        this.costumerAddress = costumerAddress;
-    }
-
-    public String getCostumerCity() {
-        return costumerCity;
-    }
-
-    public void setCostumerCity(String costumerCity) {
-        this.costumerCity = costumerCity;
-    }
-
     public String getCustomerMobilePhone() {
         return customerMobilePhone;
     }
 
     public void setCustomerMobilePhone(String customerMobilePhone) {
         this.customerMobilePhone = customerMobilePhone;
-    }
-
-    public String getCustomerPostalCode() {
-        return customerPostalCode;
-    }
-
-    public void setCustomerPostalCode(String customerPostalCode) {
-        this.customerPostalCode = customerPostalCode;
     }
 
     public int getAmount() {
@@ -224,4 +196,19 @@ public class Custom  {
         this.createdDate = createdDate;
     }
 
+    public CustomCourier getCostumerCourier() {
+        return costumerCourier;
+    }
+
+    public void setCostumerCourier(CustomCourier costumerCourier) {
+        this.costumerCourier = costumerCourier;
+    }
+
+    public CustomPostOffice getCustomPostOffice() {
+        return customPostOffice;
+    }
+
+    public void setCustomPostOffice(CustomPostOffice customPostOffice) {
+        this.customPostOffice = customPostOffice;
+    }
 }

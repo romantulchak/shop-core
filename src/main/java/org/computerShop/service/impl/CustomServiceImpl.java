@@ -110,7 +110,6 @@ public class CustomServiceImpl implements CustomService {
                 .append("<h1>").append("Dear, ").append(custom.getCostumerName()).append(" ").append(custom.getCostumerLastName()).append("</h1>")
                 .append("<h2 style=\"color: green; font-family:sans-serif;\">").append("Your order number: ").append(identificationNumber)
                 .append("</h2>")
-                .append("<h3>").append("Location: ").append(custom.getCostumerCity()).append(" ").append(custom.getCostumerAddress()).append("</h3>")
                 .append("<h3>").append("Total price: ").append(custom.getTotalPrice()).append("</h3>");
         for (Product product: products) {
 
