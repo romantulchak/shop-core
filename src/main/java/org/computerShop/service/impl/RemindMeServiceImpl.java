@@ -21,10 +21,10 @@ public class RemindMeServiceImpl implements RemindMeService {
     @Override
     public ResponseEntity<String> createRemindMe(RemindMe remindMe) {
 
-        if(remindMe != null){
+        if(remindMe != null && !remindMeRepo.existsByEmailAndProduct(remindMe.getEmail(), remindMe.getProduct())){
             remindMeRepo.save(remindMe);
+            return new ResponseEntity<>("Ok", HttpStatus.OK);
         }
-
-        return new ResponseEntity<>("Ok", HttpStatus.OK);
+        return new ResponseEntity<>("This mail is already in use", HttpStatus.BAD_REQUEST);
     }
 }

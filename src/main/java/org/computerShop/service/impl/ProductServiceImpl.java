@@ -1,6 +1,7 @@
 package org.computerShop.service.impl;
 
 import org.computerShop.dto.ProductDTO;
+import org.computerShop.dto.ProductPageableDTO;
 import org.computerShop.model.ProductSection;
 import org.computerShop.email.SendEmail;
 import org.computerShop.model.*;
@@ -10,6 +11,9 @@ import org.computerShop.sockets.ResponseMessage;
 import org.computerShop.utils.MailContentBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -177,21 +181,23 @@ public class ProductServiceImpl implements ProductService {
     //TODO: MAX SIZE PHOTO 10 MB
 
     @Override
-    public List<ProductDTO> filterByCategory(String categoryName){
-        List<Product> products = null;
+    public ProductPageableDTO filterByCategory(String categoryName, int page){
+        Pageable pageable = PageRequest.of(page, 5);
+        Page<Product> products = null;
         Subcategory subcategory = subcategoryRepo.findBySubcategoryName(categoryName);
         if(subcategory != null){
-            products = productRepo.findAllBySubcategory(subcategory);
+            products = productRepo.findAllBySubcategory(subcategory, pageable);
         }else{
-            products = productRepo.findByCategory(categoryName);
+            products = productRepo.findByCategory(categoryName, pageable);
         }
-        if (products.size() != 0){
-            return products.stream().map(this::convertToProductDto).collect(Collectors.toList());
+        if (products.toList().size() != 0){
+            return new ProductPageableDTO(products.toList().stream().map(this::convertToProductDto).collect(Collectors.toList()), page, products.getTotalPages(), products.toList().size());
         }else {
             if(categoryName.contains("undefined") || categoryName.contains("all")) {
-                return productRepo.findAll().stream().map(this::convertToProductDto).collect(Collectors.toList());
+                products = productRepo.findAll(pageable);
+                return new ProductPageableDTO(products.toList().stream().map(this::convertToProductDto).collect(Collectors.toList()), page, products.getTotalPages(), products.toList().size());
             }else{
-                return products.stream().map(this::convertToProductDto).collect(Collectors.toList());
+                return new ProductPageableDTO(products.toList().stream().map(this::convertToProductDto).collect(Collectors.toList()), page, products.getTotalPages(), products.toList().size());
             }
         }
 

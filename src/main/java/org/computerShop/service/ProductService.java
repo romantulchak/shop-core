@@ -1,6 +1,7 @@
 package org.computerShop.service;
 
 import org.computerShop.dto.ProductDTO;
+import org.computerShop.dto.ProductPageableDTO;
 import org.computerShop.model.Category;
 import org.computerShop.model.Product;
 import org.computerShop.model.accessory.CPU;
@@ -21,7 +22,7 @@ public interface ProductService {
     ResponseEntity<?> updateProduct(Product product);
     ResponseEntity<String> deleteProduct(Product product);
     Product detailsProduct(Product product);
-    List<ProductDTO> filterByCategory(String category);
+    ProductPageableDTO filterByCategory(String category, int page);
     List<Product> filter(String[] brands, String[] cpus, String[] gpus );
     List<ProductDTO> mostPurchased();
     ResponseEntity<String> setDiscountPrice(Product product, short percent, boolean notifySubscribers);

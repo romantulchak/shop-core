@@ -12,4 +12,6 @@ import java.util.List;
 public interface RemindMeRepo extends JpaRepository<RemindMe, Long> {
    @Query(value = "SELECT p FROM RemindMe p WHERE p.product.id = ?1")
     List<RemindMe> allForProduct(long id);
+
+   boolean existsByEmailAndProduct(String email, Product product);
 }

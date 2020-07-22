@@ -5,6 +5,7 @@ import org.computerShop.model.Category;
 import org.computerShop.model.Product;
 import org.computerShop.model.Subcategory;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -18,9 +19,9 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
 
 
     List<Product> getAllByOrderByProductPrice();
-    List<Product> findAllBySubcategory(Subcategory category);
+    Page<Product> findAllBySubcategory(Subcategory category, Pageable pageable);
     @Query(value = "SELECT p FROM Product p left join p.category c where c.categoryName = ?1")
-    List<Product> findByCategory(String categoryName);
+    Page<Product> findByCategory(String categoryName, Pageable pageable);
     @Query(value = "SELECT p FROM Product p where p.brand.name IN ?1")
     List<Product> findAllByBrand(String[] name);
 

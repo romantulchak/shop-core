@@ -28,9 +28,11 @@ public class Custom  {
     private String costumerLastName;
 
     @Embedded
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private CustomCourier costumerCourier;
 
     @Embedded
+    @JsonView({Views.CustomFUll.class, Views.UserFull.class,Views.CustomUser.class})
     private CustomPostOffice customPostOffice;
 
 

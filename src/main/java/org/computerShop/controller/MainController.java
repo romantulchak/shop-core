@@ -3,6 +3,7 @@ package org.computerShop.controller;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.computerShop.dto.ProductDTO;
+import org.computerShop.dto.ProductPageableDTO;
 import org.computerShop.model.Category;
 import org.computerShop.model.Product;
 import org.computerShop.model.Views;
@@ -93,8 +94,8 @@ public class MainController {
 
     @GetMapping("/filterByCategory")
     @JsonView(Views.ProductFull.class)
-    public List<ProductDTO> productsBySubcategory(@RequestParam(value = "categoryName", required = false) String category){
-        return productService.filterByCategory(category);
+    public ProductPageableDTO productsBySubcategory(@RequestParam(value = "categoryName", required = false) String category, @RequestParam(value = "page", defaultValue = "0") int page){
+        return productService.filterByCategory(category, page);
     }
 
     @GetMapping("/filter")
