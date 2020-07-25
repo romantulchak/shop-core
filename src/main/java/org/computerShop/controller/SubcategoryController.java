@@ -31,6 +31,11 @@ public class SubcategoryController {
         return subcategoryService.createSubcategory(subcategory);
     }
 
+    @JsonView(Views.SubcategoryFull.class)
+    @GetMapping("/getSubcategoriesByCategory/{categoryName}")
+    public List<Subcategory> getSubcategoriesByCategory(@PathVariable("categoryName") String categoryName){
+        return subcategoryService.getSubcategoriesByCategory(categoryName);
+    }
 
 
 

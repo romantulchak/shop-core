@@ -51,4 +51,12 @@ public class SubcategoryServiceImpl implements SubcategoryService {
     public List<Subcategory> getSubcategories() {
         return subcategoryRepo.findAll();
     }
+
+    @Override
+    public List<Subcategory> getSubcategoriesByCategory(String categoryName) {
+        if(categoryName != null){
+            return subcategoryRepo.getSubcategoriesByCategoryName(categoryName);
+        }
+        return null;
+    }
 }

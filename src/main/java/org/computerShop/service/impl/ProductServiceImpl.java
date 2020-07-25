@@ -182,7 +182,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductPageableDTO filterByCategory(String categoryName, int page){
-        Pageable pageable = PageRequest.of(page, 5);
+        Pageable pageable = PageRequest.of(page, 9);
         Page<Product> products = null;
         Subcategory subcategory = subcategoryRepo.findBySubcategoryName(categoryName);
         if(subcategory != null){
@@ -191,13 +191,13 @@ public class ProductServiceImpl implements ProductService {
             products = productRepo.findByCategory(categoryName, pageable);
         }
         if (products.toList().size() != 0){
-            return new ProductPageableDTO(products.toList().stream().map(this::convertToProductDto).collect(Collectors.toList()), page, products.getTotalPages(), products.toList().size());
+            return new ProductPageableDTO(products.toList().stream().map(this::convertToProductDto).collect(Collectors.toList()), page, products.getTotalPages(), products.toList().size(), products.getTotalElements());
         }else {
             if(categoryName.contains("undefined") || categoryName.contains("all")) {
                 products = productRepo.findAll(pageable);
-                return new ProductPageableDTO(products.toList().stream().map(this::convertToProductDto).collect(Collectors.toList()), page, products.getTotalPages(), products.toList().size());
+                return new ProductPageableDTO(products.toList().stream().map(this::convertToProductDto).collect(Collectors.toList()), page, products.getTotalPages(), products.toList().size(),products.getTotalElements() );
             }else{
-                return new ProductPageableDTO(products.toList().stream().map(this::convertToProductDto).collect(Collectors.toList()), page, products.getTotalPages(), products.toList().size());
+                return new ProductPageableDTO(products.toList().stream().map(this::convertToProductDto).collect(Collectors.toList()), page, products.getTotalPages(), products.toList().size(), products.getTotalElements());
             }
         }
 

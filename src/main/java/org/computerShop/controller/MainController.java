@@ -94,7 +94,7 @@ public class MainController {
 
     @GetMapping("/filterByCategory")
     @JsonView(Views.ProductFull.class)
-    public ProductPageableDTO productsBySubcategory(@RequestParam(value = "categoryName", required = false) String category, @RequestParam(value = "page", defaultValue = "0") int page){
+    public ProductPageableDTO productsBySubcategory(@RequestParam(value = "categoryName", required = false) String category, @RequestParam(value = "page", defaultValue = "1") int page){
         return productService.filterByCategory(category, page);
     }
 

@@ -17,15 +17,21 @@ public class ProductPageableDTO {
     public int totalPages;
     @JsonView(Views.ProductFull.class)
     private int productsCounter;
+    @JsonView(Views.ProductFull.class)
+    private long totalItems;
+
+
+
 
     public ProductPageableDTO() {
     }
 
-    public ProductPageableDTO(List<ProductDTO> productDTOS, int currentPage, int totalPages, int productsCounter) {
+    public ProductPageableDTO(List<ProductDTO> productDTOS, int currentPage, int totalPages, int productsCounter, long totalItems) {
         this.productDTOS = productDTOS;
         this.currentPage = currentPage;
         this.totalPages = totalPages;
         this.productsCounter = productsCounter;
+        this.totalItems = totalItems;
     }
 
     public List<ProductDTO> getProductDTOS() {
@@ -58,5 +64,13 @@ public class ProductPageableDTO {
 
     public void setProductsCounter(int productsCounter) {
         this.productsCounter = productsCounter;
+    }
+
+    public long getTotalItems() {
+        return totalItems;
+    }
+
+    public void setTotalItems(long totalItems) {
+        this.totalItems = totalItems;
     }
 }
