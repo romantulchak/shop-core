@@ -152,7 +152,7 @@ public class ProductServiceImpl implements ProductService {
                     String uuidFile = UUID.randomUUID().toString();
                     String resultFullName = uuidFile + "." + file.getOriginalFilename();
                     file.transferTo(new File(uploadPath + "/" + resultFullName));
-                    String imagePath = "http://localhost:8080/productImages/" + resultFullName;
+                    String imagePath = "http://localhost:8090/productImages/" + resultFullName;
                     Image image = new Image(imagePath);
                     images.add(image);
                 }
@@ -286,6 +286,26 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductDTO> searchProducts(String productName) {
         List<Product> products = productRepo.findAllByProductNameLowercaseIsContaining(productName);
         return products.stream().map(this::convertToProductDto).limit(10).collect(Collectors.toList());
+    }
+
+    @Override
+    public Integer getMaxPrice(String categoryName) {
+            Integer price = productRepo.getMaxPriceForCategory(categoryName);
+            if(price != null){
+                return price;
+            }else {
+                return productRepo.getMaxPriceForSubcategory(categoryName);
+            }
+    }
+
+    @Override
+    public Integer getMinPrice(String categoryName) {
+        Integer price = productRepo.getMinPriceForCategory(categoryName);
+        if(price != null){
+            return price;
+        }else {
+            return productRepo.getMinPriceForSubcategory(categoryName);
+        }
     }
 }
 

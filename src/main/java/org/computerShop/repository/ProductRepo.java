@@ -60,4 +60,14 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
     List<Product> findAllByProductNameLowercaseIsContaining(String productName);
 
 
+    @Query(value = "SELECT p.productPrice FROM Product p where p.category.categoryName = ?1 AND p.productPrice = (SELECT max (prod.productPrice) FROM Product  prod) ")
+    Integer getMaxPriceForCategory(String categoryName);
+    @Query(value = "SELECT p.productPrice FROM Product p where p.category.categoryName = ?1 AND p.productPrice = (SELECT min (prod.productPrice) FROM Product  prod) ")
+    Integer getMinPriceForCategory(String categoryName);
+
+    @Query(value = "SELECT p.productPrice FROM Product p where p.subcategory.subcategoryName = ?1 AND p.productPrice = (SELECT max (prod.productPrice) FROM Product  prod) ")
+    Integer getMaxPriceForSubcategory(String categoryName);
+    @Query(value = "SELECT p.productPrice FROM Product p where p.subcategory.subcategoryName = ?1 AND p.productPrice = (SELECT min (prod.productPrice) FROM Product  prod) ")
+    Integer getMinPriceForSubcategory(String categoryName);
+
 }

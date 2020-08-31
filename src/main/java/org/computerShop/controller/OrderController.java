@@ -72,4 +72,16 @@ public class OrderController {
     public int checkAmount(@RequestParam(value="productId", required = false) String id, @RequestParam(value = "productAmount", required = false) String amount){
         return customService.checkAmount(id, amount);
     }
+
+    @GetMapping("/countBuy")
+    @PreAuthorize("hasRole('ADMIN')")
+    public long getCountBuy(){
+        return customService.getCountBuy();
+    }
+
+    @GetMapping("/totalMoneyByDay")
+    @PreAuthorize("hasRole('ADMIN')")
+    public long getTotalMoneyByDay(){
+        return customService.getTotalBuyMoneyByDay();
+    }
 }

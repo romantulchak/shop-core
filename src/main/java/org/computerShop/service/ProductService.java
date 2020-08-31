@@ -29,5 +29,6 @@ public interface ProductService {
     List<ProductDTO> lastTenProducts();
     List<Product> similarProducts(long productId, String categoryName);
     List<ProductDTO> searchProducts(String productName);
-
+    Integer getMaxPrice(String categoryName);
+    Integer getMinPrice(String categoryName);
 }

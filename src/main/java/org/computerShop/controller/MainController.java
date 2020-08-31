@@ -172,4 +172,9 @@ public class MainController {
     public List<ProductDTO> searchProducts(@RequestParam(value = "productName") String productName){
         return productService.searchProducts(productName.toLowerCase());
     }
+
+    @GetMapping("/getMaxPrice/{categoryName}")
+    public Integer getMaxPrice(@PathVariable("categoryName") String categoryName){
+        return productService.getMaxPrice(categoryName);
+    }
 }

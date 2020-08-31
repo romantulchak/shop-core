@@ -29,6 +29,7 @@ public class Subcategory {
     @OneToMany(mappedBy = "subcategory", cascade = CascadeType.ALL)
     private Set<Product> product;
 
+
     private transient List<CategorySectionDto> sections;
 
     public List<CategorySectionDto> getSections() {
@@ -78,5 +79,6 @@ public class Subcategory {
     public void setProduct(Set<Product> product) {
         this.product = product;
     }
+
 
 }

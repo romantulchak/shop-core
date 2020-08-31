@@ -4,9 +4,11 @@ import org.computerShop.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.computerShop.model.Custom;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 import java.util.List;
 @Repository
 public interface CustomRepo extends JpaRepository<Custom, Long> {
@@ -15,4 +17,10 @@ public interface CustomRepo extends JpaRepository<Custom, Long> {
     Custom findFirstByIdentificationNumber(String identificationNumber);
     List<Custom> findAllByIdentificationNumber(String identificationNumber);
 
+    @Query(value = "SELECT count(c) FROM Custom c")
+    long getTotalOrderCounter();
+
+
+    @Query(value="SELECT sum(c.totalPrice) FROM Custom c where c.createdDate > CURRENT_DATE ")
+    long getTotalCustomPriceByDay(@Param("date") LocalDateTime date);
 }
