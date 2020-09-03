@@ -19,4 +19,5 @@ public interface CustomService {
     int checkAmount(String id, String amount);
     long getCountBuy();
     long getTotalBuyMoneyByDay();
+    long getOrderCounterByDay();
 }

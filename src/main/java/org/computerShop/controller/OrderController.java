@@ -84,4 +84,10 @@ public class OrderController {
     public long getTotalMoneyByDay(){
         return customService.getTotalBuyMoneyByDay();
     }
+
+    @GetMapping("/getOrderCounterByDay")
+    @PreAuthorize("hasRole('ADMIN')")
+    public long getOrderCounterByDay(){
+        return customService.getOrderCounterByDay();
+    }
 }

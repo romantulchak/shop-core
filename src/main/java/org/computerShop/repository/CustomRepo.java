@@ -18,9 +18,9 @@ public interface CustomRepo extends JpaRepository<Custom, Long> {
     List<Custom> findAllByIdentificationNumber(String identificationNumber);
 
     @Query(value = "SELECT count(c) FROM Custom c")
-    long getTotalOrderCounter();
-
-
+    Long getTotalOrderCounter();
+    @Query(value = "SELECT count(c) FROM Custom c where c.createdDate > CURRENT_DATE ")
+    Long getOrderCounterByDay();
     @Query(value="SELECT sum(c.totalPrice) FROM Custom c where c.createdDate > CURRENT_DATE ")
-    long getTotalCustomPriceByDay(@Param("date") LocalDateTime date);
+    Long getTotalCustomPriceByDay();
 }

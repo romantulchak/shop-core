@@ -269,4 +269,28 @@ public class CustomServiceImpl implements CustomService {
             return amountToReturn;
         }
     }
+
+    @Override
+    public long getCountBuy() {
+        return  checkIfNull(customRepo.getTotalOrderCounter());
+    }
+
+    @Override
+    public long getTotalBuyMoneyByDay() {
+        return  checkIfNull(customRepo.getTotalCustomPriceByDay());
+    }
+
+    @Override
+    public long getOrderCounterByDay() {
+        return checkIfNull(customRepo.getOrderCounterByDay());
+    }
+
+    private long checkIfNull(Long number){
+        if(number == null){
+            return 0;
+        }else{
+            return number;
+        }
+
+    }
 }

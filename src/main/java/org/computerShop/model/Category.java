@@ -123,4 +123,6 @@ public class Category {
     public void setSectionsInDb(List<Sections> sectionsInDb) {
         this.sectionsInDb = sectionsInDb;
     }
+
+
 }

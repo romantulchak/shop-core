@@ -102,7 +102,7 @@ public class User {
     @OneToOne
     private Subscription subscription;
 
-
+    private Boolean isNew;
 
 
     public User() {
@@ -126,6 +126,7 @@ public class User {
         this.address = address;
         this.postalCode = postalCode;
         this.mobilePhone = mobilePhone;
+        this.isNew = true;
     }
 
     public Long getId() {
@@ -266,5 +267,13 @@ public class User {
 
     public void setReplays(List<Replay> replays) {
         this.replays = replays;
+    }
+
+    public Boolean getNew() {
+        return isNew;
+    }
+
+    public void setNew(Boolean aNew) {
+        isNew = aNew;
     }
 }
