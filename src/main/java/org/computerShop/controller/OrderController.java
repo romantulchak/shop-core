@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import org.computerShop.model.User;
 import org.computerShop.model.Views;
 import org.computerShop.service.impl.CustomServiceImpl;
+import org.computerShop.service.impl.IncomeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -18,10 +19,12 @@ import java.util.List;
 public class OrderController {
 
     private CustomServiceImpl customService;
+    private IncomeServiceImpl incomeService;
 
     @Autowired
-    public OrderController(CustomServiceImpl customService){
+    public OrderController(CustomServiceImpl customService, IncomeServiceImpl incomeService){
         this.customService = customService;
+        this.incomeService = incomeService;
     }
 
     @PostMapping("/createOrder")
@@ -89,5 +92,10 @@ public class OrderController {
     @PreAuthorize("hasRole('ADMIN')")
     public long getOrderCounterByDay(){
         return customService.getOrderCounterByDay();
+    }
+    @GetMapping("/getIncomeByLastMonth")
+    @PreAuthorize("hasRole('ADMIN')")
+    public long getIncomeByLastMonth(){
+        return incomeService.getIncomeByLastMonth();
     }
 }
