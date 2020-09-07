@@ -23,7 +23,7 @@ public interface CustomRepo extends JpaRepository<Custom, Long> {
     Long getOrderCounterByDay();
     @Query(value="SELECT sum(c.totalPrice) FROM Custom c where c.createdDate > CURRENT_DATE ")
     Long getTotalCustomPriceByDay();
-
+//TODO: fix
     @Query(value = "SELECT SUM (custom.total_price) FROM Custom where custom.created_date > current_date - interval '30' day", nativeQuery = true)
     Long getTotalCustomPriceByMonth();
 }

@@ -17,8 +17,8 @@ public class IncomeServiceImpl implements IncomeService {
 
     @Override
     public long getIncomeByLastMonth(){
-        if (incomeRepo.findFirstByOrderByIdDesc() != null){
-            return incomeRepo.findFirstByOrderByIdDesc().getIncome();
+        if (incomeRepo.totalIncomeByMonth() != null){
+            return incomeRepo.totalIncomeByMonth();
         }else{
             return 0;
         }

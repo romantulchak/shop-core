@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IncomeRepo extends JpaRepository<Income, Long> {
 
-    Income findFirstByOrderByIdDesc();
-
+    @Query(value = "SELECT SUM (income.income) FROM Income where income.date > current_date -interval '30' day",  nativeQuery = true)
+    Long totalIncomeByMonth();
 }
